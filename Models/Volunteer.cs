@@ -7,5 +7,8 @@ namespace GenesisVolunteerPortal.Models
 {
     public class Volunteer
     {
+        int VolunteerID { get; set; }
+
+        int PersonID { get; set; }
     }
 }
