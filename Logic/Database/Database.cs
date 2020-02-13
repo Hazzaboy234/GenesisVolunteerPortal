@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GenesisVolunteerPortal.Logic.Salesforce
+namespace GenesisVolunteerPortal.Logic.Database
 {
-    public class Salesforce
+    public class Database
     {
-        //use HttpClient
+        //use SQLClient
     }
 }

@@ -11,7 +11,7 @@ namespace GenesisVolunteerPortal.Models
 
         String Description { get; set; }
 
-        String AssociatedMembers { get; set; }
+        String[] AssociatedMembers { get; set; }
 
         String Location { get; set; }
 

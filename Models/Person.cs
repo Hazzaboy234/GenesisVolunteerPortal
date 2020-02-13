@@ -37,7 +37,7 @@ namespace GenesisVolunteerPortal.Models
 
         String MedicalInfo { get; set; }
 
-        String CommunicationPrefernce { get; set; }
+        String CommunicationPreference { get; set; }
 
         String MobileNumber { get; set; }
 
@@ -46,8 +46,6 @@ namespace GenesisVolunteerPortal.Models
         String ProfileImage { get; set; }
 
         PersonRole Role { get; set; }
-        
-        String Nickname { get; set; }
 
         String Address { get; set; }
 
