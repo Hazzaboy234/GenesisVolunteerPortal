@@ -1,12 +1,17 @@
+using System;
+using GenesisVolunteerPortal.Logic.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace temp
+namespace GenesisVolunteerPortal
 {
     public class Startup
     {
@@ -20,9 +25,15 @@ namespace temp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var builder = new SqlConnectionStringBuilder(
+                Configuration.GetConnectionString("Database")) {Password = Configuration["DbPassword"]};
 
+            services.AddDbContext<GenesisTrustDatabaseContext>(options =>
+                options.UseSqlServer(builder.ConnectionString));
+            Console.WriteLine(builder.ConnectionString);
             services.AddControllersWithViews();
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
