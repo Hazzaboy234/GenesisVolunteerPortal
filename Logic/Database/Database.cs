@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.EntityFrameworkCore;
 namespace GenesisVolunteerPortal.Logic.Database
@@ -35,9 +37,28 @@ namespace GenesisVolunteerPortal.Logic.Database
 
         }
 
+        public IEnumerable<Persons> GetAllPersons()
+        {
+            return _context.Persons;
+        }
+
         public Roles GetRoleById(int roleId)
         {
             return _context.Roles.Find(roleId);
+        }
+
+        public IEnumerable<Roles> GetAllRoles()
+        {
+            return _context.Roles;
+        }
+        public IEnumerable<RoleTimes> GetRoleTimesByRoleId(int roleId)
+        {
+            return _context.RoleTimes.Where(r => r.RoleId == roleId);
+        }
+
+        public Projects GetProjectById(int projectId)
+        {
+            return _context.Projects.Find(projectId);
         }
     }
 }

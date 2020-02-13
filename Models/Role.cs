@@ -7,22 +7,22 @@ namespace GenesisVolunteerPortal.Models
 {
     public class Role
     {
-        String Title { get; set; }
+        public String Title { get; set; }
 
-        String Description { get; set; }
+        public String Description { get; set; }
 
-        String AssociatedProject { get; set; }
+        public String AssociatedProject { get; set; }
 
-        String Location { get; set; }
+        public String Location { get; set; }
 
-        String Time { get; set; }
+        public List<String> Time { get; set; }
 
-        String Hours { get; set; }
+        public String Hours { get; set; }
 
-        String Image { get; set; }
+        public String Image { get; set; }
 
-        String ApplicationCode { get; set; }
+        public String ApplicationCode { get; set; }
 
-        int RoleID { get; set; }
+        public int RoleID { get; set; }
     }
 }

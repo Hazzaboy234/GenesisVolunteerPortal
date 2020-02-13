@@ -19,13 +19,20 @@ namespace GenesisVolunteerPortal.Controllers
             _context = context;
         }
         
-        [HttpGet]
+        [HttpGet("/persons/{id}")]
         public ActionResult GetPersons(int personId)
         {
             var db = new Database(_context);
             return Ok(JsonConvert.SerializeObject(db.GetPersonById(personId)));
         }
-
+        
+        [HttpGet]
+        public IEnumerable<Persons> GetAllPersons()
+        {
+            var db = new Database(_context);
+            return db.GetAllPersons();
+        }
+        
         [HttpPost]
         public void PostPersons(Persons person)
         {
@@ -39,11 +46,12 @@ namespace GenesisVolunteerPortal.Controllers
             var db = new Database(_context);
             db.Update(person);
         }
-        // public IEnumerable<Person> Person()
-        // {
-        //     return Ok();
-        // }
-        
-        
+
+        [HttpDelete]
+        public void DeletePersons(Persons person)
+        {
+            var db = new Database(_context);
+            db.Remove(person);
+        }
     }
 }

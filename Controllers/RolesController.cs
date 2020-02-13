@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GenesisVolunteerPortal.Logic;
 using GenesisVolunteerPortal.Logic.Database;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using GenesisVolunteerPortal.Models;
@@ -23,7 +24,8 @@ namespace GenesisVolunteerPortal.Controllers
         public ActionResult GetRoles(int roleId)
         {
             var db = new Database(_context);
-            return Ok(JsonConvert.SerializeObject(db.GetRoleById(roleId)));
+            var rm = new RoleManager();
+            return Ok(JsonConvert.SerializeObject(rm.CreateRole(db.GetRoleTimesByRoleId(roleId), db.GetRoleById(roleId))));
         }
 
         [HttpPost]
