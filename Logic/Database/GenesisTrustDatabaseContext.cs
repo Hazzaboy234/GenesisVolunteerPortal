@@ -10,8 +10,7 @@ namespace GenesisVolunteerPortal.Logic.Database
         {
         }
 
-        public GenesisTrustDatabaseContext(DbContextOptions<GenesisTrustDatabaseContext> options)
-            : base(options)
+        public GenesisTrustDatabaseContext(DbContextOptions<GenesisTrustDatabaseContext> options) : base(options)
         {
         }
 

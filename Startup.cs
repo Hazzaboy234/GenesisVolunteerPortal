@@ -1,6 +1,9 @@
+using System;
 using GenesisVolunteerPortal.Logic.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -27,9 +30,10 @@ namespace GenesisVolunteerPortal
 
             services.AddDbContext<GenesisTrustDatabaseContext>(options =>
                 options.UseSqlServer(builder.ConnectionString));
-            
+            Console.WriteLine(builder.ConnectionString);
             services.AddControllersWithViews();
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
