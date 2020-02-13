@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 namespace GenesisVolunteerPortal.Logic.Database
 {
-    public class Database
+    public class Database : IDatabase
     {
-        //use SQLClient
+        public Database()
+        {
+
+        }
+        
+        private void Add<T>(T addition)
+        {
+            using var connection = new GenesisTrustDatabaseContext();
+            connection.Add(addition);
+            connection.SaveChanges();
+        }
+
+        private void Remove<T>(T removal)
+        {
+            using var connection = new GenesisTrustDatabaseContext();
+            connection.Remove(removal);
+        }
     }
 }
