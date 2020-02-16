@@ -35,6 +35,7 @@ body {
   align-self:center;
   margin-left: auto;
   color:white;
+  border-bottom:1px white solid;
 }
 
 #main-nav{
@@ -189,6 +190,11 @@ ul li:hover{
   font-weight: bold;
   background-color: white;
   color:rgb(68, 183, 73);
+}
+
+.active:hover{
+  background-color:none;
+  color:currentColor;
 }
 
 .hide{
