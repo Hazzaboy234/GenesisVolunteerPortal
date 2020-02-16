@@ -2,6 +2,32 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(68, 183, 73);
+  flex:1;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+
+#header-logo {
+  width: 200px;
+  align-self: center;
+}
+
+.header-container {
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav{
+  outline:1px black solid;
 }
 
 ul {
@@ -14,72 +40,41 @@ ul {
 }
 
 ul li {
-  border: 1px black solid;
-
   width: 100%;
   padding: 10px;
   text-align: center;
 }
-
+/*  background-color: rgb(68, 183, 73); */
 ul li a{
     color:inherit;
     text-decoration: none;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: rgb(68, 183, 73);
-}
-
-#header-logo {
-  width: 300px;
-}
-
-.header-container {
-  margin: 0;
-  padding: 0;
-}
-
-footer {
-  background-color: rgb(68, 183, 73);
-}
-
-#twitter-feed {
-  width: 100%;
-  height: 200px;
-}
-
-.noti-container {
-  outline: 1px red solid;
-  width:100%;
-  height: 200px;
+    cursor: pointer;
+    font-size:1em;
 }
 
 .main-container {
     display: flex;
     flex-direction: row;
-  }
-
-  
-.secondary-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  flex:1;
-  width:100%;
+    flex:3;
 }
 
 .map-container{
-    flex:5;
+  flex:5;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  border:1px black solid;
+  border-top:none;
 }
 
-#main-nav{
+.map{
+  flex:1;
 
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  font-size:4em;
 }
 
 #map-nav{
@@ -92,4 +87,47 @@ footer {
 
 .map-nav-item{
     margin:5px;
+    border:1px black solid;
+}
+  
+.secondary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex:1;
+  border-bottom:1px black solid;  
+  
+}
+
+.noti-container {
+  width:100%;
+  height: 200px;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size:2em;
+}
+
+#twitter-feed {
+  width: 100%;
+}
+
+
+
+
+.footer-container{
+  background-color: rgb(68, 183, 73);
+  flex:0.5;
+  color:white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2em;
 }
