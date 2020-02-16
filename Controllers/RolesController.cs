@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using GenesisVolunteerPortal.Logic.Database;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
-using GenesisVolunteerPortal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace GenesisVolunteerPortal.Controllers
 {
@@ -13,37 +11,30 @@ namespace GenesisVolunteerPortal.Controllers
     public class RolesController : Controller
     {
         private readonly GenesisTrustDatabaseContext _context;
-        
-        public RolesController(GenesisTrustDatabaseContext context)
+        private readonly Database _database;
+
+        public RolesController(GenesisTrustDatabaseContext context, Database database)
         {
             _context = context;
+            _database = database;
         }
-        
+
         [HttpGet]
-        public ActionResult GetRoles(int roleId)
+        public async Task<ActionResult> GetRoles(int roleId)
         {
-            var db = new Database(_context);
-            return Ok(JsonConvert.SerializeObject(db.GetRoleById(roleId)));
+            return Ok(JsonConvert.SerializeObject(await _database.GetRoleById(roleId)));
         }
 
         [HttpPost]
-        public void PostRoles(Roles role)
+        public async Task PostRoles(Roles role)
         {
-            var db = new Database(_context);
-            db.Add(role);
+            await _database.Add(role);
         }
 
         [HttpPut]
-        public void PutRoles(Roles role)
+        public async Task PutRoles(Roles role)
         {
-            var db = new Database(_context);
-            db.Update(role);
+            await _database.Update(role);
         }
-        // public IEnumerable<Role> Role()
-        // {
-        //     return Ok();
-        // }
-        
-        
     }
 }

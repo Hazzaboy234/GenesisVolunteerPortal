@@ -19,10 +19,10 @@ namespace GenesisVolunteerPortal.Logic
                 City = person.City,
                 CommunicationPreference = person.CommunicationPreference,
                 DoB = person.DoB
-                
-                
+
+
             };
-            
+
         }
     }
 }

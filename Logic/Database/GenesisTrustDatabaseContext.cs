@@ -20,7 +20,7 @@ namespace GenesisVolunteerPortal.Logic.Database
         public virtual DbSet<Projects> Projects { get; set; }
         public virtual DbSet<RoleTimes> RoleTimes { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Persons>(entity =>

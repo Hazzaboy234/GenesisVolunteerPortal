@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
-using Microsoft.EntityFrameworkCore;
 
 namespace GenesisVolunteerPortal.Logic.Database
 {
-    public class Database
+    public class Database : IDatabase
     {
         private readonly GenesisTrustDatabaseContext _context;
 
@@ -14,6 +14,7 @@ namespace GenesisVolunteerPortal.Logic.Database
         {
             _context = context;
         }
+
         public async Task Add<T>(T addition)
         {
             _context.Add(addition);
@@ -43,6 +44,10 @@ namespace GenesisVolunteerPortal.Logic.Database
             return await _context.Persons.ToListAsync().ConfigureAwait(true);
         }
 
+        public async Task<List<Persons>> SearchPersons(string name = null, string email = null)
+        {
+            return await _context.Persons.Where(p => p.Name == name && p.Email == email).ToListAsync().ConfigureAwait(true);
+        }
         public async Task<Roles> GetRoleById(int roleId)
         {
             return await _context.Roles.FindAsync(roleId);
@@ -61,6 +66,11 @@ namespace GenesisVolunteerPortal.Logic.Database
         public async Task<Projects> GetProjectById(int projectId)
         {
             return await _context.Projects.FindAsync(projectId);
+        }
+
+        public async Task<List<Projects>> GetAllProjects()
+        {
+            return await _context.Projects.ToListAsync().ConfigureAwait(true);
         }
     }
 }
