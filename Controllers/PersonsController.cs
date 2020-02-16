@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using GenesisVolunteerPortal.Logic.Database;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
-using GenesisVolunteerPortal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -19,31 +18,39 @@ namespace GenesisVolunteerPortal.Controllers
             _context = context;
         }
         
-        [HttpGet]
-        public ActionResult GetPersons(int personId)
+        [HttpGet("/persons/{id}")]
+        public async Task<ActionResult> GetPersons(int personId)
         {
             var db = new Database(_context);
-            return Ok(JsonConvert.SerializeObject(db.GetPersonById(personId)));
+            return Ok(JsonConvert.SerializeObject(await db.GetPersonById(personId).ConfigureAwait(true)));
         }
-
-        [HttpPost]
-        public void PostPersons(Persons person)
+        
+        [HttpGet]
+        public async Task<List<Persons>> GetAllPersons()
         {
             var db = new Database(_context);
-            db.Add(person);
+            return await db.GetAllPersons().ConfigureAwait(true);
+        }
+        
+        [HttpPost]
+        public async Task PostPersons(Persons person)
+        {
+            var db = new Database(_context);
+            await db.Add(person).ConfigureAwait(true);
         }
 
         [HttpPut]
-        public void PutPersons(Persons person)
+        public async Task PutPersons(Persons person)
         {
             var db = new Database(_context);
-            db.Update(person);
+            await db.Update(person).ConfigureAwait(true);
         }
-        // public IEnumerable<Person> Person()
-        // {
-        //     return Ok();
-        // }
-        
-        
+
+        [HttpDelete]
+        public async Task DeletePersons(Persons person)
+        {
+            var db = new Database(_context);
+            await db.Remove(person).ConfigureAwait(true);
+        }
     }
 }

@@ -1,6 +1,9 @@
-﻿using System.Data.SqlClient;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.EntityFrameworkCore;
+
 namespace GenesisVolunteerPortal.Logic.Database
 {
     public class Database
@@ -11,33 +14,53 @@ namespace GenesisVolunteerPortal.Logic.Database
         {
             _context = context;
         }
-        public void Add<T>(T addition)
+        public async Task Add<T>(T addition)
         {
             _context.Add(addition);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public void Remove<T>(T removal)
+        public async Task Remove<T>(T removal)
         {
             _context.Remove(removal);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public void Update<T>(T update)
+        public async Task Update<T>(T update)
         {
             _context.Update(update);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public Persons GetPersonById(int personId)
+        public async Task<Persons> GetPersonById(int personId)
         {
-            return _context.Persons.Find(personId);
+            return await _context.Persons.FindAsync(personId);
 
         }
 
-        public Roles GetRoleById(int roleId)
+        public async Task<List<Persons>> GetAllPersons()
         {
-            return _context.Roles.Find(roleId);
+            return await _context.Persons.ToListAsync().ConfigureAwait(true);
+        }
+
+        public async Task<Roles> GetRoleById(int roleId)
+        {
+            return await _context.Roles.FindAsync(roleId);
+        }
+
+        public async Task<List<Roles>> GetAllRoles()
+        {
+            return await _context.Roles.ToListAsync().ConfigureAwait(true);
+        }
+
+        public async Task<List<RoleTimes>> GetRoleTimesByRoleId(int roleId)
+        {
+            return await _context.RoleTimes.Where(r => r.RoleId == roleId).ToListAsync().ConfigureAwait(true);
+        }
+
+        public async Task<Projects> GetProjectById(int projectId)
+        {
+            return await _context.Projects.FindAsync(projectId);
         }
     }
 }
