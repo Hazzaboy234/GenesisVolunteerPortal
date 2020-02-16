@@ -10,7 +10,9 @@ body {
 .header-container {
   margin: 0;
   padding: 0;
-  flex:1;
+
+  display: flex;
+  flex-direction: column;
 }
 .header {
   display: flex;
@@ -27,15 +29,20 @@ body {
 #header-title{
   font-size:1.5em;
   font-weight: bold;
-  color:white;
+  color:inherit;
 }
 #profile-nav{
   align-self:center;
   margin-left: auto;
+  color:white;
 }
 
 #main-nav{
-  border:1px black solid;
+
+}
+
+.main-nav-item{
+  /*background-color: white;*/
 }
 
 ul {
@@ -45,25 +52,41 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  transition:0.3s ease-in-out;
 }
 
 ul li {
+  transition:inherit;
   width: 100%;
   padding: 10px;
   text-align: center;
-  background-color:white;
+  background-color:rgb(68, 183, 73);
 
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
+  color:white;
+  
 }
+
+ul li:hover{  background-color: rgb(90, 223, 90);}
 /*  background-color: rgb(68, 183, 73); */
 ul li a{
-    color:inherit;
-    text-decoration: none;
-    cursor: pointer;
-    font-size:0.8em;
+  user-select: none;
+  color:inherit;
+  transition:inherit;
+  text-decoration: none;
+
+  font-size:0.8em;
+}
+
+ul li:hover{
+  outline-width: 1px;
+  outline-color:black;
+
 }
 
 .main-container {
@@ -77,9 +100,8 @@ ul li a{
 
   display: flex;
   flex-direction: column;
-  border:1px black solid;
   border-top:none;
-  background-image:url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fw0.fast-meteo.com%2Flocationmaps%2FBeaconsfield.10.gif&f=1&nofb=1");
+  /*background-image:url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fw0.fast-meteo.com%2Flocationmaps%2FBeaconsfield.10.gif&f=1&nofb=1");*/
   
   background-size: contain;
   
@@ -92,7 +114,7 @@ ul li a{
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  font-size:4em;
+  font-size:4em;  
 }
 
 #map-nav{
@@ -101,20 +123,28 @@ ul li a{
     margin:15px;
     margin-left:0;
     margin-right:0;    
+    cursor:pointer;
+    color:white;
+    
 }
 
 .map-nav-item{
     margin:5px;
-    border:1px black solid;
+    outline:1px grey solid;
+
     
 }
-  
+.map-nav-item:hover{
+  outline-width: 1px;
+  outline-color:black;
+
+}
+
 .secondary-container {
   display: flex;
   flex-direction: column;
   align-items: center;  
   flex:1;
-  border-bottom:1px black solid;  
   
 }
 
@@ -134,14 +164,12 @@ ul li a{
 #twitter-feed {
   width: 100%;
   text-align: center;
+  
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.active{
-  font-weight:bold;
-  font-size:1.5em;
-}
-
-
 
 .footer-container{
   background-color: rgb(68, 183, 73);
@@ -153,5 +181,17 @@ ul li a{
   align-items: center;
   justify-content: center;
 
-  font-size: 2em;
+  font-size: 1em;
+  
+}
+
+.active{
+  font-weight: bold;
+  background-color: white;
+  color:rgb(68, 183, 73);
+}
+
+.hide{
+  display:none;
+  
 }
