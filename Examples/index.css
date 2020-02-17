@@ -62,7 +62,8 @@ ul li {
 
   cursor: pointer;
   color:white;
-  
+  font-size: 1.25em;
+  text-transform: capitalize;
 }
 
 ul li:hover{  background-color: rgb(90, 223, 90);}
@@ -215,4 +216,10 @@ ul li:hover{
   border:1px grey solid;
   border-bottom:6px rgb(216, 56, 56) groove;
   font-size: 1.25em;
+}
+
+@media (max-width: 600px){
+  .main-container{
+    flex-direction: column;
+  }
 }
