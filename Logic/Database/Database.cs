@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace GenesisVolunteerPortal.Logic.Database
 {
@@ -44,9 +45,9 @@ namespace GenesisVolunteerPortal.Logic.Database
             return await _context.Persons.ToListAsync().ConfigureAwait(true);
         }
 
-        public async Task<List<Persons>> SearchPersons(string name = null, string email = null)
+        public async Task<List<Persons>> SearchPersons(string query)
         {
-            return await _context.Persons.Where(p => p.Name == name && p.Email == email).ToListAsync().ConfigureAwait(true);
+            return await _context.Persons.FromSqlRaw(query).ToListAsync().ConfigureAwait(true);
         }
         public async Task<Roles> GetRoleById(int roleId)
         {

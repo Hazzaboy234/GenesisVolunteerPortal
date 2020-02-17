@@ -1,3 +1,4 @@
+using GenesisVolunteerPortal.Logic;
 using GenesisVolunteerPortal.Logic.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace GenesisVolunteerPortal
 {
@@ -35,6 +35,8 @@ namespace GenesisVolunteerPortal
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IDatabase, Database>();
+            services.AddScoped<ISearchManager, SearchManager>();
+            services.AddMvc().AddNewtonsoftJson();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

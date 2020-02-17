@@ -11,7 +11,7 @@ namespace GenesisVolunteerPortal.Logic.Database
         Task<List<Roles>> GetAllRoles();
         Task<List<Projects>> GetAllProjects();
         Task<Persons> GetPersonById(int personId);
-        Task<List<Persons>> SearchPersons(string name, string email);
+        Task<List<Persons>> SearchPersons(string query);
         Task<Projects> GetProjectById(int projectId);
         Task<Roles> GetRoleById(int roleId);
         Task<List<RoleTimes>> GetRoleTimesByRoleId(int roleId);

@@ -8,7 +8,9 @@ namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
+
         public DateTime DoB { get; set; }
+
         public string NationalInsurance { get; set; }
         public bool BanStatus { get; set; }
         public bool SanctionStatus { get; set; }

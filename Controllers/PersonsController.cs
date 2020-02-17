@@ -3,7 +3,10 @@ using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Threading.Tasks;
+using GenesisVolunteerPortal.Logic;
+using Newtonsoft.Json.Linq;
 
 namespace GenesisVolunteerPortal.Controllers
 {
@@ -13,11 +16,13 @@ namespace GenesisVolunteerPortal.Controllers
     {
         private readonly GenesisTrustDatabaseContext _context;
         private readonly IDatabase _database;
+        private readonly ISearchManager _searchManager;
 
-        public PersonsController(GenesisTrustDatabaseContext context, IDatabase database)
+        public PersonsController(GenesisTrustDatabaseContext context, IDatabase database, ISearchManager searchManager)
         {
             _context = context;
             _database = database;
+            _searchManager = searchManager;
         }
 
         [HttpGet("/persons/{id}")]
@@ -26,10 +31,19 @@ namespace GenesisVolunteerPortal.Controllers
             return Ok(JsonConvert.SerializeObject(await _database.GetPersonById(personId).ConfigureAwait(true)));
         }
 
-        [HttpGet("/persons/search")]
-        public async Task<List<Persons>> SearchPersons(string name = null, string email = null)
+        [HttpPost("/persons/search")]
+        public async Task<ActionResult> SearchPersons(JObject json)
         {
-            return await _database.SearchPersons(name, email).ConfigureAwait(true);
+            if (!json.HasValues)
+            {
+                return BadRequest("No search options were provided");
+            }
+            var results = _searchManager.SearchPersons(json);
+            if (results == null)
+            {
+                return BadRequest("No valid search options were provided");
+            }
+            return Content(results, "application/json");
         }
 
         [HttpGet]
