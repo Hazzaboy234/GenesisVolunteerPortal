@@ -16,14 +16,13 @@ namespace GenesisVolunteerPortal.Logic
     public class SearchManager : ISearchManager
     {
         private readonly IDatabase _database;
-        //async Task<List<Persons>>
         private readonly string[] _personKeys = {"name", "email"};
 
         public SearchManager(IDatabase database)
         {
             _database = database;
         }
-        public string SearchPersons(JObject searchTerms)
+        public async Task<string> SearchPersons(JObject searchTerms)
         {
             StringBuilder query = new StringBuilder("SELECT * FROM Persons WHERE");
             bool flag = false;
@@ -31,7 +30,8 @@ namespace GenesisVolunteerPortal.Logic
             {
                 if (_personKeys.Contains(keyValuePair.Key))
                 {
-                    query.Append($" {keyValuePair.Key} = '{keyValuePair.Value}' AND");
+                    query.Append($" {keyValuePair.Key} = @param AND");
+
                     flag = true;
                 }
             }
@@ -43,7 +43,7 @@ namespace GenesisVolunteerPortal.Logic
             
             query.Length -= 3;
             Console.WriteLine(query.ToString());
-            return JsonConvert.SerializeObject(_database.SearchPersons(query.ToString()).Result);
-        }
+            return JsonConvert.SerializeObject(await _database.SearchPersons(query.ToString()));
+        } 
     } 
 }

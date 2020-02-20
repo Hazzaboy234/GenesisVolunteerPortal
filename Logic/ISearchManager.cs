@@ -1,9 +1,10 @@
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 namespace GenesisVolunteerPortal.Logic
 {
     public interface ISearchManager
     {
-        string SearchPersons(JObject searchTerms);
+        Task<string> SearchPersons(JObject searchTerms);
     }
 }
