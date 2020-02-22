@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GenesisVolunteerPortal.Models
+﻿namespace GenesisVolunteerPortal.Models
 {
     public class Project
     {
-        String Title { get; set; }
+        public string Title { get; set; }
 
-        String Description { get; set; }
+        public string Description { get; set; }
 
-        String[] AssociatedMembers { get; set; }
+        public string[] AssociatedMembers { get; set; }
 
-        String Location { get; set; }
+        public string Location { get; set; }
 
-        String Dates { get; set; }
+        public string Dates { get; set; }
 
-        String ProjectManager { get; set; }
+        public string ProjectManager { get; set; }
 
-        int ProjectID { get; set; }
+        public int ProjectID { get; set; }
     }
 }
