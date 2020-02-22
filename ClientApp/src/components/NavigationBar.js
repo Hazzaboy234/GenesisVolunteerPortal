@@ -4,21 +4,9 @@ export class NavigationBar extends Component {
         return (
             <header className="header-container">
                 <div className="header">
-                    <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")}/>
-                <nav id="profile-nav">
-                        <ul>
-                            <li>
-                                <img
-                                    alt="profile"
-                                    src={require("./placeholder-icon.png")}
-                                    width="30px"
-                                />
-                            </li>
-                            <li><a>Profile</a></li>
-                            <li><a>Settings</a></li>
-                            <li><a>Help</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
+                    <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
+                    <nav id="profile-nav">
+                        <ProfileNavList profile={{img:require("./placeholder-icon.png")}}/>
                     </nav>
                 </div>
                 <nav id="main-nav">
@@ -31,5 +19,35 @@ export class NavigationBar extends Component {
                 </nav>
             </header>
         )
+    }
+}
+
+//src={require("./placeholder-icon.png")}
+class ProfileNavList extends Component {
+    render() {
+        if (this.props.profile!=undefined) {
+            return (
+                <ul>
+                    <li>
+                        <img
+                            alt="profile"
+                            src={this.props.profile.img}
+                            width="30px"
+                        />
+                    </li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a>Help</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            )
+        } else {
+            return (
+                <ul>
+                    <li><a>Login</a></li>
+                </ul>
+            )
+        }
+
     }
 }
