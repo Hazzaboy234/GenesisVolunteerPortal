@@ -2,37 +2,50 @@ using GenesisVolunteerPortal.Logic.Database;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GenesisVolunteerPortal.Controllers
 {
     public class ProjectsController : Controller
     {
         private readonly GenesisTrustDatabaseContext _context;
-        
-        public ProjectsController(GenesisTrustDatabaseContext context)
+        private readonly Database _database;
+
+        public ProjectsController(GenesisTrustDatabaseContext context, Database database)
         {
             _context = context;
+            _database = database;
         }
-        
-        [HttpGet]
-        public ActionResult GetProjects(int projectId)
+
+        [HttpGet("/projects/{id}")]
+        public async Task<ActionResult> GetProjects(int projectId)
         {
-            var db = new Database(_context);
-            return Ok(JsonConvert.SerializeObject(db.GetProjectById(projectId)));
+            return Ok(JsonConvert.SerializeObject(await _database.GetPersonById(projectId).ConfigureAwait(true)));
+        }
+
+        [HttpGet]
+        public async Task<List<Projects>> GetAllProjects()
+        {
+            return await _database.GetAllProjects().ConfigureAwait(true);
         }
 
         [HttpPost]
-        public void PostProjects(Projects project)
+        public async Task PostProjects(Projects project)
         {
-            var db = new Database(_context);
-            db.Add(project);
+            await _database.Add(project).ConfigureAwait(true);
         }
 
         [HttpPut]
-        public void PutProjects(Projects project)
+        public async Task PutProjects(Projects project)
         {
-            var db = new Database(_context);
-            db.Update(project);
+            await _database.Update(project).ConfigureAwait(true);
+        }
+
+        [HttpDelete]
+        public async Task DeleteProjects(Projects project)
+        {
+            await _database.Remove(project).ConfigureAwait(true);
         }
     }
 }
