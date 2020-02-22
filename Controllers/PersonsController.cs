@@ -43,7 +43,7 @@ namespace GenesisVolunteerPortal.Controllers
             {
                 return BadRequest("No valid search options were provided");
             }
-            return Content(results, "application/json");
+            return null;
         }
 
         [HttpGet]
