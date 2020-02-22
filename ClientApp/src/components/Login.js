@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import "./login.css"
+//import "./login.css"
+//How do i deal with conflicting stylesheets in react?
+//Maybe we use inline style objects instead var style={...}
 export class Login extends Component {
     constructor(props){
         super(props);
         this.validate = this.validate.bind(this);
     }
-    combinationExists(email,password){
+    isInDatabase(email,password){
         //Do ajax request to back-end to find out if the email and password exist in the database
         alert("doing ajax request...");
         return false;
@@ -25,7 +27,7 @@ export class Login extends Component {
         var isPasswordValid=RegExp("^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*").test(pass);
     
         
-        if(((isEmailValid===true && isPasswordValid===true))&&(this.combinationExists(email,pass)===true)){
+        if(((isEmailValid===true && isPasswordValid===true))&&(this.isInDatabase(email,pass)===true)){
             //insert information into cookie
             alert("Information valid!");
             //redirect to next window
