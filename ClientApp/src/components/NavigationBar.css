@@ -132,7 +132,7 @@ ul li:hover{
 
 #map-nav{
     position: absolute;
-    z-index: 4;
+    z-index: 4; 
     width:30%;
     align-self: center;
     margin:15px;
@@ -157,13 +157,15 @@ ul li:hover{
 }
 
 .secondary-container {
+  /*position: absolute;  
+  height: 100%;*/
   display: flex;
   flex-direction: column;
   align-items: center;  
   flex:1;
   /*background-color: rgb(90, 223, 90);*/
   color: rgb(68, 183, 73);
-  background-color: rgba(87, 161, 91, 0.1);  
+  background-color: rgba(87, 161, 91, 0.1);    
   /*color:white;*/
 }
 

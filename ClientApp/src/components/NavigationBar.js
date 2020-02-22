@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 export class NavigationBar extends Component {
     render() {
         return (
-            <header class="header-container">
-                <div class="header">
+            <header className="header-container">
+                <div className="header">
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")}/>
                 <nav id="profile-nav">
                         <ul>
@@ -23,10 +23,10 @@ export class NavigationBar extends Component {
                 </div>
                 <nav id="main-nav">
                     <ul>
-                        <li class="main-nav-item active"><a href="/">Home</a></li>
-                        <li class="main-nav-item"><a>Roles</a></li>
-                        <li class="main-nav-item"><a>Projects</a></li>
-                        <li class="main-nav-item"><a>Policies</a></li>
+                        <li className="main-nav-item active"><a href="/">Home</a></li>
+                        <li className="main-nav-item"><a href="/">Roles</a></li>
+                        <li className="main-nav-item"><a href="/">Projects</a></li>
+                        <li className="main-nav-item"><a href="/">Policies</a></li>
                     </ul>
                 </nav>
             </header>

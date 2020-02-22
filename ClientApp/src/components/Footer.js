@@ -3,7 +3,7 @@ import "./NavigationBar.css";
 export class Footer extends Component {
     render() {
         return (
-            <div class="footer-container">
+            <div className="footer-container">
                 <ul>
                     <li><a>Contact</a></li>
                     <li><a>Stuff</a></li>
