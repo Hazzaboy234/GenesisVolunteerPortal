@@ -1,0 +1,1 @@
+document.getElementById("main-button").addEventListener("click",()=>window.location.replace("./login.html"));
