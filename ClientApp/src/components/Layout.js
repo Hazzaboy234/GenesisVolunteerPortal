@@ -11,9 +11,7 @@ export class Layout extends Component {
     return (
       <div>
         <NavigationBar/>
-        <Container>
           {this.props.children}
-        </Container>
         <Footer/>
       </div>
     );

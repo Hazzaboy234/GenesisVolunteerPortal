@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 export class NavigationBar extends Component {
     render() {
         return (
-            <div class="header-container">
+            <header class="header-container">
                 <div class="header">
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")}/>
                 <nav id="profile-nav">
@@ -29,7 +29,7 @@ export class NavigationBar extends Component {
                         <li class="main-nav-item"><a>Policies</a></li>
                     </ul>
                 </nav>
-            </div>
+            </header>
         )
     }
 }

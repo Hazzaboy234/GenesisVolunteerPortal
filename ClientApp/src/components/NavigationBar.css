@@ -6,7 +6,20 @@ body {
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(68, 183, 73);
 }
+
+.temp{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height:100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(68, 183, 73);
+}
+
 .header-container {
   margin: 0;
   padding: 0;
@@ -92,6 +105,7 @@ ul li:hover{
     flex-direction: row;
     flex:3;
     color:rgb(90, 223, 90);
+    background-color: white;
 }
 
 .map-container{
@@ -117,6 +131,8 @@ ul li:hover{
 }
 
 #map-nav{
+    position: absolute;
+    z-index: 4;
     width:30%;
     align-self: center;
     margin:15px;
