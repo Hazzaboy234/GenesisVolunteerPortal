@@ -94,10 +94,15 @@ ul li a{
   font-size:0.8em;
 }
 
+ul li a:hover{
+  text-decoration: none;
+  color:currentColor !important;
+}
+
 ul li:hover{
   outline-width: 1px;
   outline-color:black;
-
+  color:currentColor;
 }
 
 .main-container {
@@ -242,7 +247,7 @@ ul li:hover{
 
 .active:hover{
   background-color:none;
-  color:currentColor;
+  color:currentColor !important;
 }
 
 .hide{

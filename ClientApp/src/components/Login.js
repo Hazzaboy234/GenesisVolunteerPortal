@@ -39,8 +39,9 @@ export class Login extends Component {
     render() {
         return (
             <div class="main-container">
+                <link rel="stylesheet" href={require("./login.css")}/>
                 <div class="logo-container">
-                    <img id="header-logo" alt="Genesis Trust" src="/Resources/Images/logo-2.png" />
+                    <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
                 </div>
                 <div class="login-container">
                     <ul>
