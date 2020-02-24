@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import "./NavigationBar.css";
+//import "./NavigationBar.css";
 export class Footer extends Component {
     render() {
         return (
             <div className="footer-container">
+                <link rel="stylesheet" href={require("./NavigationBar.css")}/>
                 <ul>
                     <li><a>Contact</a></li>
                     <li><a>Stuff</a></li>

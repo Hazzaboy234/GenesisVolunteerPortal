@@ -1,9 +1,6 @@
-import React,{Component} from "react";
-import {Map} from "./Map";
-import { MapNavigationComponent } from "./MapNavigationComponent";
-import {Tooltip} from "reactstrap";
+import React, {Component} from "react";
+import { Map } from "./Map";
 export class MapContainer extends Component{
-
     render(){
         return(
             <div className="main-container">
@@ -14,12 +11,12 @@ export class MapContainer extends Component{
                         <li className="map-nav-item"><a>Calendar</a></li>
                         <li className="map-nav-item new-content-alert"><a>Noticeboard</a></li>
                     </ul>
-                </nav>            
+                </nav>  
                 <div className="map">
-                    <Map/>
+                    <Map />
                 </div>
             </div>
-    
+
             <div className="secondary-container">
                 <div className="noti-container">
                     <span>Notifications</span>
@@ -27,9 +24,9 @@ export class MapContainer extends Component{
                         <ul>
                             <li>Confirm Email Address</li>
                             <li>Complete Application</li>
-                            <li>LMAO</li>                        
+                            <li>LMAO</li>
                         </ul>
-    
+
                     </div>
                 </div>
             </div>

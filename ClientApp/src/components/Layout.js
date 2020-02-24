@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import { NavMenu } from './NavMenu';
 import {NavigationBar} from "./NavigationBar";
-import "./NavigationBar.css";
+//import "./NavigationBar.css";
 import { Footer } from './Footer';
 export class Layout extends Component {
   static displayName = Layout.name;
@@ -10,9 +10,9 @@ export class Layout extends Component {
   render () {
     return (
       <div>
-        <NavigationBar/>
+        
           {this.props.children}
-        <Footer/>
+        
       </div>
     );
   }

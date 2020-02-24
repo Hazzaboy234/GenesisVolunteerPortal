@@ -10,7 +10,8 @@ body{
     display: flex;
     flex-direction: row;
     background-image: linear-gradient( rgb(68, 183, 73), rgb(68, 183, 73), rgb(10, 115, 117)); 
-    width:100%;
+    width:100vw;
+    height:100vh;
 }
 
 .logo-container{
