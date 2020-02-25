@@ -17,8 +17,6 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={Signup} />
