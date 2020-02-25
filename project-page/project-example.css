@@ -1,0 +1,169 @@
+
+  .header-container {
+    margin: 0;
+    padding: 0;
+  
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(68, 183, 73);
+  
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  #header-logo {
+    width: 200px;
+  }
+  
+  #header-title{
+    font-size:1.5em;
+    font-weight: bold;
+    color:inherit;
+  }
+  #profile-nav{
+    align-self:center;
+    margin-left: auto;
+    color:white;
+    border-bottom:1px white solid;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transition:0.3s ease-in-out;
+  }
+  
+  ul li {
+    transition:inherit;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color:rgb(68, 183, 73);
+    /*border-right:1px white solid;*/
+  
+  
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    color:white;
+    font-size: 1.25em;
+    text-transform: capitalize;
+  }
+  
+  ul li:hover{  background-color: rgb(90, 223, 90);}
+  /*  background-color: rgb(68, 183, 73); */
+  ul li a{
+    user-select: none;
+    color:inherit;
+    transition:inherit;
+    text-decoration: none;
+  
+    font-size:0.8em;
+  }
+  
+  ul li:hover{
+    outline-width: 1px;
+    outline-color:black;
+  
+  }
+
+  
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex:3;
+    color:rgb(90, 223, 90);
+}
+
+.content-container{
+  background-color: rgb(217, 255, 245, 0.2);
+  display: flex;
+  height: 100%;
+
+}
+
+
+#profile-picture{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 25vw;
+
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+#pp-caption{
+  font-family: "Scanno", sans-serif;
+
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.project-description{
+  font-size: 20;
+  width: 50vw;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-family: "Scanno", sans-serif;
+  color: rgb(0, 72, 81);
+  position: fixed;
+  text-align: center;
+  font-weight: 500;
+}
+
+.active{
+    font-weight: bold;
+    background-color: white;
+    color:rgb(68, 183, 73);
+}
+  
+.active:hover{
+    background-color:none;
+    color:currentColor;
+}
+  
+.hide{
+    display:none;
+}
+
+
+.footer-container{
+background-color: rgb(68, 183, 73);
+flex:0.5;
+color:white;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+
+font-size: 1em;
+
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+position: fixed;
+
+
+
+}
+ 
