@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
 {
@@ -25,5 +24,6 @@ namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
         public string City { get; set; }
         public string Postcode { get; set; }
         public string Gender { get; set; }
+        public bool EmailConfirmed { get; set; }
     }
 }
