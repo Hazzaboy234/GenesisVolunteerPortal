@@ -4,6 +4,9 @@ export class Login extends Component {
         super(props);
         this.validate = this.validate.bind(this); //Passes the object so it can be referenced as "this" in the method
     }
+    componentDidMount(){
+        document.title="Genesis Trust Portal: Login";
+    }
     isInDatabase(email,password){
         //Do ajax request to back-end to find out if the email and password exist in the database
         var areCredentialsValid = false;
