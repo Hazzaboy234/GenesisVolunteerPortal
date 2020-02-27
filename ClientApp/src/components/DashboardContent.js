@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Map } from "./Map";
-export class MapContainer extends Component{
+export class DashboardContent extends Component{
     render(){
         return(
             <div className="main-container">
