@@ -97,7 +97,7 @@ input{
     box-shadow: 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81), 1px 1px rgb(0, 72, 81);
     
     align-self: center;
-    
+    cursor: pointer;
     margin-bottom: 2px;
     font-size: 15px;
     display: flex;
