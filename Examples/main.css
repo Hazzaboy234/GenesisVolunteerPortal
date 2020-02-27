@@ -91,7 +91,7 @@ ul li:hover {
   display: flex;
   flex-direction: row;
   flex: 3;
-  color: rgb(90, 223, 90);
+  background-color: rgb(217 255 245);
 }
 
 .footer-container {
