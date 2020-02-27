@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using GenesisVolunteerPortal.Models;
+using System.Collections.Generic;
 
 namespace GenesisVolunteerPortal.Logic
 {
@@ -10,7 +8,7 @@ namespace GenesisVolunteerPortal.Logic
     {
         public Role CreateRole(IEnumerable<RoleTimes> times, Roles roles)
         {
-            var role = new Role
+            Role role = new Role
             {
                 RoleID = roles.RoleId,
                 Title = roles.Title,
@@ -21,8 +19,8 @@ namespace GenesisVolunteerPortal.Logic
                 Image = roles.Image,
                 ApplicationCode = roles.ApplicationCode,
             };
-            role.Time = new List<String>();
-            foreach(RoleTimes time in times) 
+            role.Time = new List<string>();
+            foreach (RoleTimes time in times)
             {
                 role.Time.Add(time.Time.Value.Date.ToString());
             }

@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
+﻿using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+
 namespace GenesisVolunteerPortal.Logic.Database
 {
-    public class Database
+    public class Database : IDatabase
     {
         private readonly GenesisTrustDatabaseContext _context;
 
@@ -13,52 +15,63 @@ namespace GenesisVolunteerPortal.Logic.Database
         {
             _context = context;
         }
-        public void Add<T>(T addition)
+
+        public async Task Add<T>(T addition)
         {
             _context.Add(addition);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public void Remove<T>(T removal)
+        public async Task Remove<T>(T removal)
         {
             _context.Remove(removal);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public void Update<T>(T update)
+        public async Task Update<T>(T update)
         {
             _context.Update(update);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync().ConfigureAwait(true);
         }
 
-        public Persons GetPersonById(int personId)
+        public async Task<Persons> GetPersonById(int personId)
         {
-            return _context.Persons.Find(personId);
+            return await _context.Persons.FindAsync(personId);
 
         }
 
-        public IEnumerable<Persons> GetAllPersons()
+        public async Task<List<Persons>> GetAllPersons()
         {
-            return _context.Persons;
+            return await _context.Persons.ToListAsync().ConfigureAwait(true);
         }
 
-        public Roles GetRoleById(int roleId)
+        public async Task<List<Persons>> SearchPersons(string query)
         {
-            return _context.Roles.Find(roleId);
+            return await _context.Persons.FromSqlRaw(query).ToListAsync().ConfigureAwait(true);
+        }
+        public async Task<Roles> GetRoleById(int roleId)
+        {
+            return await _context.Roles.FindAsync(roleId);
         }
 
-        public IEnumerable<Roles> GetAllRoles()
+        public async Task<List<Roles>> GetAllRoles()
         {
-            return _context.Roles;
-        }
-        public IEnumerable<RoleTimes> GetRoleTimesByRoleId(int roleId)
-        {
-            return _context.RoleTimes.Where(r => r.RoleId == roleId);
+            return await _context.Roles.ToListAsync().ConfigureAwait(true);
         }
 
-        public Projects GetProjectById(int projectId)
+        public async Task<List<RoleTimes>> GetRoleTimesByRoleId(int roleId)
         {
-            return _context.Projects.Find(projectId);
+            return await _context.RoleTimes.Where(r => r.RoleId == roleId).ToListAsync().ConfigureAwait(true);
+        }
+
+        public async Task<Projects> GetProjectById(int projectId)
+        {
+            return await _context.Projects.FindAsync(projectId);
+        }
+
+        public async Task<List<Projects>> GetAllProjects()
+        {
+            return await _context.Projects.ToListAsync().ConfigureAwait(true);
         }
     }
 }
