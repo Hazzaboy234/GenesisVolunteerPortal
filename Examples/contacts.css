@@ -1,0 +1,47 @@
+.contacts-container{
+    
+    display: flex;
+    
+    flex-direction: column;
+
+    background-color: white;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.title-container {
+    align-items: center;
+    color: rgb(0, 72, 81);
+    font-size: 20pt;
+    min-height: min-content;
+    margin: 0%;
+    
+  }
+
+  .email-container {
+    background-color:rgb(240, 240, 240);
+    
+    margin: 3%;
+    
+  }
+
+  .phone-container {
+    margin: 3%;
+ 
+ 
+  }
+
+  .address-container {
+    margin: 3%;
+  }
+ .column-container{
+    color: rgb(0, 72, 81);
+    display: flex;
+    width:100%;
+    
+ }
+
+#head4{
+  text-size-adjust: 10px;
+
+}
