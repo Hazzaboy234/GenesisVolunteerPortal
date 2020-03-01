@@ -1,7 +1,6 @@
 .contacts-container{
     
     display: flex;
-    
     flex-direction: column;
 
     background-color: white;
@@ -20,28 +19,33 @@
 
   .email-container {
     background-color:rgb(240, 240, 240);
-    
-    margin: 3%;
-    
+    margin:2%;
+    border-top:5px solid rgb(68, 183, 73);
+    max-width: 33%;
+    width:33%;
+    padding-left: 2%;    
   }
 
   .phone-container {
-    margin: 3%;
- 
- 
+    
+    margin:2%;
+    border-top:5px solid rgb(68, 183, 73);
+    width:33%;
+    max-width: 33%;
+    padding-left: 2%; 
   }
 
   .address-container {
-    margin: 3%;
+    margin:2%;
+    border-top:5px solid rgb(68, 183, 73);
+    width:33%;
+    max-width: 33%;
+    padding-left: 2%; 
   }
+
  .column-container{
     color: rgb(0, 72, 81);
     display: flex;
     width:100%;
-    
+    margin:0%;
  }
-
-#head4{
-  text-size-adjust: 10px;
-
-}
