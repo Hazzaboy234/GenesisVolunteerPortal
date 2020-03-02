@@ -1,6 +1,8 @@
 .map-container {
-    display: flex;
-    color: grey;
-    background-color: rgb(217 255 245);
-    padding: 2%;
+    
+    background-color: white;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+    color: rgb(0, 72, 81)
   }
