@@ -3,9 +3,9 @@
     
    
     background-color: white;
-    width: 100% 
     color: rgb(0, 72, 81);
     display: inline;
+ 
 
 }
 
@@ -14,12 +14,17 @@
 }
 
 .policy-type1{
+    color: rgb(0, 72, 81);
     width:100%;
     background-color: white;
+    padding-left: 1%;
+    padding-bottom: 2%;
 }
 .policy-type2{
     width:100%;
     background-color: rgb(233, 232, 232);
+    padding-left: 1%;
+    padding-bottom: 2%;
 }
 
 
