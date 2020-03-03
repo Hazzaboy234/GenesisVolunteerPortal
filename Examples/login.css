@@ -86,15 +86,19 @@ ul li a{
 }
 
 #forgot-password-tag{
-    padding-top: 20px;
+    margin-bottom: -30px;
+    margin-top: 25px;
     font-size: 12px;
     font-style: italic;
     text-align: right;
 }
 
 #sign-up-tag{
+    color: rgb(8, 60, 61);
     font-size: 14px;
     font-weight: bold;
+    align-self: center;
+    padding-top: 4px;
 }
 
 #sign-up-tag:hover{
