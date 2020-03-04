@@ -24,11 +24,10 @@ export class Login extends Component {
     validate(){
         var email = document.getElementById("email").value;
         var pass = document.getElementById("password").value;
-
+        //name@domain.etc
         var isEmailValid=RegExp("(\\w+@\\w+[.]\\w+)").test(email);
         var isPasswordValid=RegExp("^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*").test(pass);
     
-        
         if(((isEmailValid===true && isPasswordValid===true))&&(this.isInDatabase(email,pass)===true)){
             //insert information into cookie
             alert("Information valid!");

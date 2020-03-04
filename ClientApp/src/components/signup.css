@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100vh;
+    display: flex;
+    background-color: rgb(68, 183, 73);
+    flex-direction: column;
+}
+
+.super{
+    display: flex;
+    flex-direction: column;
+}
+.input-text{
+    box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+    margin-top: 10;
+    width: 20%;
+    border: 30px white solid;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.input-text ul{
+    align-self: center;
+}
+
+
+ul{
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+/**
+ul li {
+    width: 30%; 
+    text-align: left;
+}
+**/
+li{
+    
+    align-self: center;
+    font-size: 14px;
+}
+
+input{
+    box-shadow: 3px 3px rgb(10, 115, 117), 2px 2px rgb(10, 115, 117), 1px 1px rgb(10, 115, 117);
+    margin: 6px;
+    height:30px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline:none;
+}
+
+.header-container{
+    margin-left: 10;
+    margin-top: 20;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Title-item{
+   
+    width: 100%;
+    font-size: 75px;
+    margin-left: 50px;
+    margin-top: 35px;
+    
+}
+
+#header-logo{
+    
+    align-self: center;
+    width: 300px;
+}
+
+.foot{      
+    display: flex;
+    flex-direction: row;
+}
+
+.foot-button{
+    box-shadow: 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81), 1px 1px rgb(0, 72, 81);
+    
+    align-self: center;
+    cursor: pointer;
+    margin-bottom: 2px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    background-color: rgb(10, 115, 117);
+ 
+}
+
+.foot-button:active {
+    box-shadow: 1px 1px rgb(0, 72, 81), 1px 1px rgb(0, 72, 81), 1px 1px rgb(0, 72, 81);
+    align-self: center;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: rgb(10, 115, 117);
+}
+
+.foot-text{
+    margin-left: 130;
+}
+
+.b{
+    align-self: center;
+    
+}
+
+.button{
+    
+    
+    margin-top: 10px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#text{
+    font-size: 35px;  
+}
+
+.info{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.mandatory-icon{
+    color:red !important;
+}
+
+span{
+    color:white;
+    font-size:18px;
+}

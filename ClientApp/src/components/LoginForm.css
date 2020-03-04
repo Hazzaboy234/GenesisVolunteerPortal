@@ -7,6 +7,8 @@
     background-color: white;
     box-shadow: 0px 0px 15px 5px rgb(7, 77, 78);
     border-radius: 4px;
+    
+    
 }
 
 input[type=email], input[type=password] {
@@ -51,3 +53,10 @@ ul{
     padding-bottom: 15px;
 }
 
+#forgot-password-tag{
+    cursor:pointer;
+}
+
+#forgot-password-tag:hover{
+    color:grey;
+}
