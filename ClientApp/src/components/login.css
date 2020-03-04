@@ -65,3 +65,7 @@ button:hover{
 #forgot-password-tag:hover{
     color:grey;
 }
+
+img, #forgot-password-tag{
+    cursor:pointer;
+}

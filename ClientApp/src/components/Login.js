@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ForgotPassword } from "./ForgotPassword";
+import { ForgotPassword } from "./ForgotPasswordForm";
 import { LoginForm } from "./LoginForm";
 
 export class Login extends Component {

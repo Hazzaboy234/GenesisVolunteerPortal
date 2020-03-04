@@ -12,7 +12,7 @@ export class LoginForm extends Component {
                     <li><input type="password" id="password" placeholder="Enter Password" size="45" /></li>
                     <li><button type="submit" id="login-button" onClick={this.props.submit}>LOGIN</button></li>
                     <li id="sign-up-tag">SIGN UP</li>
-                    <li id="forgot-password-tag" onClick={this.props.helper}>Forgot Password?</li>
+                    <li id="forgot-password-tag"><a onClick={this.props.helper}>Forgot Password?</a></li>
                 </ul>
             </div>
         )

@@ -4,8 +4,8 @@ export class ForgotPassword extends Component {
     render() {
         return (
             <div className="forgot-password-container">
-                <link rel="stylesheet" href={require("./ForgotPassword.css")}/>
-                <img onClick={this.props.helper} alt="Back" id="back-arrow" src="/Resources/Images/Arrow.png" />
+                <link rel="stylesheet" href={require("./ForgotPasswordForm.css")}/>
+                <img onClick={this.props.helper} alt="Back" id="back-arrow" src={require("./Resources/Arrow.png")}/>
                 <ul>
                     <li id="forgot-password-title">Forgot your password?</li>
                     <li id="sub-heading">Please enter your email address to reset you password.</li>
