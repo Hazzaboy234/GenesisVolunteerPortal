@@ -6,6 +6,22 @@ body{
     margin: 0;
 }
 
+button{
+    background-color: rgb(10,115,117);
+    color: white;
+    padding: 12px 18px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    background-color: rgb(68, 183, 73);
+}
+
 .main-container{
     display: flex;
     flex-direction: row;
@@ -26,67 +42,6 @@ body{
     width: 300px;
 }
 
-.login-container{
-    position: fixed;
-    padding: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0px 0px 15px 5px rgb(7, 77, 78);
-    border-radius: 4px;
-}
-
-input[type=email], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button{
-    background-color: rgb(10,115,117);
-    color: white;
-    padding: 12px 18px;
-    margin: 8px 0;
-    font-size: 14px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover{
-    background-color: rgb(68, 183, 73);
-}
-
-ul{
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 50px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    list-style-type: none;
-}
-
-#login-tag{
-    font-size: 16px;
-    font-weight: 600;
-    padding-bottom: 15px;
-}
-
-#forgot-password-tag{
-    margin-bottom: -30px;
-    margin-top: 25px;
-    font-size: 12px;
-    font-style: italic;
-    text-align: right;
-}
-
 #sign-up-tag{
     color: rgb(8, 60, 61);
     font-size: 14px;
@@ -99,6 +54,13 @@ ul{
     color: grey;
 }
 
+#forgot-password-tag{
+    margin-bottom: -30px;
+    margin-top: 25px;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+}
 
 #forgot-password-tag:hover{
     color:grey;

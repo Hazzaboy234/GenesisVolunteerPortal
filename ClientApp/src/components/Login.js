@@ -6,6 +6,7 @@ export class Login extends Component {
     constructor(props){
         super(props);
         this.validate = this.validate.bind(this); //Passes the object so it can be referenced as "this" in the method
+        this.flipMode = this.flipMode.bind(this);
 
         this.state = {mode:0}
     }
@@ -38,24 +39,24 @@ export class Login extends Component {
         }    
     }
 
-    onClickHelper(){
+    flipMode(){
         //flips this.state.mode to a 0 or 1
-        this.setState({mode:this.state.mode == 0 ? 1 : 0})
+        this.setState({mode:this.state.mode === 0 ? 1 : 0})
     }
 
     render() {
         var container;
-        if(this.state.mode == 0){
-            container = <LoginForm helper={this.onClickHelper}/>
+        if(this.state.mode === 0){
+            container = <LoginForm submit={this.validate} helper={this.flipMode}/>
         }else{
-            container = <ForgotPassword helper={this.onClickHelper}/>
+            container = <ForgotPassword helper={this.flipMode}/>
         }
 
 
         return (
-            <div class="main-container">
+            <div className="main-container">
                 <link rel="stylesheet" href={require("./login.css")}/>
-                <div class="logo-container">
+                <div className="logo-container">
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
                 </div>
                 {container}

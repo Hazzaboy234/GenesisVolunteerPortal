@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import { MapNavigationComponent } from "./MapNavigationComponent";
-import { Tooltip, Container } from "reactstrap";
+//import { MapNavigationComponent } from "./MapNavigationComponent";
+//import { Tooltip, Container } from "reactstrap";
 import { NavigationBar } from "./NavigationBar";
 import { Footer } from "./Footer";
 import { DashboardContent } from "./DashboardContent";

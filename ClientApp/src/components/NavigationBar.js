@@ -11,10 +11,10 @@ export class NavigationBar extends Component {
                 </div>
                 <nav id="main-nav">
                     <ul>
-                        <li className="main-nav-item active"><a href="/">Home</a></li>
-                        <li className="main-nav-item"><a href="/">Roles</a></li>
-                        <li className="main-nav-item"><a href="/">Projects</a></li>
-                        <li className="main-nav-item"><a href="/">Policies</a></li>
+                        <li className="main-nav-item active"><a href="./">Home</a></li>
+                        <li className="main-nav-item"><a href="./">Roles</a></li>
+                        <li className="main-nav-item"><a href="./">Projects</a></li>
+                        <li className="main-nav-item"><a href="./">Policies</a></li>
                     </ul>
                 </nav>
             </header>
@@ -25,7 +25,7 @@ export class NavigationBar extends Component {
 //src={require("./placeholder-icon.png")}
 class ProfileNavList extends Component {
     render() {
-        if (this.props.profile!=undefined) {
+        if (this.props.profile!==undefined) {
             return (
                 <ul>
                     <li>
@@ -35,16 +35,16 @@ class ProfileNavList extends Component {
                             width="30px"
                         />
                     </li>
-                    <li><a>Profile</a></li>
-                    <li><a>Settings</a></li>
-                    <li><a>Help</a></li>
-                    <li><a>Logout</a></li>
+                    <li><a href="./">Profile</a></li>
+                    <li><a href="./">Settings</a></li>
+                    <li><a href="./">Help</a></li>
+                    <li><a href="./">Logout</a></li>
                 </ul>
             )
         } else {
             return (
                 <ul>
-                    <li><a>Login</a></li>
+                    <li><a href="./">Login</a></li>
                 </ul>
             )
         }

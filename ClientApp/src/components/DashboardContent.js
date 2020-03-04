@@ -7,9 +7,9 @@ export class DashboardContent extends Component{
             <div className="map-container">
                 <nav id="map-nav">
                     <ul>
-                        <li className="map-nav-item active"><a>Map</a></li>
-                        <li className="map-nav-item"><a>Calendar</a></li>
-                        <li className="map-nav-item new-content-alert"><a>Noticeboard</a></li>
+                        <li className="map-nav-item active"><a href="./">Map</a></li>
+                        <li className="map-nav-item"><a href="./">Calendar</a></li>
+                        <li className="map-nav-item new-content-alert"><a href="./">Noticeboard</a></li>
                     </ul>
                 </nav>  
                 <div className="map">
