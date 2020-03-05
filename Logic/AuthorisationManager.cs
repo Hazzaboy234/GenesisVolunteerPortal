@@ -150,5 +150,26 @@ namespace GenesisVolunteerPortal.Logic
             }
             return false;
         }
+
+        public async Task<RegistrationResponse> Register(Persons user)
+        {
+            var response = new RegistrationResponse();
+            if (await UniqueEmail(user.Email))
+            {
+                await _database.Add(user);
+                response.Success = true;
+                return response;
+            }
+
+            response.Success = false;
+            response.ErrorMessage = "Email is already being used.";
+            return response;
+        }
+
+        private async Task<bool> UniqueEmail(string email)
+        {
+            var users =  await _database.GetPersonByEmail(email);
+            return users.Count == 0;
+        }
     }
 }

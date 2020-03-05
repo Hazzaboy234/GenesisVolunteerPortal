@@ -21,6 +21,8 @@ namespace GenesisVolunteerPortal.Controllers
             _authorisationManager = authorisationManager;
         }
 
+        
+        [HttpPost("/login/validate")]
         public async Task<ActionResult> Login(LoginAttempt attempt)
         {
             var response = await _authorisationManager.AuthoriseLogin(attempt);
@@ -31,15 +33,17 @@ namespace GenesisVolunteerPortal.Controllers
             return Ok(response.Token);
         }
 
+        [HttpPost("/register")]
         public async Task<ActionResult> Register(Persons attempt)
         {
+            //var response = await _authorisationManager.
             return null;
         }
 
         [HttpGet("/login/{id}")]
-        public string GetPassword(string password)
+        public string GetPassword(string id)
         {
-            return _authorisationManager.GeneratePass(password);
+            return _authorisationManager.GeneratePass(id);
         }
     }
 }
