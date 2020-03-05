@@ -202,11 +202,17 @@ position: fixed;
 
 
 .project-box{
+<<<<<<< Updated upstream
   
   margin-right: 15px;
   box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
   border: 1px rgb(0, 72, 81) solid;
   border-radius: 10px;
+=======
+  box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+  margin-right: 15px;
+  border: 1px gray solid;
+>>>>>>> Stashed changes
 }
 
 .project:hover{
