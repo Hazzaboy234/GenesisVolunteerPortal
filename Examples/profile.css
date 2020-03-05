@@ -1,0 +1,188 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    margin:20px;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    height: auto;
+}
+.image-container:hover{
+    visibility: visible;
+}
+.profile-image{
+    border: 1px solid rgb(0 72 81);
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    max-width: 100%;
+    height: auto;    
+}
+.profile-image:hover{
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+
+}
+.edit-image {
+    font-size: 18px;
+    position: relative;
+    /*top: 50%;
+    left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /*visibility: hidden;*/
+    text-align: center;
+    justify-content: center;
+}
+.edit-image:hover{
+    visibility: visible;
+    cursor: pointer;
+}
+
+
+
+.details-container{
+    padding-left: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.details-container:hover{
+    background-color: none;
+    cursor: default !important;
+}
+.details-ul{
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+    align-items: flex-start !important;
+    margin-left: 10px;
+    padding: 5px !important;
+}
+.details-ul:hover{
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+    cursor: default !important;
+}
+.details-element{
+    background-color: initial !important;
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    padding: 5px !important;
+    margin-left: 20px !important;
+    text-align: left;
+    align-items: flex-start !important;
+}
+
+.details-element:hover{
+    cursor: default !important;
+}
+
+.details-label{
+    font-weight: bold;
+    background-color: initial !important;
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start !important;
+    padding: 5px !important;
+}
+
+.details-label:hover{
+    cursor: default !important;
+}
+
+
+/* CALENDAR STARTS HERE */
+
+.calendar-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {list-style-type: none;} 
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+  width: 100%;
+  background-color:  rgb(68, 183, 73);
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+  width: 100%
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+  width: 100%;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: rgb(68, 183, 73);
+  color: white !important
+}
