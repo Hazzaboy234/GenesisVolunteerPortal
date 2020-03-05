@@ -110,7 +110,7 @@
   background-color: rgb(217, 255, 245, 0.2);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  margin-bottom: 150px;
 }
 
 
@@ -161,12 +161,18 @@ position: fixed;
   width: 100%;
   text-align: center;
   font-size: 20px;
+  
+
 }
 
 .text-content{
   margin-top: 10px;
+  padding: 20px;
   width: 80%;
   align-self: center;
+  box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+  border: 1px rgb(0, 72, 81) solid;
+  border-radius: 10px;
 }
 
 
@@ -181,7 +187,7 @@ position: fixed;
 }
 
 .project{
-  margin-top: 5px;
+  margin-top: 15px;
   width: 33%;
   float: left;
   padding: 0px;
@@ -194,8 +200,18 @@ position: fixed;
   margin-bottom: 5px;
 }
 
+
 .project-box{
-  margin-right: 5px;
-  border: 2px black solid;
+  
+  margin-right: 15px;
+  box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+  border: 1px rgb(0, 72, 81) solid;
+  border-radius: 10px;
 }
 
+.project:hover{
+  background-color: white;
+}
+.project-box:hover{
+  background-color: rgb(90, 223, 90);
+}
