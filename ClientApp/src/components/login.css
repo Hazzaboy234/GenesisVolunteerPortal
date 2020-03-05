@@ -2,7 +2,6 @@ body{
     display: flex;
     flex-direction:row;
     font-family: Arial, Helvetica, sans-serif;
-
     margin: 0;
 }
 
@@ -50,10 +49,6 @@ button:hover{
     padding-top: 4px;
 }
 
-#sign-up-tag:hover{
-    color: grey;
-}
-
 #forgot-password-tag{
     margin-bottom: -30px;
     margin-top: 25px;
@@ -62,11 +57,11 @@ button:hover{
     text-align: right;
 }
 
-
 a{
     color:initial;
 }
+
 a:hover{
-    color:initial;
+    color:rgb(14, 92, 94);
     text-decoration: none;
 }

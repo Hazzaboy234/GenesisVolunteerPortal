@@ -11,6 +11,7 @@ export class Signup extends Component {
 
                 <div className="super">
                     <div className="input-text">
+                    <a href="/"><img alt="Back" id="back-arrow" src={require("./Resources/Arrow.png")}/></a>
                         <ul>
                             <input type="text" placeholder="First Name " />
                             <span className="mandatory-icon">*</span>
