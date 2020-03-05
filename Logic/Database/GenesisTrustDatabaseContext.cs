@@ -84,6 +84,8 @@ namespace GenesisVolunteerPortal.Logic.Database
 
                 entity.Property(e => e.PasswordHash).IsRequired();
 
+                entity.Property(e => e.PasswordSalt).IsRequired();
+
                 entity.Property(e => e.Postcode)
                     .IsRequired()
                     .HasMaxLength(10)
