@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ForgotPassword } from "./ForgotPasswordForm";
 import { LoginForm } from "./LoginForm";
-
+import * as $ from "jquery";
 export class Login extends Component {
     constructor(props){
         super(props);
@@ -17,6 +17,25 @@ export class Login extends Component {
         //Do ajax request to back-end to find out if the email and password exist in the database
         var areCredentialsValid = false;
         //areCredentialsValid = therequest
+
+        $.ajax({
+            url: "./login/validate",
+            type: 'POST',
+            data:JSON.stringify({
+                UserEmail:email,
+                Password:password
+            }),
+            dataType:'json',
+            success: function(res) {
+                console.log(res);
+                alert(res);
+            },
+            error: function(xhr, testStatus, errorThrown){
+                alert(xhr+"\n"+testStatus+"\n"+errorThrown);
+            }
+        });
+
+
         alert("doing ajax request...");
         return areCredentialsValid;
     }

@@ -36,6 +36,7 @@ namespace GenesisVolunteerPortal
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IDatabase, Database>();
             services.AddScoped<ISearchManager, SearchManager>();
+            services.AddScoped<IAuthorisationManager, AuthorisationManager>();
             services.AddMvc().AddNewtonsoftJson();
 
             // In production, the React files will be served from this directory

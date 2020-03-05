@@ -40,6 +40,11 @@ namespace GenesisVolunteerPortal.Logic.Database
 
         }
 
+        public async Task<List<Persons>> GetPersonByEmail(string email)
+        {
+            return await _context.Persons.Where(p => p.Email == email).ToListAsync().ConfigureAwait(true);
+        }
+
         public async Task<List<Persons>> GetAllPersons()
         {
             return await _context.Persons.ToListAsync().ConfigureAwait(true);

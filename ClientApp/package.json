@@ -16,6 +16,7 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.33",
     "ajv": "^6.9.1",
     "cross-env": "^5.2.0",
     "eslint-config-react-app": "^4.0.1",
