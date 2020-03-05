@@ -40,7 +40,7 @@ body {
   border-bottom: 1px white solid;
 }
 
-ul {
+.header-bar {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -50,7 +50,7 @@ ul {
   transition: 0.3s ease-in-out;
 }
 
-ul li {
+.main-nav-item{
   transition: inherit;
   width: 100%;
   padding: 10px;
@@ -69,13 +69,13 @@ ul li {
   text-transform: capitalize;
 }
 
-ul li:hover {
+.main-nav-item:hover {
   background-color: rgb(90, 223, 90);
   outline-width: 1px;
   outline-color: black;
 }
 
-ul li a {
+.main-nav-item a {
   user-select: none;
   color: inherit;
   transition: inherit;
