@@ -5,6 +5,48 @@
    
 }
 
-.h1{
-    color: black;
+h4 {
+    display: block;
+    font-size: 1.40em;
+    margin-top: 0em;
+    margin-bottom: 1.0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color:black;
+    border-bottom: double;
+    border-color: black;
+    border-width: 2px;
+    background-color: rgb(231, 231, 231);
+  }
+h5 {
+    display: block;
+    font-size: .8em;
+    margin-top: 0.3em;
+    margin-bottom: 1.9em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color:green;
+  }
+
+h3{
+    font-size: 1.8em;
+    border: green;
+    border-top-style: groove;
+    border-bottom-style: groove;
+    border-width: 4px;
+    
 }
+
+h1{
+    border-top-style: groove;
+    border-bottom-style: groove;
+    border-width: 8px;
+    text-size-adjust: 2.5em;
+    background-color: rgb(231, 231, 231);
+    color:black;
+
+}
+ 
+
