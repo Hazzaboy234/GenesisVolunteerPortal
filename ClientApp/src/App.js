@@ -11,6 +11,7 @@ import { Dashboard } from './components/Dashboard';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { Boilerplate } from './components/Boilerplate';
+import { Settings } from './components/Settings';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -23,6 +24,7 @@ export default class App extends Component {
         <Route path='/login' component={Login} />
         <Route path='/signup' component={Signup} />
         <Route path='/dogs' component={Boilerplate} />
+        <Route path='/settings' component={Settings} />
       </Layout>
     );
   }
