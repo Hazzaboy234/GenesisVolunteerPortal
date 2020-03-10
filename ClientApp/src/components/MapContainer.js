@@ -5,17 +5,18 @@ export class MapContainer extends Component {
   //AIzaSyCkz4BpuGT57kXKhLA39NUDAeCN1zss8q8
   constructor(props) {
     super(props);
-
+    this.markerClicked = this.markerClicked.bind(this);
     this.state = {
       initPos: { lat: 47.444, lng: -122.176 },
-      markers: [],
-      selectedMarker: <Marker
+      markers: [<Marker
         key={4}
-        position={{lat:47.5,lng: -122.176}}
-      />
+        position={{lat:47.5,lng: -122.176}} 
+        onClick={this.markerClicked}
+      />],            
+      selectedMarker:null
     }
 
-    this.markerClicked = this.markerClicked.bind(this);
+ 
   }
 
   markerClicked(marker, event) {
@@ -24,14 +25,16 @@ export class MapContainer extends Component {
     string = string.replace("l1", marker.position.lat);
     string = string.replace("l2", marker.position.lng);
     alert(string);
-    /*
+    
     this.setState({
       selectedMarker: marker
     });
-    */
+    
   }
 
   componentDidMount() {
+    this.setState({selectedMarker:this.state.markers[0]});
+    /*
     var positions = [
       { lat: 47.444, lng: -122.176 },
       { lat: 47.434, lng: -122.176 }
@@ -50,6 +53,7 @@ export class MapContainer extends Component {
     }
     console.log(markers);
     this.setState({ markers: markers })
+    */
   }
 
   render() {
@@ -61,12 +65,10 @@ export class MapContainer extends Component {
         initialCenter={this.state.initPos}
       >
         {this.state.markers}
-        {this.state.selectedMarker}
 
         <InfoWindow
-          marker={this.state.selectedMarker}
-          visible={true}
-        >
+          marker={this.state.selectedMarker===null?this.state.markers[0]:this.state.selectedMarker}
+          visible={true}>
           <div>
             <h1>GSDALO</h1>
           </div>
