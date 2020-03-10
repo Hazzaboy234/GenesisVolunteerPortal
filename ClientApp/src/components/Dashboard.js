@@ -12,8 +12,7 @@ export class Dashboard extends Component {
         return (
             <div>
                 <link rel="stylesheet" href={require("./NavigationBar.css")}/>
-                <link rel="stylesheet" href={require("./dashboard.css")}/>
-                <Toast message="Test"/>
+                <link rel="stylesheet" href={require("./dashboard.css")}/>                
                 <NavigationBar />
                 <DashboardContent/>
                 <Footer />

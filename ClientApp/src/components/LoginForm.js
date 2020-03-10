@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Toast} from "./Toast";
 export class LoginForm extends Component {
     render() {
         //console.log(this.props.validate);
