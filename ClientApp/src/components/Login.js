@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { ForgotPassword } from "./ForgotPasswordForm";
 import { LoginForm } from "./LoginForm";
 import * as $ from "jquery";
+
+
+
 export class Login extends Component {
     constructor(props) {
         super(props);
@@ -11,12 +14,14 @@ export class Login extends Component {
         this.state = { mode: 0 }
     }
 
+    //Stuff you want to run off the bat when the component loads
     componentDidMount() {
         document.title = "Genesis Trust Portal: Login";
         document.addEventListener("keyup",(key)=>{            
             if(key.keyCode===13) this.validate();
         })
     }
+
     isInDatabase(email, password) {
         //Do ajax request to back-end to find out if the email and password exist in the database
         //areCredentialsValid = therequest

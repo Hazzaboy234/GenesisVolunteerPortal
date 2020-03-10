@@ -16,18 +16,38 @@ import React,{Component} from "react";
  */
 
 export class Boilerplate extends Component{    
+    constructor(props){
+        super(props);
+        this.state={active:false}
+        this.flip = this.flip.bind(this);
+    }
 
     componentDidMount(){
         document.title="Boilerplate";
     }
 
+    //Flips the state variable active between true and false
+    flip(){
+        this.setState({active:this.state.active===false?true:false});
+        /*
+        this is the same as:
+        if(this.state.active===true){
+            this.setState({active:false});
+        }else{
+            this.setState({active:true});
+        }
+        It's just in one line. this is called the ternary operator:
+        condition ? valueIfTrue : valueIfFlase
+        */
+    }
+
     render(){
         return(
-            <div>
+            <div className="boilerplate-container">
                 <link rel="stylesheet" href={require("./boilerplate.css")}/>
-                <p className="paragraph">
-                    Content Here
-                </p>
+
+                <button className="paragraph" onMouseUp={this.flip}>Click me</button>
+                <span>The button is {this.state.active===true?"active!":"inactive!"}</span>
             </div>
         )
     }

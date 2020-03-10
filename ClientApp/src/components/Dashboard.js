@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import { NavigationBar } from "./NavigationBar";
 import { Footer } from "./Footer";
 import { DashboardContent } from "./DashboardContent";
-import { Toast } from "./Toast";
+//import { Toast } from "./Toast";
 export class Dashboard extends Component {
 
     render() {

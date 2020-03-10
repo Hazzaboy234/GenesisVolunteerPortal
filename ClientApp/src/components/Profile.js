@@ -21,7 +21,7 @@ export class Profile extends Component {
 
                     <div class="profile-container">
                         <div class="image-container">
-                            <img class="profile-image" src="/Resources/Images/ProfilePicture.jpg"/>
+                            <img alt="alt-text" class="profile-image" src={require("./Resources/ProfilePicture.jpg")}/>
 
             
         <span class="profile-image">Change Image</span>
