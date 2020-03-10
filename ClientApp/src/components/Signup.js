@@ -6,7 +6,7 @@ export class Signup extends Component {
             <div>
                 <link rel="stylesheet" href={require("./signup.css")}/>
                 <div className="header-container">
-                    <img id="header-logo" src={require("./Resources/logo.png")} />
+                    <img alt="Genesis Trust" id="header-logo" src={require("./Resources/logo.png")} />
                 </div>
 
                 <div className="super">

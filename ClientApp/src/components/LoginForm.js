@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export class LoginForm extends Component {
     render() {
-        console.log(this.props.validate);
+        //console.log(this.props.validate);
         return (            
             <div className="login-container">
                 <link rel="stylesheet" href={require("./LoginForm.css")}/>

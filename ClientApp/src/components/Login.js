@@ -15,29 +15,22 @@ export class Login extends Component {
     }
     isInDatabase(email,password){
         //Do ajax request to back-end to find out if the email and password exist in the database
-        var areCredentialsValid = false;
         //areCredentialsValid = therequest
-
         $.ajax({
-            url: "./login/validate",
+            url: '/login/validate',
             type: 'POST',
             data:JSON.stringify({
                 UserEmail:email,
                 Password:password
             }),
-            dataType:'json',
-            success: function(res) {
-                console.log(res);
-                alert(res);
+            contentType:'application/json',            
+            success: function(res) { //If the credentials can be found..
+                return true;
             },
-            error: function(xhr, testStatus, errorThrown){
-                alert(xhr+"\n"+testStatus+"\n"+errorThrown);
+            error: function(xhr, testStatus, errorThrown){ //Otherwise
+                return false;
             }
         });
-
-
-        alert("doing ajax request...");
-        return areCredentialsValid;
     }
     
     validate(){
