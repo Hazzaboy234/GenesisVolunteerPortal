@@ -10,6 +10,7 @@ import './custom.css'
 import { Dashboard } from './components/Dashboard';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
+import { Boilerplate } from './components/Boilerplate';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -21,6 +22,7 @@ export default class App extends Component {
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={Signup} />
+        <Route path='/dogs' component={Boilerplate} />
       </Layout>
     );
   }
