@@ -10,6 +10,7 @@ export class Login extends Component {
 
         this.state = {mode:0}
     }
+
     componentDidMount(){
         document.title="Genesis Trust Portal: Login";
     }
@@ -67,7 +68,7 @@ export class Login extends Component {
         return (
             <div className="main-container">
                 <link rel="stylesheet" href={require("./login.css")}/>
-                <div className="logo-container">
+                <div className="logo-container">                    
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
                 </div>
                 {container}
