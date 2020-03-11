@@ -29,7 +29,7 @@ export class Contacts extends Component{
             
 
                 <div className="title-container">
-                    <center><h1>Contacts</h1></center>
+                    <center><br/><h1>Contacts</h1></center>
                 </div>
                 
 
