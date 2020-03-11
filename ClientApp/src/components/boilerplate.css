@@ -1,5 +1,12 @@
+.boilerplate-container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
 .paragraph{
     color:red;
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
 }

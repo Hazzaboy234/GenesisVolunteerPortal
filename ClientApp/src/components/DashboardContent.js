@@ -1,9 +1,10 @@
 import React, {Component} from "react";
-import { Map } from "./Map";
+import { MapContainer } from "./MapContainer";
 export class DashboardContent extends Component{
     render(){
         return(
             <div className="main-container">
+                
             <div className="map-container">
                 <nav id="map-nav">
                     <ul>
@@ -12,9 +13,10 @@ export class DashboardContent extends Component{
                         <li className="map-nav-item new-content-alert"><a href="./">Noticeboard</a></li>
                     </ul>
                 </nav>  
-                <div className="map">
-                    <Map />
-                </div>
+            <MapContainer markers={[
+                { lat: 47.444, lng: -122.176}
+            ]}/>
+
             </div>
 
             <div className="secondary-container">
