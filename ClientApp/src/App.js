@@ -13,6 +13,8 @@ import { Signup } from './components/Signup';
 import { Boilerplate } from './components/Boilerplate';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
+import { Contacts } from './components/Contacts';
+
 
 export default class App extends Component {
   static displayName = App.name;
@@ -27,6 +29,7 @@ export default class App extends Component {
         <Route path='/dogs' component={Boilerplate} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
+        <Route path='/contacts' component={Contacts} />
       </Layout>
     );
   }
