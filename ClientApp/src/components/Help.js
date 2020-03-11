@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React,{Component} from "react";
 import { Footer } from "./Footer";
 import { NavigationBar } from "./NavigationBar";
-
 /**Useful Notes!
  * All tags must have an ending tag
     e.g. change <link> tags to <link/> or <img> to <img/>
