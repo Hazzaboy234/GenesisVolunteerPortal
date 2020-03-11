@@ -4,15 +4,13 @@ export class Toast extends Component{
     constructor(props){
         super(props);
         this.state={
-            visible:true
+            visible:false
         }
     }
     
     render(){
-        var className = "toast_ " + this.props.type + " "+ (this.state.visible===false ? "hidden": "show");
-        //alert(className);
         return(            
-            <div className={className} onClick={()=>this.setState({visible:false})}>
+            <div className={"toast_ "+this.props.type}>
                 <link rel="stylesheet" href={require("./toast.css")}/>
                 <span>{this.props.message}</span>
             </div>
