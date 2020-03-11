@@ -14,6 +14,7 @@ import { Boilerplate } from './components/Boilerplate';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
 import { Contacts } from './components/Contacts';
+import { Calendar } from './components/Calendar';
 
 
 export default class App extends Component {
@@ -30,6 +31,7 @@ export default class App extends Component {
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
         <Route path='/contacts' component={Contacts} />
+        <Route path='/calendar' component={Calendar} />
       </Layout>
     );
   }
