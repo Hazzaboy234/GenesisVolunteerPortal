@@ -11,10 +11,10 @@ export class NavigationBar extends Component {
                 </div>
                 <nav id="main-nav">
                     <ul>
-                        <li className="main-nav-item active"><a href="./">Home</a></li>
-                        <li className="main-nav-item"><a href="./">Roles</a></li>
-                        <li className="main-nav-item"><a href="./">Projects</a></li>
-                        <li className="main-nav-item"><a href="./">Policies</a></li>
+                        <li className="main-nav-item active"><a href="./dashboard">Home</a></li>
+                        <li className="main-nav-item"><a href="./roles">Roles</a></li>
+                        <li className="main-nav-item"><a href="./projects">Projects</a></li>
+                        <li className="main-nav-item"><a href="./policies">Policies</a></li>
                     </ul>
                 </nav>
             </header>
@@ -37,7 +37,7 @@ class ProfileNavList extends Component {
                     </li>
                     <li><a href="./">Profile</a></li>
                     <li><a href="./">Settings</a></li>
-                    <li><a href="./">Help</a></li>
+                    <li><a href="./help">Help</a></li>
                     <li><a href="./">Logout</a></li>
                 </ul>
             )

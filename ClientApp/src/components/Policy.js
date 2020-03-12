@@ -14,12 +14,12 @@ export class Policy extends Component{
                 <link rel="stylesheet" href={require("./main.css")}/>
                 <link rel="stylesheet" href={require("./policy.css")}/>
                 <NavigationBar/>
-                <div class="policy-container">
+                <div className="policy-container">
         
-        <div class="content-container">
+        <div className="content-container">
         
 
-            <div class="policy-type1">
+            <div className="policy-type1">
                 <h2>Volunteer Handbook</h2>
                 <p>Want to get involved with volunteering at Genesis trust but don't know what we do or how to help?<br/><br/>
                     Take a look at our Volunteer Handbook below to browse some of our activities and learn what we as a charity are about, and how you as an individual can come together as part of a greater team, and help us achieve something great!   
@@ -33,7 +33,7 @@ export class Policy extends Component{
                 </ul>
             </div>
            
-            <div class="policy-type2">
+            <div className="policy-type2">
                 <h2>Volunteer Policy</h2>
                 <p>Thinking of becoming a volunteer?<br/><br/>
                 Have a browse through our volunteer policy to see how Genesis Trust will support you as individuals as a volunteer.
@@ -48,7 +48,7 @@ export class Policy extends Component{
             </div>
 
 
-            <div class="policy-type1">
+            <div className="policy-type1">
                 <h2>Induction Checklist</h2>
                 <p>Before you can become a fully qualified volunteer with us a supervisor must ensure you are up to the job.<br/><br/>
                     Below is a checklist that we will use to assess your ability and help you in your journey to becoming a volunteer with Genesis Trust.
@@ -67,7 +67,7 @@ export class Policy extends Component{
 
 
 
-             <div class="policy-type2">
+             <div className="policy-type2">
                 <h2>Health & Safety Policy</h2>
                 <p>At Genesis Trust we take health and safety very seriously. <br/><br/> At the forefront of everything we do, is the safety of our employees ad volunteers. 
                     <br/><br/>For this reason we always stick to the health and safety policy and ensure we never put our employees and volunteers into dangerous or unsafe situations. 
@@ -86,7 +86,7 @@ export class Policy extends Component{
              </div>
 
 
-             <div class="policy-type1">
+             <div className="policy-type1">
                 <h2>Equal Opportunities Policy</h2>
                 <p>As part of our Charity we work with a varied group of people. <br/><br/>
                 It is important to us that we NEVER discriminate against anyone, so to ensure this is taken seriously, we adhere to out Equal Opportunities Policy
@@ -104,7 +104,7 @@ export class Policy extends Component{
 
 
 
-            <div class="policy-type2">
+            <div className="policy-type2">
                 <h2>Ethical And Environmental Policy</h2>
                 <p>GenesisTrust is committed to minimising the environmental impact of our actions, and to upholding ethical standards. Read a little bit about how we do this below
 
@@ -118,7 +118,7 @@ export class Policy extends Component{
                 </ul>
             </div>
 
-            <div class="policy-type1">
+            <div className="policy-type1">
                 <h2>Policy For Safeguarding Adults</h2>
                 <p>
                     Adults are our number one group to aid when it comes to Genesis Trust. <br/><br/>
@@ -131,7 +131,7 @@ export class Policy extends Component{
                     <br/><br/>
                 </ul>
           
-            <div class="policy-type2">
+            <div className="policy-type2">
                 <h2>Data Policy</h2>
                 <p>As part of our job it is important we take details from volunteers and clients to ensure we can aid in the most appropriate way, however we pride ourselves on our data protection. <br/><br/> Take a look at our data policy to see for yourselves what we do to keep your data safe!</p>
                 <img alt="Genesis Trust" src={require("./Resources/data-analytics-picture--global-en-.jpg")}width="800px" />
@@ -144,7 +144,7 @@ export class Policy extends Component{
                 </ul>
             </div>
 
-            <div class="policy-type1">
+            <div className="policy-type1">
                 <h2>Complaints Procedure</h2>
                 <p>Here at Genesis Trust we take any complaints very seriosuly, so if you have any complaints then please see our complaints policy. <br/><br/>If you require further information, please do not hesitate to contact us at genesis trust using the contact tab below.</p>
                 

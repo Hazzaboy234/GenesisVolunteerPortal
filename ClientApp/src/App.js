@@ -15,6 +15,11 @@ import { Settings } from './components/Settings';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
 import { ProjectsMain } from './components/Projects-main';
+import { Contacts } from './components/Contacts';
+import { Calendar } from './components/Calendar';
+
+
+
 
 export default class App extends Component {
   static displayName = App.name;
@@ -31,6 +36,8 @@ export default class App extends Component {
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
         <Route path='/projects-main' component={ProjectsMain} />
+        <Route path='/contacts' component={Contacts} />
+        <Route path='/calendar' component={Calendar} />
       </Layout>
     );
   }
