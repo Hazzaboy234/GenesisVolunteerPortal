@@ -41,7 +41,7 @@ export class Noticeboard extends Component{
         return(
             <div className="noticeboard">
                 <link rel="stylesheet" href={require("./Noticeboard.css")}/>
-                <Notice title="Welcome to GT" date="12/03/2020" description="Welcome Guys"/>
+                <Notice title="This is the title of the notice" date="12/03/2020" description="Welcome Guys"/>
                 <Notice title="Welcome to GT" date="12/03/2020" description="Welcome Guys"/>
             </div>
         )
