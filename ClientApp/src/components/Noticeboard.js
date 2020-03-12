@@ -23,7 +23,7 @@ class Notice extends Component{
             </div>
         )
     }
-}
+}   
 export class Noticeboard extends Component{    
     constructor(props){
         super(props);

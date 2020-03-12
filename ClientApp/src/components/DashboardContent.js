@@ -13,27 +13,12 @@ export class DashboardContent extends Component {
                             <li className="map-nav-item new-content-alert"><a href="./">Noticeboard</a></li>
                         </ul>
                     </nav>
-                    <div className="map">
-                        
+                    <div className="map">                        
                         <Noticeboard/>
                     </div>
                 </div>
             </div>
-
-            <div className="secondary-container">
-                <div className="noti-container">
-                    <span>Notifications</span>
-                    <div>
-                        <ul>
-                            <li>Confirm Email Address</li>
-                            <li>Complete Application</li>
-                            <li>LMAO</li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>            
+        
         )
     }
 }
