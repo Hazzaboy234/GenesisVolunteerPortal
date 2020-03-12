@@ -14,6 +14,7 @@ import { Boilerplate } from './components/Boilerplate';
 import { Settings } from './components/Settings';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
+import { ProjectsMain } from './components/Projects-main';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -29,6 +30,7 @@ export default class App extends Component {
         <Route path='/settings' component={Settings} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
+        <Route path='/projects-main' component={ProjectsMain} />
       </Layout>
     );
   }

@@ -1,5 +1,6 @@
 import React,{Component} from "react";
-
+import {NavigationBar} from "./NavigationBar";
+import {Footer} from "./Footer"
 /**Useful Notes!
  * All tags must have an ending tag
     e.g. change <link> tags to <link/> or <img> to <img/>
