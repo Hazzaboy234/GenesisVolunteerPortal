@@ -1,22 +1,44 @@
 .noticeboard{
+    margin-top: 100px;
     width:100%;
 }
 
 .notice-container{
-    font-size: 0.5em;    
+    font-size: 20px;    
     display: flex;
     flex-direction: row;
-    width: 100%;
     flex:1;
     align-items: center;
-
+    border: 2px rgb(7, 77, 78) solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    color: black;
+    background-color: rgba(68, 183, 73, 0.1);
+    box-shadow: 0px 0px 10px 1px rgb(7, 77, 78);
 }
 
 .notice-header{
+    padding: 20px;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .notice-body{
+    padding-left: 80px;
+    padding-right: 80px;
+}
 
+.date{
+    font-style: italic;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.title{
+    text-decoration: underline;
 }

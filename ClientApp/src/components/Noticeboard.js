@@ -14,8 +14,8 @@ class Notice extends Component{
         return(
             <div className="notice-container">
                 <div className="notice-header">
-                    <span>{this.props.title}</span>
-                    <span>{this.props.date}</span>
+                    <span className="title">{this.props.title}</span>
+                    <span className="date">{this.props.date}</span>
                 </div>
                 <div className="notice-body">
                     <p>{this.props.description}</p>
@@ -42,7 +42,7 @@ export class Noticeboard extends Component{
             <div className="noticeboard">
                 <link rel="stylesheet" href={require("./Noticeboard.css")}/>
                 <Notice title="Welcome to GT" date="12/03/2020" description="Welcome Guys"/>
-                <Notice/>
+                <Notice title="Welcome to GT" date="12/03/2020" description="Welcome Guys"/>
             </div>
         )
     }
