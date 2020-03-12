@@ -27,5 +27,10 @@
     padding-bottom: 2%;
 }
 
+ul{
+    justify-content: left;
+    justify-items: left;
+}
+
 
 

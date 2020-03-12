@@ -18,9 +18,10 @@ export class Policy extends Component{
         
         <div className="content-container">
         
-
+           
             <div className="policy-type1">
-                <h2>Volunteer Handbook</h2>
+            
+                <h2><br/> Volunteer Handbook</h2>
                 <p>Want to get involved with volunteering at Genesis trust but don't know what we do or how to help?<br/><br/>
                     Take a look at our Volunteer Handbook below to browse some of our activities and learn what we as a charity are about, and how you as an individual can come together as part of a greater team, and help us achieve something great!   
                 </p>
@@ -155,9 +156,7 @@ export class Policy extends Component{
                     
                 <a href="http://genesistrust.org.uk/wp-content/uploads/2018/10/Genesis_Complaints_Procedure_Issue1.pdf">Complaints Procedure    </a><br/>
                     
-                
                 </ul>
-                  
             </div>
         </div>
     </div>
