@@ -1,0 +1,170 @@
+import React, { Component } from "react";
+
+export class ProjectsMain extends Component {
+    render() {
+        return (<div>
+            <link rel="stylesheet" href={require("./projects-main-page.css")} />
+            
+            <div class="header-container">
+                <div class="header">
+                    
+                    <img id="header-logo" src={require("./Resources/logo.png")}/>
+                    <nav id="profile-nav">
+                        <ul class = "head-list">                    
+                            <li>
+                                <img
+                                src={require("./Resources/placeholder-icon.png")}
+                                width="30px"
+                            />
+                            </li>                    
+                            <li><a>Profile</a></li>                
+                            <li><a>Settings</a></li>
+                            <li><a>Help</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <nav id="main-nav">
+                    <ul class = "main-list">
+                        <li class="main-nav-item"><a href="/">Home</a></li>
+                        <li class="main-nav-item"><a>Roles</a></li>
+                        <li class="main-nav-item active"><a>Projects</a></li>
+                        <li class="main-nav-item"><a>Policies</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class = "content-container">
+                <div class = "text-containter">
+                    <div class = "text-content" >
+                    Via various interlinking projects we meet the needs of hungry, homeless and vulnerable people in Bath and the
+                    surrounding areas. Offering immediate practical help with food, clothing and furniture, as well as long-term
+                    opportunities, training and work experience, we support people on their journey from crisis to independence.
+
+                    Click on an individual project below to find out more, or read about our Pathways Programme.
+                    </div>
+                </div>
+                
+                <div class = "project-box-containter">
+                    <ul class = "projects">
+                        <li class = "project">
+                            <div class = "project-box">
+                                    <div class = "content">
+                                        lifeline centre
+                                    </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/client_stories.jpg")}/>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    family matters
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/family-matters.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    street pastors
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/street-pastors.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    home for good
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/home-for-good.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    foodbank
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/food-bank.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    lunch box
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/lunch-box.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    soup run
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/soup-run.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    furniture project
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/furniture-projects.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class = "project">
+                            <div class = "project-box">
+                                <div class = "content">
+                                    life skills
+                                </div>
+                                <div class = "photo">
+                                    <img id="header-logo" src={require("./Resources/life-skills.jpg")}/>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                        
+                
+                
+                    </ul>
+                </div>
+                
+            </div>
+            <div class = "space">
+            </div>
+
+
+
+
+            
+            <div class="footer-container"> 
+                <ul class = "foot-list">
+                    <li><a>Contact</a></li>            
+                    <li><a>Stuff</a></li>
+                    <li><a>Main Site</a></li>
+                    <li><a>Site Map</a></li>
+                </ul>
+                <span><a>Copyright XYZ</a></span>
+            </div>
+
+
+
+            </div>);
+    }
+}
