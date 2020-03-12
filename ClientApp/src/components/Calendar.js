@@ -18,7 +18,7 @@ export class Calendar extends Component {
                 <div class="map-container">
             <nav id="map-nav">
                 <ul>
-                    <li className="map-nav-item "><a href="./map">Map</a></li>
+                    <li className="map-nav-item "><a href="./dashboard">Map</a></li>
                     <li className="map-nav-item active"><a href="./calendar">Calendar</a></li>
                     <li className="map-nav-item new-content-alert"><a href="./">Noticeboard</a></li>
                 </ul>
