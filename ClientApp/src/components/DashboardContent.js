@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Map } from "./Map";
+import { Noticeboard } from "./Noticeboard";
 export class DashboardContent extends Component{
     render(){
         return(
@@ -13,7 +14,7 @@ export class DashboardContent extends Component{
                     </ul>
                 </nav>  
                 <div className="map">
-                    <Map />
+                    <Noticeboard />
                 </div>
             </div>
 
