@@ -1,192 +1,53 @@
-
-  .header-container {
-    margin: 0;
-    padding: 0;
-  
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
-  }
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(68, 183, 73);
-  
-    padding-top:10px;
-    padding-bottom:10px;
-  }
-  #header-logo {
-    width: 200px;
-  }
-  
-  #header-title{
-    font-size:1.5em;
-    font-weight: bold;
-    color:inherit;
-  }
-  #profile-nav{
-    align-self:center;
-    margin-left: auto;
-    color:white;
-    border-bottom:1px white solid;
-  }
-  
-  
-  .main-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
-
-  .foot-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
-
-  .head-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
-  
-  ul li {
-    transition:inherit;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color:rgb(68, 183, 73);
-
-    /*border-right:1px black solid;*/
-  
-
-    
-  
-    cursor: pointer;
-    color:white;
-    font-size: 1.25em;
-    text-transform: capitalize;
-  }
-  
-  ul li:hover{  background-color: rgb(90, 223, 90);}
-  /*  background-color: rgb(68, 183, 73); */
-  ul li a{
-    user-select: none;
-    color:inherit;
-    transition:inherit;
-    text-decoration: none;
-  
-    font-size:0.8em;
-  }
-  
-  ul li:hover{
-    outline-width: 1px;
-    outline-color:black;
-  
-  }
-
-  
-.main-container {
-    display: flex;
-    flex-direction: row;
-    flex:3;
-    color:rgb(90, 223, 90);
-}
-
 .content-container{
-  background-color: rgb(217, 255, 245, 0.2);
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 150px;
-  width: 90%;
-  justify-content: center;
+  background-color:white;
+
 }
-
-
-
-
-
-
-
-
-.active{
-    font-weight: bold;
-    background-color: white;
-    color:rgb(68, 183, 73);
-}
-  
-.active:hover{
-    background-color:none;
-    color:currentColor;
-}
-  
-.hide{
-    display:none;
-}
-
-
-.footer-container{
-background-color: rgb(68, 183, 73);
-flex:0.5;
-color:white;
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-evenly;
-
-font-size: 1em;
-
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-position: fixed;
-}
-
-
-
-
-
-
-
-
-
 
 
 
 .radiob{
     transition:inherit;
-    cursor: pointer;
-    width: 100%;
+    display:flex;
+    width:33.3333333333333333333333333333%;
     padding: 10px;
     text-align: left;
-    background-color:rgb(68, 183, 73);
-
-    /*border-right:1px black solid;*/
-    box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
-
+    background-color: rgb(233, 232, 232);
     
-  
-    cursor: pointer;
-    color:white;
+    
+    box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
+    
+    color:rgb(68, 183, 73);
     font-size: 1.25em;
     text-transform: capitalize;
+    border-radius: 12px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
+.radiot{
+  transition:inherit;
+ 
+  display:flex;
+  width:33.3333333333333333333333333333%;
+  padding: 10px;
+  text-align: left;
+  margin-left: 10%;
+  color:rgb(68, 183, 73);
+  font-size: 1.25em;
+  text-transform: capitalize;
+ 
+  text-decoration-line: underline;
+  text-decoration-color: rgb(68, 183, 73);
+
+}
+.title-container {
+  align-items: center;
+  color: rgb(0, 72, 81);
+  font-size: 20pt;
+  min-height: min-content;
+  margin: 0%;
+  
+}
 input[type="radio"]{
     height: 25px;
     width: 25px;
@@ -200,18 +61,45 @@ input[type="radio"]{
 
  .settings{
     
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display:inline;
+    
  }
 
+
+.display{
+
+  display:flex;
+  
+}
+.status{
+  display:flex;
+  
+}
  .button{
     box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
-    width: 100%; 
-    margin-bottom: 10%;
+    width: 40%; 
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color:rgb(233, 232, 232);
+    text-size-adjust: 25pt;
+    color: rgb(68, 183, 73);
+    
+    border-radius: 12px;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
  }
 
  .options{
-    margin-right: 10%;
+  background-color: rgb(217, 255, 245, 1);
+  display: flex;
+  flex-direction: row;
+  
+  width: 100%;
+  justify-content: center;
+  margin-right: 10%;
+ }
+
+ a{
+   color:rgb(68, 183, 73);
  }
