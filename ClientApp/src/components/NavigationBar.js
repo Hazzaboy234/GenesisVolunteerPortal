@@ -1,6 +1,42 @@
 import React, { Component } from 'react';
+class NavItem extends Component{
+    render(){
+        var className="main-nav-item" + (this.props.active!==undefined?" active":"");
+        return(
+            <li className={className}><a href={this.props.redirect}>{this.props.title}</a></li>        
+        )
+    }
+}
 export class NavigationBar extends Component {
     render() {
+        var options = [
+            {
+                key:0,
+                title:"Home",
+                redirect:"./dashboard",        
+            },
+            {
+                key:1,
+                title:"Roles",
+                redirect:"./roles"
+            },
+            {
+                key:2,
+                title:"Projects",
+                redirect:"./projects"
+            },
+            {
+                key:3,
+                title:"Policies",
+                redirect:"./policies"
+            }
+        ]
+
+        var index = this.props.active!=undefined?this.props.active:0;
+        options[index].active=true;
+
+        var navItems = []
+        options.map((option)=>{navItems.push(option.active!==undefined?<NavItem key={option.key} title={option.title} redirect={option.redirect} active/> : <NavItem key={option.key} title={option.title} redirect={option.redirect}/>)})
         return (
             <header className="header-container">
                 <div className="header">
@@ -10,11 +46,8 @@ export class NavigationBar extends Component {
                     </nav>
                 </div>
                 <nav id="main-nav">
-                    <ul>
-                        <li className="main-nav-item active"><a href="./dashboard">Home</a></li>
-                        <li className="main-nav-item"><a href="./roles">Roles</a></li>
-                        <li className="main-nav-item"><a href="./projects">Projects</a></li>
-                        <li className="main-nav-item"><a href="./policies">Policies</a></li>
+                    <ul>                        
+                        {navItems}
                     </ul>
                 </nav>
             </header>
