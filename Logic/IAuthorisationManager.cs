@@ -9,7 +9,6 @@ namespace GenesisVolunteerPortal.Logic
         Task<LoginResponse> AuthoriseLogin(LoginAttempt loginAttempt);
         Task<string> CreateJWT(Persons user);
         Task<bool> IsAuthorised(string jwtInput, string role);
-
-        string GeneratePass(string password);
+        Task<RegistrationResponse> Register(RegistrationAttempt user);
     }
 }

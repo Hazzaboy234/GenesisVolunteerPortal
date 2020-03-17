@@ -31,18 +31,12 @@ namespace GenesisVolunteerPortal.Logic.Database
                     .HasColumnName("PersonID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.AddressLine1)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.AddressLine1);
 
-                entity.Property(e => e.AddressLine2)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine2);
 
                 entity.Property(e => e.City)
-                    .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -58,7 +52,6 @@ namespace GenesisVolunteerPortal.Logic.Database
                     .IsUnicode(false);
 
                 entity.Property(e => e.Gender)
-                    .IsRequired()
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
@@ -78,7 +71,6 @@ namespace GenesisVolunteerPortal.Logic.Database
                     .HasMaxLength(50);
 
                 entity.Property(e => e.NationalInsurance)
-                    .IsRequired()
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
@@ -87,7 +79,6 @@ namespace GenesisVolunteerPortal.Logic.Database
                 entity.Property(e => e.PasswordSalt).IsRequired();
 
                 entity.Property(e => e.Postcode)
-                    .IsRequired()
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
