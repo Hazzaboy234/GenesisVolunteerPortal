@@ -15,6 +15,7 @@ import { Policy } from './components/Policy';
 import { Help } from './components/Help';
 import { Contacts } from './components/Contacts';
 import { Calendar } from './components/Calendar';
+import { Roles } from './components/Roles';
 
 
 export default class App extends Component {
@@ -32,6 +33,7 @@ export default class App extends Component {
         <Route path='/help' component={Help} />
         <Route path='/contacts' component={Contacts} />
         <Route path='/calendar' component={Calendar} />
+        <Route path='/roley' component={Roles} />
       </Layout>
     );
   }
