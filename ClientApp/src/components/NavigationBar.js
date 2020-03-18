@@ -23,7 +23,7 @@ export class NavigationBar extends Component {
             {
                 key:2,
                 title:"Projects",
-                redirect:"./projects"
+                redirect:"./projects-main"
             },
             {
                 key:3,

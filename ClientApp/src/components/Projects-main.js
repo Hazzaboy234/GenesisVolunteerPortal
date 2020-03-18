@@ -1,38 +1,14 @@
 import React, { Component } from "react";
-
+import { NavigationBar } from "./NavigationBar";
+import { Footer } from "./Footer";
 export class ProjectsMain extends Component {
     render() {
         return (<div>
             <link rel="stylesheet" href={require("./projects-main-page.css")} />
             
-            <div class="header-container">
-                <div class="header">
-                    
-                    <img id="header-logo" src={require("./Resources/logo.png")}/>
-                    <nav id="profile-nav">
-                        <ul class = "head-list">                    
-                            <li>
-                                <img
-                                src={require("./Resources/placeholder-icon.png")}
-                                width="30px"
-                            />
-                            </li>                    
-                            <li><a>Profile</a></li>                
-                            <li><a>Settings</a></li>
-                            <li><a>Help</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <nav id="main-nav">
-                    <ul class = "main-list">
-                        <li class="main-nav-item"><a href="/">Home</a></li>
-                        <li class="main-nav-item"><a>Roles</a></li>
-                        <li class="main-nav-item active"><a>Projects</a></li>
-                        <li class="main-nav-item"><a>Policies</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <link rel="stylesheet" href={require("./NavigationBar.css")} />
+            <NavigationBar />
+            
             <div class = "content-container">
                 <div class = "text-containter">
                     <div class = "text-content" >
@@ -153,16 +129,8 @@ export class ProjectsMain extends Component {
 
 
             
-            <div class="footer-container"> 
-                <ul class = "foot-list">
-                    <li><a>Contact</a></li>            
-                    <li><a>Stuff</a></li>
-                    <li><a>Main Site</a></li>
-                    <li><a>Site Map</a></li>
-                </ul>
-                <span><a>Copyright XYZ</a></span>
-            </div>
-
+            <Footer/>
+            
 
 
             </div>);

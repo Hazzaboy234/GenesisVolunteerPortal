@@ -1,67 +1,4 @@
 
-  .header-container {
-    margin: 0;
-    padding: 0;
-  
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 8px 7px -7px rgba(83, 88, 83, 1);
-  }
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(68, 183, 73);
-  
-    padding-top:10px;
-    padding-bottom:10px;
-  }
-  #header-logo {
-    width: 200px;
-  }
-  
-  #header-title{
-    font-size:1.5em;
-    font-weight: bold;
-    color:inherit;
-  }
-  #profile-nav{
-    align-self:center;
-    margin-left: auto;
-    color:white;
-    border-bottom:1px white solid;
-  }
-  
-  
-  .main-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
-
-  .foot-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
-
-  .head-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    transition:0.3s ease-in-out;
-  }
   
   ul li {
     transition:inherit;
@@ -70,7 +7,7 @@
     text-align: center;
     background-color:rgb(68, 183, 73);
 
-    /*border-right:1px black solid;*/
+    
   
 
     
@@ -81,8 +18,8 @@
     text-transform: capitalize;
   }
   
-  ul li:hover{  background-color: rgb(90, 223, 90);}
-  /*  background-color: rgb(68, 183, 73); */
+  ul li:hover{  background-color: whitesmoke; }
+ 
   ul li a{
     user-select: none;
     color:inherit;
@@ -166,6 +103,7 @@ position: fixed;
 }
 
 .text-content{
+  background-color: whitesmoke;
   margin-top: 10px;
   padding: 20px;
   width: 80%;
@@ -178,20 +116,40 @@ position: fixed;
 
 
 .projects{
+  /* removes style sheet clashes*/
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+
+
+
+  /* actual styling*/
+  
   list-style-type: none;
   padding: 0;
   
   width: 75%;
   margin-left: 12.5%;
   margin-bottom: 850px;
+
+
+
+  
 }
 
 .project{
+  display: list-item;
+
+  
   margin-top: 15px;
   width: 33%;
   float: left;
   padding: 0px;
-  background-color: white;
+  background-color: rgba(87, 161, 91, 0.1);    
   color: black;
  
 }
@@ -202,15 +160,19 @@ position: fixed;
 
 
 .project-box{
+  background-color: white;
   box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
   margin-right: 15px;
   border: 1px gray solid;
   border-radius: 10px;
 }
 
-.project:hover{
-  background-color: white;
-}
+
+
 .project-box:hover{
   background-color: rgb(90, 223, 90);
+}
+
+.project:hover{
+  background-color: rgba(87, 161, 91, 0.1);    
 }
