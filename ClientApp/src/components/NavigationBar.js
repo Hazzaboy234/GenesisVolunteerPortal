@@ -68,10 +68,10 @@ class ProfileNavList extends Component {
                             width="30px"
                         />
                     </li>
-                    <li><a href="./">Profile</a></li>
-                    <li><a href="./">Settings</a></li>
+                    <li><a href="./profile">Profile</a></li>
+                    <li><a href="./settings">Settings</a></li>
                     <li><a href="./help">Help</a></li>
-                    <li><a href="./">Logout</a></li>
+                    <li><a href="./logout">Logout</a></li>
                 </ul>
             )
         } else {

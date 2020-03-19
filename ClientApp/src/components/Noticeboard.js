@@ -32,17 +32,14 @@ export class Noticeboard extends Component{
 
         }
     }
-    componentDidMount(){
-        document.title="Noticeboard";
-
-    }
 
     render(){
         return(
             <div className="noticeboard">
                 <link rel="stylesheet" href={require("./Noticeboard.css")}/>
-                <Notice title="Welcome to GT" date="12/03/2020" description="Welcome Guys"/>
-                <Notice/>
+                <Notice title="Welcome to GT" date="12/03/2020" description="Welcome to our platform"/>
+                <Notice title="Policies Update" date="16/03/2020" description=""/>
+                <Notice title="Coronavirus & Our events" date="19/03/2020" description="It has come to our attention that coronavirus..."/>
             </div>
         )
     }

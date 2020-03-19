@@ -35,6 +35,7 @@ export class Login extends Component {
     }
     
     validate(){
+        //console.log(this.props);
         var email = document.getElementById("email").value;
         var pass = document.getElementById("password").value;
         //name@domain.etc
@@ -47,7 +48,7 @@ export class Login extends Component {
             window.location.replace("/dashboard");
             //redirect to next window
         }else{
-            alert("Invalid info \nEmail:"+email+"\npass:"+pass);
+            this.props.toastHandler("The information you provided was invalid","negative");
         }    
     }
 

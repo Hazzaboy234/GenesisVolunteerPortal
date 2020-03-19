@@ -1,7 +1,31 @@
 import React, { Component } from "react";
 import { Map } from "./Map";
 import { Noticeboard } from "./Noticeboard";
+import { Calendar } from "react-calendar";
 export class DashboardContent extends Component {
+    constructor(props){
+        super(props);
+
+
+        this.state = {
+            date:new Date(),
+            events:{}
+        }
+        this.getEvent = this.getEvent.bind(this);
+        
+    }
+    
+    componentDidMount(){
+        var e = {}
+        //Loads dates in...
+        e[new Date().getDate()] = "Pub Crawl";        
+        this.setState({events:e})
+    }
+    getEvent(date){        
+        var e = this.state.events[date.getDate()]
+        return e!==undefined? e: ""
+    }
+    
     render() {
         var content = [
             {
@@ -13,7 +37,21 @@ export class DashboardContent extends Component {
                 key:1,
                 title:"Noticeboard",
                 component:<Noticeboard/>
-            }            
+            },
+            {
+                key:2,
+                title:"Calendar",
+                component:
+                <div style={{marginTop:"80px"}}>
+                    <Calendar 
+                    tileContent={(date,view)=> "\n"+this.getEvent(date.date)} 
+                    activeStartDate={this.state.date}
+                    value={this.state.date} 
+                    onChange={()=>this.setState({date:new Date()})}
+                    onClickDay={(day)=>this.getEvent(day)}
+                    />
+                </div>
+            }        
         ]
         return (
             <div className="main-container">
@@ -27,7 +65,7 @@ export class DashboardContent extends Component {
 
 class NavItem extends Component {
     render() {
-        var className = "map-nav-item" + (this.props.active != undefined ? " active" : "");
+        var className = "map-nav-item" + (this.props.active !== undefined ? " active" : "");
         return (
             <li onClick={()=>this.props.onClick(this.props.id)} className={className}><a>{this.props.title}</a></li>
         )
