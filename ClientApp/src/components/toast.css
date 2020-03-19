@@ -2,16 +2,16 @@
     user-select: none;
     position: absolute;
     padding:15px 30px;
-
+    
     background-color:rgba(255, 255, 255, 0.7);
     color:white;
-    font-weight: bold;
+    font-weight: bold;    
+    left: 0;
+    right: 0;
+    margin: auto;
 
-    left:50%;
-    margin-left:-10%;
-
+    max-width: 50%;
     margin-top:10px;
-
     text-align: center;
 
     /*transition: all 0.4s ease-in-out;*/
@@ -42,4 +42,8 @@
 
 .hidden{
     margin-top: -500px;
+}
+
+.show{
+    margin-top: initial;
 }

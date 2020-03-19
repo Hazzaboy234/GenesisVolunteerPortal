@@ -17,6 +17,7 @@ import { Help } from './components/Help';
 import { ProjectsMain } from './components/Projects-main';
 import { Contacts } from './components/Contacts';
 import { Calendar } from './components/Calendar';
+import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
 
 
@@ -24,13 +25,31 @@ import { Profile } from './components/Profile';
 
 export default class App extends Component {
   static displayName = App.name;
-  
-  render () {
+
+  constructor(props) {
+    super(props);
+    this.state = { toast: <Toast /> }    
+  }
+
+  toastHandler(message, type) {
+    //if (message == undefined || message == null) this.setState({ toast: null })
+    if (type != undefined) {
+      this.setState({ toast: <Toast message={message} type={type} /> });
+    } else {
+      this.setState({ toast: <Toast message={message} /> });
+    }
+  }
+
+  hideToast(){
+    this.setState({toast:<Toast/>})
+  }
+
+  render() {
     return (
       <Layout>
-        <Route exact path='/' component={Login} />
-        <Route path='/dashboard' component={Dashboard} />
-        <Route path='/login' component={Login} />
+        {this.state.toast}
+        <Route exact path='/' render={(props) => <Login toastHandler={this.toastHandler.bind(this)} />} hideToast={this.hideToast.bind(this)}/>
+        <Route path='/dashboard' render={(props) => <Dashboard toastHandler={this.toastHandler.bind(this)} />} />
         <Route path='/signup' component={Signup} />
         <Route path='/dogs' component={Boilerplate} />
         <Route path='/settings' component={Settings} />
