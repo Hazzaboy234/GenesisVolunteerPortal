@@ -25,12 +25,12 @@ export class Roles extends Component {
         <NavigationBar />
         <div className="big-ol-container">
           <div className="filter-container">
-            {/* <div className="dates-container, filter-holder">
+            <div className="dates-container, filter-holder">
               <form action="/action_page.php">
                 <label for="date-choice">Choose Date: </label>
                 <input type="date" id="date-choice" name="date-choice" />
               </form>
-            </div> */}
+            </div>
 
             {/* Distance Filter */}
             <div className="filter-holder">
