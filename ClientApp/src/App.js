@@ -11,11 +11,14 @@ import { Dashboard } from './components/Dashboard';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { Boilerplate } from './components/Boilerplate';
+import { Settings } from './components/Settings';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
+import { ProjectsMain } from './components/Projects-main';
 import { Contacts } from './components/Contacts';
 import { Calendar } from './components/Calendar';
 import { Toast } from './components/Toast';
+import { Profile } from './components/Profile';
 
 
 
@@ -49,10 +52,13 @@ export default class App extends Component {
         <Route path='/dashboard' render={(props) => <Dashboard toastHandler={this.toastHandler.bind(this)} />} />
         <Route path='/signup' component={Signup} />
         <Route path='/dogs' component={Boilerplate} />
+        <Route path='/settings' component={Settings} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
+        <Route path='/projects-main' component={ProjectsMain} />
         <Route path='/contacts' component={Contacts} />
         <Route path='/calendar' component={Calendar} />
+        <Route path='/profile' component={Profile} />
       </Layout>
     );
   }

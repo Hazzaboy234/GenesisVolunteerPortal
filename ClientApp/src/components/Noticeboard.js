@@ -14,8 +14,8 @@ class Notice extends Component{
         return(
             <div className="notice-container">
                 <div className="notice-header">
-                    <span>{this.props.title}</span>
-                    <span>{this.props.date}</span>
+                    <span className="title">{this.props.title}</span>
+                    <span className="date">{this.props.date}</span>
                 </div>
                 <div className="notice-body">
                     <p>{this.props.description}</p>
