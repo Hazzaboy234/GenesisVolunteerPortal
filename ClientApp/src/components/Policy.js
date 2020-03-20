@@ -13,7 +13,7 @@ export class Policy extends Component {
             <div>
                 <link rel="stylesheet" href={require("./main.css")} />
                 <link rel="stylesheet" href={require("./policy.css")} />
-                <NavigationBar />
+                <NavigationBar active={3}/>
                 <div className="policy-container">
 
                     <div className="content-container">

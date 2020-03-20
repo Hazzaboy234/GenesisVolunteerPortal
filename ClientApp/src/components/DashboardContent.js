@@ -42,7 +42,7 @@ export class DashboardContent extends Component {
                 key:2,
                 title:"Calendar",
                 component:
-                <div style={{marginTop:"80px"}}>
+                <div style={{marginTop:"80px",fontSize:"0.3em"}}>
                     <Calendar 
                     tileContent={(date,view)=> "\n"+this.getEvent(date.date)} 
                     activeStartDate={this.state.date}

@@ -10,7 +10,8 @@ import './custom.css'
 import { Dashboard } from './components/Dashboard';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
-import { Boilerplate } from './components/Boilerplate';
+//import { Boilerplate } from './components/Boilerplate';
+import {Boilerplate} from "./components/Boilerplate"
 import { Settings } from './components/Settings';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
@@ -33,7 +34,7 @@ export default class App extends Component {
 
   toastHandler(message, type) {
     //if (message == undefined || message == null) this.setState({ toast: null })
-    if (type != undefined) {
+    if (type !== undefined) {
       this.setState({ toast: <Toast message={message} type={type} /> });
     } else {
       this.setState({ toast: <Toast message={message} /> });

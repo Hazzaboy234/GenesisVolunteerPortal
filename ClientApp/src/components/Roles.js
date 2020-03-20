@@ -8,7 +8,7 @@ export class Role extends Component {
   render() {
     return (
       <div>
-          <NavigationBar/>
+          <NavigationBar active={1}/>
           <Dropdown/>
           <div className="main-container">
             <p> Hi there!</p>
