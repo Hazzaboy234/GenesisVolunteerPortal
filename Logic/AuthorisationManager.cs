@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -65,11 +66,11 @@ namespace GenesisVolunteerPortal.Logic
             return false;
         }
 
-        public string GeneratePass(string password)
+        private string GeneratePass(string password, byte[] salt)
         {
            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
            password: password,
-           salt: Encoding.UTF8.GetBytes("cL96jPpecLbetumfd3wMmqxqUbrJggpDLNkUrWpGLYpVrNg93vALccEpG2XvE9v8qHKdZXqqQP3ucpfm86UPA5p56nDLpSaJdPLVyZWxfx4P3jZzyAmN9QSW63qxnrPM"),
+           salt: salt,
            prf: KeyDerivationPrf.HMACSHA1,
            iterationCount: 10000,
            numBytesRequested: 256 / 8));
@@ -151,12 +152,21 @@ namespace GenesisVolunteerPortal.Logic
             return false;
         }
 
-        public async Task<RegistrationResponse> Register(Persons user)
+        public async Task<RegistrationResponse> Register(RegistrationAttempt user)
         {
             var response = new RegistrationResponse();
             if (await UniqueEmail(user.Email))
             {
-                await _database.Add(user);
+                var salt = GetSalt();
+                var newUser = new Persons
+                {
+                    Name = user.FirstName + " " + user.LastName,
+                    Email = user.Email,
+                    PasswordHash = GeneratePass(user.Password, salt),
+                    PasswordSalt = Encoding.UTF8.GetString(salt, 0, salt.Length),
+                    Role = GetRoleFromCode(user.RegistrationCode)
+                };
+                await _database.Add(newUser);
                 response.Success = true;
                 return response;
             }
@@ -170,6 +180,27 @@ namespace GenesisVolunteerPortal.Logic
         {
             var users =  await _database.GetPersonByEmail(email);
             return users.Count == 0;
+        }
+        
+        private static int saltLengthLimit = 32;
+        private static byte[] GetSalt()
+        {
+            return GetSalt(saltLengthLimit);
+        }
+        private static byte[] GetSalt(int maximumSaltLength)
+        {
+            var salt = new byte[maximumSaltLength];
+            using (var random = new RNGCryptoServiceProvider())
+            {
+                random.GetNonZeroBytes(salt);
+            }
+
+            return salt;
+        }
+
+        private static string GetRoleFromCode(string code)
+        {
+            return "User";
         }
     }
 }
