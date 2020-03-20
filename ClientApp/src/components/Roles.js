@@ -4,7 +4,7 @@ import { NavigationBar } from "./NavigationBar";
 import { Footer } from "./Footer";
 
 
-export class Role extends Component {
+export class Roles extends Component {
   render() {
     return (
       <div>

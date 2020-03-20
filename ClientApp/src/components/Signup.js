@@ -3,9 +3,11 @@ import * as $ from "jquery";
 export class Signup extends Component {
     post(){
         var data = {}
-        data["name"] = document.getElementById("first-name-input").value + " " + document.getElementById("second-name-input").value;
-        data["email"] = document.getElementById("email-input").value;
-        data["password"] = document.getElementById("password-input").value;
+        data["FirstName"] = document.getElementById("first-name-input").value;
+        data["LastName"] = document.getElementById("second-name-input").value;
+        data["Email"] = document.getElementById("email-input").value;
+        data["Password"] = document.getElementById("password-input").value;
+        data["RegistrationCode"] = document.getElementById("rc-input").value;
 
         $.ajax({
             url: '/register',
@@ -55,11 +57,11 @@ export class Signup extends Component {
                         </ul>
                         <ul>
 
-                            <input type="password" placeholder="Confirm Password" />
+                            <input id="cpassword-input" type="password" placeholder="Confirm Password" />
                             <span className="mandatory-icon">*</span>
                         </ul>
                         <ul>
-                            <input type="text" placeholder="Registration Code" />
+                            <input id="rc-input" type="text" placeholder="Registration Code" />
                             <span>*</span>
                         </ul>
                         <ul className="info">

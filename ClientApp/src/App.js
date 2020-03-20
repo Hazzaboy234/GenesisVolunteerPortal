@@ -20,7 +20,7 @@ import { Contacts } from './components/Contacts';
 import { Calendar } from './components/Calendar';
 import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
-
+import {Roles} from "./components/Roles"
 
 
 
@@ -56,10 +56,11 @@ export default class App extends Component {
         <Route path='/settings' component={Settings} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
-        <Route path='/projects-main' component={ProjectsMain} />
+        <Route path='/projects' component={ProjectsMain} />
         <Route path='/contacts' component={Contacts} />
         <Route path='/calendar' component={Calendar} />
         <Route path='/profile' component={Profile} />
+        <Route path='/roles_' component={Roles} />
       </Layout>
     );
   }

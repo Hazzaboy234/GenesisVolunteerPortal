@@ -125,7 +125,7 @@ ul li:hover{
   
 }
 
-.map{  
+.content-container{  
   flex:1;
 
   display:flex;
@@ -136,7 +136,7 @@ ul li:hover{
   background-color: rgba(68, 183, 73,0.8);
 }
 
-#map-nav{
+#content-nav{
     position: absolute;
     z-index: 4; 
     width:30%;
@@ -283,6 +283,11 @@ ul li:hover{
   height: 40px;
   transform: rotate(45deg);
   text-transform: capitalize;  
+  transition: all 0.5s ease-in-out;
+}
+
+.visibility-toggle active{
+  transform: rotate(0deg);
 }
 
 @media (max-width: 600px){

@@ -42,10 +42,9 @@ export class DashboardContent extends Component {
                 key:2,
                 title:"Calendar",
                 component:
-                <div style={{marginTop:"80px",fontSize:"0.3em"}}>
+                <div className="calendar-container">
                     <Calendar 
-                    tileContent={(date,view)=> "\n"+this.getEvent(date.date)} 
-                    activeStartDate={this.state.date}
+                    tileContent={(date,view)=> "\n\n"+this.getEvent(date.date)} 
                     value={this.state.date} 
                     onChange={()=>this.setState({date:new Date()})}
                     onClickDay={(day)=>this.getEvent(day)}
@@ -87,13 +86,13 @@ class ContentMenu extends Component {
         this.props.content.map((item) => menuItems.push(<NavItem key={item.key} id={item.key} onClick={this.clickHandler.bind(this)} title={item.title}/>))
         return (
             <div className="map-container">
-                <nav id="map-nav">
+                <nav id="content-nav">
                     <ul>
                         {menuItems}
                     </ul>
                 </nav>
 
-                <div className="map">
+                <div className="content-container">
                     {this.props.content[this.state.active].component}
                 </div>
             </div>
