@@ -14,7 +14,7 @@
 
     <!-- Nav component here -->
 
-    <div class="main-container">
+    <div class="big-ol-container">
       <div class="filter-container">
         <!-- Need to incorporate pretty calendar -->
         <div class="dates-container, filter-holder">
@@ -74,7 +74,11 @@
         <!-- Duration filter -->
         <div class="filter-holder">
           <div class="dropdown">
-            <button onclick="dropIt('Duration')" id="duration-butt" class="dropbtn">
+            <button
+              onclick="dropIt('Duration')"
+              id="duration-butt"
+              class="dropbtn"
+            >
               Duration
             </button>
             <div id="Duration" class="dropdown-content">
@@ -96,20 +100,30 @@
 
         <div class="filter-holder">
           <div class="dropdown">
-            <button onclick="dropIt('Projects')" id="projects-butt" class="dropbtn">
+            <button
+              onclick="dropIt('Projects')"
+              id="projects-butt"
+              class="dropbtn"
+            >
               Projects
             </button>
             <div id="Projects" class="dropdown-content">
-              <a href="#" onclick="chooseOption('projects-butt', 'Furniture Project')"
+              <a
+                href="#"
+                onclick="chooseOption('projects-butt', 'Furniture Project')"
                 >Furniture project</a
               >
-              <a href="#" onclick="chooseOption('projects-butt', 'Family matters')"
+              <a
+                href="#"
+                onclick="chooseOption('projects-butt', 'Family matters')"
                 >Family matters</a
               >
               <a href="#" onclick="chooseOption('projects-butt', 'Life Skills')"
                 >Life skills</a
               >
-              <a href="#" onclick="chooseOption('projects-butt', 'Home for Good')"
+              <a
+                href="#"
+                onclick="chooseOption('projects-butt', 'Home for Good')"
                 >Home for Good</a
               >
             </div>
@@ -118,7 +132,11 @@
 
         <div class="filter-holder">
           <div class="dropdown">
-            <button onclick="dropIt('Availability')" id="availability-butt" class="dropbtn">
+            <button
+              onclick="dropIt('Availability')"
+              id="availability-butt"
+              class="dropbtn"
+            >
               Duration
             </button>
             <div id="Availability" class="dropdown-content">
@@ -128,16 +146,22 @@
               <a href="#" onclick="chooseOption('availability-butt', 'Tuesday')"
                 >Tuesday</a
               >
-              <a href="#" onclick="chooseOption('availability-butt', 'Wednesday')"
+              <a
+                href="#"
+                onclick="chooseOption('availability-butt', 'Wednesday')"
                 >Wednesday</a
               >
-              <a href="#" onclick="chooseOption('availability-butt', 'Thursday')"
+              <a
+                href="#"
+                onclick="chooseOption('availability-butt', 'Thursday')"
                 >Thursday</a
               >
               <a href="#" onclick="chooseOption('availability-butt', 'Friday')"
                 >Friday</a
               >
-              <a href="#" onclick="chooseOption('availability-butt', 'Saturday')"
+              <a
+                href="#"
+                onclick="chooseOption('availability-butt', 'Saturday')"
                 >Saturday</a
               >
               <a href="#" onclick="chooseOption('availability-butt', 'Sunday')"
@@ -146,7 +170,41 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="potential-roles">
+        <div class="roles-holder">
+          <button type="button" class="collapsible">
+            <b>Role Title:</b> short role description
+          </button>
+          <div class="content">
+            <p>
+              According to all known laws of aviation,<br />
+              there is no way a bee should be able to fly.<br />
+              Its wings are too small to get its fat little body off the
+              ground.<br />
+              The bee, of course, flies anyway<br/>
+              because bees don't care what
+              humans think is impossible.
+            </p>
+            <button class="apply-button">Apply</button>
+          </div>
+          <button type="button" class="collapsible">
+            <b>Role Title:</b> short role description
+          </button>
+          <div class="content">
+            <p>
+              According to all known laws of aviation,<br />
+              there is no way a bee should be able to fly.<br />
+              Its wings are too small to get its fat little body off the
+              ground.<br />
+              The bee, of course, flies anyway<br/>
+              because bees don't care what
+              humans think is impossible.
+            </p>
+            <button class="apply-button">Apply</button>
+          </div>
+        </div>
       </div>
     </div>
 

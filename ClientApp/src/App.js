@@ -60,7 +60,7 @@ export default class App extends Component {
         <Route path='/contacts' component={Contacts} />
         <Route path='/calendar' component={Calendar} />
         <Route path='/profile' component={Profile} />
-        <Route path='/roles_' component={Roles} />
+        <Route path='/roley' component={Roles} />
       </Layout>
     );
   }
