@@ -5,7 +5,6 @@
 }
 img { max-width: 100%; max-height: 100%; }
 input { display: none; }
-
 .image-container{
     display: flex;
     flex-direction: column;
@@ -16,15 +15,7 @@ input { display: none; }
 .image-container:hover{
     visibility: visible;
 }
-.mv-daynames-table{
-  background-color: white;
-}
-.view-cap{
-  
-}
-.view-container-border{
-  background-color: white;
-}
+
 
 .profile-image{
     border: 1px solid rgb(0 72 81);
