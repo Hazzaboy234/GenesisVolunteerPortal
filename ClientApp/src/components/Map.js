@@ -7,11 +7,17 @@ var map;
 var infowindow;
 var contentString = "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li><a>View</a></li></ul></div>";
 var center = { lat: 59.310, lng: 18.067 }
+center = { lat: 51.379593, lng: -2.355752 }
+center = { lat: 51.38, lng: -2.35 }
+center = { lat: 51.379402, lng: -2.357393 }
 var google = window.google
 export class Map extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.state={showResults:0}
         this.search = this.search.bind(this);
+        this.reset = this.reset.bind(this);
+        
     }
     createMarker(marker) {
         var m = new google.maps.Marker(marker);
@@ -45,7 +51,7 @@ export class Map extends Component {
     addMarker(marker) {
         marker.map = map;
         if (marker.position === undefined) {
-            marker.position = this.randomCoords({ lat: [59.3, 59.4], lng: [18, 18.1] });
+            marker.position = this.randomCoords({ lat: [center.lat - 0.1, center.lat + 0.1], lng: [center.lng - 0.1, center.lng + 0.1] });
         }
         this.createMarker(marker);
     }
@@ -77,29 +83,39 @@ export class Map extends Component {
         var results = 0;
         if (content === "") {
             this.changeMap(map);
+            this.setState({showResults:0})
         } else {
-
+            var reg = RegExp(content,"i")
             markerObjects.forEach((marker) => {
-                if (marker.title.toLowerCase() != content.toLowerCase()) {
+                if (marker.fixed === true) {return;}
+
+                var test = reg.test(marker.title);
+                console.log(test);
+                if (test===false) {                    
                     marker.setMap(null);
                 } else {
                     if (marker.map === null) marker.setMap(map);
                     results++;
                 }
             })
-            var quantifier = results===0 || results >1 ? "were":"was";
-            output.innerText = outputString.replace("X", results.toString()).replace("Z",quantifier);
-            
+            var quantifier = results === 0 || results > 1 ? "were" : "was";
+            output.innerText = outputString.replace("X", results.toString()).replace("Z", quantifier);
+
             if (results > 0)
-                output.className = "positive"
+                //output.className = "positive"
+                this.setState({showResults:1})
             else {
-                output.className = "negative"
+                //output.className = "negative"
+                this.setState({showResults:2})
             }
         }
 
 
     }
-
+    reset(){
+        document.getElementById("search-input").value=""
+        this.setState({showResults:0})
+    }
     changeMap(map) {
         markerObjects.forEach((marker) => marker.setMap(map));
         if (map === null) {
@@ -122,12 +138,25 @@ export class Map extends Component {
         });
 
         this.addMarker({
-            title: "hello",
-            description: { body: "come on" },
+            title: "Genesis Trust Offices",
+            description: { body: "Our main offices" },
+            position: center,
+            fixed: true,
+            animation: google.maps.Animation.DROP
+        })
+
+        this.addMarker({
+            title: "Pub Crawl for All",
+            description: { body: "Join us at Second Bridge for a ...", roles: ["Chaparone", "Driver"] },
             animation: google.maps.Animation.DROP
         })
     }
     render() {
+        var className=(this.state.showResults>0?"":"hidden")
+        if(this.state.showResults > 0){
+            className+= " " + (this.state.showResults===1 ? "positive":"negative");
+        }
+        
         return (
             <div className="map-container">
                 <link rel="styleheet" href={require("./map.css")} />
@@ -136,13 +165,14 @@ export class Map extends Component {
                 <nav id="main-map-nav">
                     <ul id="main-ul">
                         <li>
-                            <input id="search-input" 
-                            type="text"
-                            placeholder="Search by event name, role type etc..."
-                            onChange={this.search}
-                            />                           
+                            <input id="search-input"
+                                type="text"
+                                placeholder="Search by event name, role type etc..."
+                                onChange={this.search}
+                            />
+                            <button className="clear-button" onClick={this.reset}>X</button>
                         </li>
-                        <li><span class="hidden" id="results-tag">Results</span></li>
+                        <li><span class={className} id="results-tag">Results</span></li>
                     </ul>
                 </nav>
             </div>
