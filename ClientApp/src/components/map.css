@@ -50,8 +50,8 @@
 
 }
 
-.hidden{
-    opacity: 0;
+.default{
+    background-color: grey;
 }
 
 .positive{
@@ -138,6 +138,24 @@
     padding:6px !important;
     border: none;
     border-radius: 5px;
+}
+
+.results-list{
+    display:flex;
+    flex-direction:column;
+    list-style-type: none;
+    margin:0!important;
+    padding:0 !important;
+}
+
+.results-container{
+    display: flex;
+    flex-direction: column !important;
+}
+
+.result{
+    margin:0 !important;
+    /*padding:0 !important;*/
 }
 
 

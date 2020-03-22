@@ -82,8 +82,7 @@ export class Map extends Component {
         var outputString = "X Results Z found";
         var results = 0;
         if (content === "") {
-            this.changeMap(map);
-            this.setState({showResults:0})
+            this.reset();
         } else {
             var reg = RegExp(content,"i")
             markerObjects.forEach((marker) => {
@@ -114,7 +113,9 @@ export class Map extends Component {
     }
     reset(){
         document.getElementById("search-input").value=""
+        document.getElementById("results-tag").innerText="All Events"
         this.setState({showResults:0})
+        this.changeMap(map);
     }
     changeMap(map) {
         markerObjects.forEach((marker) => marker.setMap(map));
@@ -137,22 +138,31 @@ export class Map extends Component {
             content: "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li><a>View</a></li></ul></div>"
         });
 
+        //Add marker to mark the main officies..
+
+
+        //Add some example markrers
+        var examples = [
+            {
+                title:"Pub Crawl for All",
+                description:{body:"Join us at the SU for a pint!",roles:["Driver"]}
+            },{
+                title:"Theme Park Trip!",
+                description:{body:"An opportunity to embrace your fear of heights!",roles:["Events Manager","Social Media Ambassador"]}
+            }
+        ]
+        examples.forEach((example)=>{example["animation"]=google.maps.Animation.DROP;this.addMarker(example)})        
         this.addMarker({
             title: "Genesis Trust Offices",
             description: { body: "Our main offices" },
             position: center,
             fixed: true,
-            animation: google.maps.Animation.DROP
-        })
-
-        this.addMarker({
-            title: "Pub Crawl for All",
-            description: { body: "Join us at Second Bridge for a ...", roles: ["Chaparone", "Driver"] },
-            animation: google.maps.Animation.DROP
+            animation: google.maps.Animation.DROP,
+            icon:require("./Resources/home-icon.png")
         })
     }
     render() {
-        var className=(this.state.showResults>0?"":"hidden")
+        var className=(this.state.showResults>0?"":"default")
         if(this.state.showResults > 0){
             className+= " " + (this.state.showResults===1 ? "positive":"negative");
         }
@@ -172,7 +182,12 @@ export class Map extends Component {
                             />
                             <button className="clear-button" onClick={this.reset}>X</button>
                         </li>
-                        <li><span class={className} id="results-tag">Results</span></li>
+                        <li className="results-container">
+                            <span className={className} id="results-tag">Events</span>
+                            <ul className="results-list">
+                                {markerObjects.map((marker)=>marker.map!=null?<Result onClick={this.openWindow.bind(this)} marker={marker}/>:null)}
+                            </ul>
+                            </li>
                     </ul>
                 </nav>
             </div>
@@ -180,3 +195,11 @@ export class Map extends Component {
     }
 }
 
+class Result extends React.Component{
+
+    render(){
+        return(
+            <li onClick={()=>this.props.onClick(this.props.marker)} className="result">{this.props.marker.title}</li>
+        )
+    }
+}
