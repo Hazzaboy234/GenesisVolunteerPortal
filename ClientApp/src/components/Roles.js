@@ -279,7 +279,6 @@ export class Roles extends Component {
           <Footer />
         </div>
       </div>
-      </div>
     );
   }
 }
