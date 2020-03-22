@@ -1,0 +1,178 @@
+
+  
+  ul li {
+    transition:inherit;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color:rgb(68, 183, 73);
+
+    
+  
+
+    
+  
+    cursor: pointer;
+    color:white;
+    font-size: 1.25em;
+    text-transform: capitalize;
+  }
+  
+  ul li:hover{  background-color: whitesmoke; }
+ 
+  ul li a{
+    user-select: none;
+    color:inherit;
+    transition:inherit;
+    text-decoration: none;
+  
+    font-size:0.8em;
+  }
+  
+  ul li:hover{
+    outline-width: 1px;
+    outline-color:black;
+  
+  }
+
+  
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex:3;
+    color:rgb(90, 223, 90);
+}
+
+.content-container{
+  background-color: rgb(217, 255, 245, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+
+
+
+
+
+
+
+
+.active{
+    font-weight: bold;
+    background-color: white;
+    color:rgb(68, 183, 73);
+}
+  
+.active:hover{
+    background-color:none;
+    color:currentColor;
+}
+  
+.hide{
+    display:none;
+}
+
+
+.footer-container{
+background-color: rgb(68, 183, 73);
+flex:0.5;
+color:white;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+
+font-size: 1em;
+
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+position: fixed;
+}
+
+.text-containter{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  
+
+}
+
+.text-content{
+  background-color: whitesmoke;
+  margin-top: 10px;
+  padding: 20px;
+  width: 80%;
+  align-self: center;
+  box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+  border: 1px rgb(0, 72, 81) solid;
+  border-radius: 10px;
+}
+
+
+
+.projects{
+  /* removes style sheet clashes*/
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+
+
+
+  /* actual styling*/
+  
+  list-style-type: none;
+  padding: 0;
+  
+  width: 75%;
+  margin-left: 12.5%;
+  margin-bottom: 850px;
+
+
+
+  
+}
+
+.project{
+  display: list-item;
+
+  
+  margin-top: 15px;
+  width: 33%;
+  float: left;
+  padding: 0px;
+  background-color: rgba(87, 161, 91, 0.1);    
+  color: black;
+ 
+}
+
+.photo{
+  margin-bottom: 5px;
+}
+
+
+.project-box{
+  background-color: white;
+  box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
+  margin-right: 15px;
+  border: 1px gray solid;
+  border-radius: 10px;
+}
+
+
+
+.project-box:hover{
+  background-color: rgb(90, 223, 90);
+}
+
+.project:hover{
+  background-color: rgba(87, 161, 91, 0.1);    
+}

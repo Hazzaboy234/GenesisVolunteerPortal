@@ -34,16 +34,14 @@ namespace GenesisVolunteerPortal.Controllers
         }
 
         [HttpPost("/register")]
-        public async Task<ActionResult> Register(Persons attempt)
+        public async Task<ActionResult> Register(RegistrationAttempt attempt)
         {
-            //var response = await _authorisationManager.
-            return null;
-        }
-
-        [HttpGet("/login/{id}")]
-        public string GetPassword(string id)
-        {
-            return _authorisationManager.GeneratePass(id);
+            var response = await _authorisationManager.Register(attempt);
+            if (response.Success)
+            {
+                return Ok();
+            }
+            return BadRequest(response.ErrorMessage);
         }
     }
 }
