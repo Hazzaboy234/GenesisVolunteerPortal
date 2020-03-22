@@ -85,14 +85,14 @@ class ContentMenu extends Component {
         var menuItems = []
         this.props.content.map((item) => menuItems.push(<NavItem key={item.key} id={item.key} onClick={this.clickHandler.bind(this)} title={item.title}/>))
         return (
-            <div className="map-container">
+            <div className="content-container">
                 <nav id="content-nav">
                     <ul>
                         {menuItems}
                     </ul>
                 </nav>
 
-                <div className="content-container">
+                <div className="content">
                     {this.props.content[this.state.active].component}
                 </div>
             </div>

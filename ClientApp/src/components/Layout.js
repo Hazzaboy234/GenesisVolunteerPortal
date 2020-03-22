@@ -13,7 +13,7 @@ export class Layout extends Component {
   render () {
     //this.props.children.map((child)=>child.props.toastHandler=()=>console.log("hello"))
     return (
-      <div>
+      <div style={{height:"100vh"}}>
           {this.props.children}
         
       </div>
