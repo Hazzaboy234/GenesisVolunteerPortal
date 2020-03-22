@@ -81,21 +81,34 @@ export class Map extends Component {
         var output = document.getElementById("results-tag");
         var outputString = "X Results Z found";
         var results = 0;
+        var criteria = ["title","description"];
+        //then reduce criteria array to just have stuff that is selected
         if (content === "") {
             this.reset();
         } else {
             var reg = RegExp(content,"i")
             markerObjects.forEach((marker) => {
-                if (marker.fixed === true) {return;}
+                if (marker.fixed === true) {return;} //we want it to stay so skip it
+                for(var i =0;i<criteria.length;i++){
+            
+                    var c;
+                    if(criteria[i]==="description"){
+                        c = this.compileDescription(marker.description)
+                        console.log(c);
+                    }else{
+                        c = marker[criteria[i]];
+                    }
 
-                var test = reg.test(marker.title);
-                //console.log(test);
-                if (test===false) {                    
-                    marker.setMap(null);
-                } else {
-                    if (marker.map === null) marker.setMap(map);
-                    results++;
+                    var test = reg.test(c);
+                    if (test===false) {                    
+                        marker.setMap(null);
+                    } else {
+                        if (marker.map === null) marker.setMap(map);
+                        results++;
+                        break;
+                    }
                 }
+
             })
             var quantifier = results === 0 || results > 1 ? "were" : "was";
             output.innerText = outputString.replace("X", results.toString()).replace("Z", quantifier);
@@ -167,7 +180,8 @@ export class Map extends Component {
             className+= " " + (this.state.showResults===1 ? "positive":"negative");
         }
 
-        var results = markerObjects.map((marker)=>marker.map!=null?<Result onClick={this.openWindow.bind(this)} marker={marker}/>:null)
+        var results = markerObjects.map((marker)=>marker.map!=null? <Result onClick={this.openWindow.bind(this)} marker={marker}/>:null)
+        console.log(results)
         
         return (
             <div className="map-container">
