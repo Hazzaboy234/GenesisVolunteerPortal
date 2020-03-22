@@ -4,6 +4,8 @@ import React, { Component } from "react";
 //import { Tooltip, Container } from "reactstrap";
 import { NavigationBar } from "./NavigationBar";
 import { DashboardContent } from "./DashboardContent";
+import { Footer } from "./Footer";
+
 export class Dashboard extends Component {
     componentDidMount(){
         document.cookie = JSON.stringify({hello:"dickhead",okay:"then"})
@@ -17,7 +19,9 @@ export class Dashboard extends Component {
                 <link rel="stylesheet" href={require("./dashboard.css")}/>                                
                 <NavigationBar active={0}/>
                 <DashboardContent/>
+                <Footer/>
             </div>
         )
     }
+    
 }
