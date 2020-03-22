@@ -3,18 +3,48 @@ import { NavigationBar } from "./NavigationBar";
 import { Footer } from "./Footer";
 
 export class Roles extends Component {
-
   componentDidMount() {
-    document.title = "Genesis Trust: Policies";
-  }
-  
-  chooseOption(butt, val) {
-    document.getElementById(butt).value = val;
+    document.title = "Genesis Trust: Roles";
   }
 
   dropIt(choice) {
     document.getElementById(choice).classList.toggle("show");
   }
+  
+  // Does not work yet
+  chooseOption(butt, val) {
+    document.getElementById(butt).value = val;
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  // window.onclick = function(event) {
+  //   if (!event.target.matches('.dropbtn')) {
+  //     var dropdowns = document.getElementsByClassName("dropdown-content");
+  //     var i;
+  //     for (i = 0; i < dropdowns.length; i++) {
+  //       var openDropdown = dropdowns[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //   }
+  // }
+  
+  // var coll = document.getElementsByClassName("collapsible");
+  // var i;
+  
+  // for (i = 0; i < coll.length; i++) {
+  //   coll[i].addEventListener("click", function() {
+  //     this.classList.toggle("active");
+  //     var content = this.nextElementSibling;
+  //     if (content.style.display === "block") {
+  //       content.style.display = "none";
+  //     } else {
+  //       content.style.display = "block";
+  //     }
+  //   });
+  // }
+  
 
   render() {
     return (
@@ -203,6 +233,46 @@ export class Roles extends Component {
                   >
                     Sunday
                   </a>
+                </div>
+              </div>
+            </div>
+            <div className="potential-roles">
+              <div className="roles-holder">
+                <button type="button" className="collapsible">
+                  <b>Role Title:</b> short role description
+                </button>
+                <div className="content">
+                  <p>
+                    According to all known laws of aviation,
+                    <br />
+                    there is no way a bee should be able to fly.
+                    <br />
+                    Its wings are too small to get its fat little body off the
+                    ground.
+                    <br />
+                    The bee, of course, flies anyway
+                    <br />
+                    because bees don't care what humans think is impossible.
+                  </p>
+                  <button className="apply-button">Apply</button>
+                </div>
+                <button type="button" className="collapsible">
+                  <b>Role Title:</b> short role description
+                </button>
+                <div className="content">
+                  <p>
+                    According to all known laws of aviation,
+                    <br />
+                    there is no way a bee should be able to fly.
+                    <br />
+                    Its wings are too small to get its fat little body off the
+                    ground.
+                    <br />
+                    The bee, of course, flies anyway
+                    <br />
+                    because bees don't care what humans think is impossible.
+                  </p>
+                  <button className="apply-button">Apply</button>
                 </div>
               </div>
             </div>
