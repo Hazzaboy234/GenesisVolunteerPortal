@@ -89,7 +89,7 @@ export class Map extends Component {
                 if (marker.fixed === true) {return;}
 
                 var test = reg.test(marker.title);
-                console.log(test);
+                //console.log(test);
                 if (test===false) {                    
                     marker.setMap(null);
                 } else {
@@ -166,6 +166,8 @@ export class Map extends Component {
         if(this.state.showResults > 0){
             className+= " " + (this.state.showResults===1 ? "positive":"negative");
         }
+
+        var results = markerObjects.map((marker)=>marker.map!=null?<Result onClick={this.openWindow.bind(this)} marker={marker}/>:null)
         
         return (
             <div className="map-container">
@@ -185,7 +187,7 @@ export class Map extends Component {
                         <li className="results-container">
                             <span className={className} id="results-tag">Events</span>
                             <ul className="results-list">
-                                {markerObjects.map((marker)=>marker.map!=null?<Result onClick={this.openWindow.bind(this)} marker={marker}/>:null)}
+                                {results}
                             </ul>
                             </li>
                     </ul>

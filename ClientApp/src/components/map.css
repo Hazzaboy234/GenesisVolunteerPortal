@@ -158,6 +158,11 @@
     /*padding:0 !important;*/
 }
 
+.main-ul li:hover{
+    background-color: currentColor;
+    opacity: initial;
+    background-color: currentColor;
+}
 
 @media (max-width: 600px){
     #main-map-nav{
