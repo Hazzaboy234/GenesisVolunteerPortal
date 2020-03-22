@@ -26,12 +26,12 @@ export class NavigationBar extends Component {
             {
                 key: 1,
                 title: "Roles",
-                redirect: "./roles"
+                redirect: "./roley"
             },
             {
                 key: 2,
                 title: "Projects",
-                redirect: "./projects-main"
+                redirect: "./projects"
             },
             {
                 key: 3,

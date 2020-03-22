@@ -7,9 +7,9 @@ var map;
 var infowindow;
 var contentString = "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li><a>View</a></li></ul></div>";
 var center = { lat: 59.310, lng: 18.067 }
-center = { lat: 51.379593, lng: -2.355752 }
-center = { lat: 51.38, lng: -2.35 }
 center = { lat: 51.379402, lng: -2.357393 }
+//var google;
+//window.onload = ()=>google = window.google
 var google = window.google
 export class Map extends Component {
     constructor(props) {
