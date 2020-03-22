@@ -136,10 +136,11 @@ export class Map extends Component {
                 <nav id="main-map-nav">
                     <ul id="main-ul">
                         <li>
-                            <input id="search-input" type="text" placeholder="Search by event name, role type etc..." />
-                            <button id="search-button" onMouseUp={this.search}>Search</button>
-                            <button id="show-button" onMouseUp={this.changeMap(map)}>Show All</button>
-                            <button id="reset-button" onMouseUp={this.changeMap(null)}>Remove Markers</button>
+                            <input id="search-input" 
+                            type="text"
+                            placeholder="Search by event name, role type etc..."
+                            onChange={this.search}
+                            />                           
                         </li>
                         <li><span class="hidden" id="results-tag">Results</span></li>
                     </ul>
