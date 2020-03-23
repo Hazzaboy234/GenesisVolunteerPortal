@@ -61,13 +61,6 @@ export class Map extends Component {
         content = content.replace("event_description", this.compileDescription(marker.description));        
         infowindow.setContent(content);        
         $.when(infowindow.open(map, marker))
-        .then(
-            ()=>{
-                document.getElementById("view-button").addEventListener("click",
-                    ()=>window.location.replace("/roles/0")
-                )
-            } 
-        )
         map.panTo(marker.position);
     }
     compileDescription(description) {
@@ -156,9 +149,17 @@ export class Map extends Component {
             zoom: 11
         });
 
-        infowindow = new google.maps.InfoWindow({
+        $.when(infowindow = new google.maps.InfoWindow({
             content: contentString
-        });
+        })).then(
+            ()=>{
+                document.getElementById("view-button").addEventListener("click",                
+                    ()=>{if(window.confirm("Are you sure you want to redirect?\nAny changes may be lost.")) window.location.replace("/roles/0")}
+                    
+                )
+            } 
+        )
+
 
         //Add marker to mark the main officies..
 
