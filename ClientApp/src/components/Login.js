@@ -45,10 +45,11 @@ export class Login extends Component {
         if(((isEmailValid===true && isPasswordValid===true))&&(this.isInDatabase(email,pass)===true)){
             //insert information into cookie
             alert("Information valid!");
+            this.props.openToast("Signing you in","positive");
             window.location.replace("/dashboard");
             //redirect to next window
         }else{
-            this.props.toastHandler("The information you provided was invalid","negative");
+            this.props.openToast("The information you provided was invalid","negative");
         }    
     }
 

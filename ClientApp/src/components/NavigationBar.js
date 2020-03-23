@@ -26,7 +26,7 @@ export class NavigationBar extends Component {
             {
                 key: 1,
                 title: "Roles",
-                redirect: "./roley"
+                redirect: "./ourroles"
             },
             {
                 key: 2,
