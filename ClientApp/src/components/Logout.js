@@ -29,14 +29,15 @@ export class Logout extends Component {
             steps[i].action()        
             i++;
             if(i >= steps.length) clearInterval(interval)
-        }.bind(this),1000)
+        }.bind(this),500)
 
     }
     render(){
         return(
-            <div>
+            <span className="logout-container">
+                <link rel="stylesheet" href={require("./Logout.css")}/>
                 {this.state.message}
-            </div>
+            </span>
         )
     }
     
