@@ -41,3 +41,33 @@
   
     font-size: 0.8em;
   }
+
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.calendar-container{
+  margin-top:80px;
+  font-size:0.4em;
+  min-height: 405px;
+  animation: fadein 0.5s;
+}
+
+.content-container{
+  flex:5;
+  color:inherit;
+  display: flex;
+  flex-direction: column;
+  border-top:none;
+  /*background-image:url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fw0.fast-meteo.com%2Flocationmaps%2FBeaconsfield.10.gif&f=1&nofb=1");*/
+  
+  background-size: contain;
+}
+
+.map-container{ 
+  width: 100%;
+  
+  display:flex;
+  flex-direction:row;
+  animation:fadein 0.5s;
+}

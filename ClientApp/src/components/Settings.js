@@ -17,7 +17,7 @@ export class Settings extends Component {
             <div class="content-container">
 
                 <div className="title-container">
-                    <center><br/><h1>Contacts</h1></center>
+                    <center><br/><h1>Settings</h1></center>
                 </div>
               
                     
@@ -56,9 +56,9 @@ export class Settings extends Component {
 
                 <div class="settings">
                     <br/>
-                    <center><div class="radiot">
-                        Account Options
-                        </div></center>
+                    <div id="title" class="radiot">
+                    Account Options
+                    </div>
 
 
                     <div class="button"><a href="./change_pass">Change Password</a>

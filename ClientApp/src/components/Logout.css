@@ -1,0 +1,8 @@
+.logout-container{
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:all 0.5s ease-in-out;   
+    font-weight: bold;
+}

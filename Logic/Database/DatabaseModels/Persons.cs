@@ -1,9 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
 {
     public partial class Persons
     {
+        [Key, Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

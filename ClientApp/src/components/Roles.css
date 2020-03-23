@@ -1,44 +1,150 @@
+.big-ol-container{
+  display: inline;
+  background-color:#b9f5d8;
+}
+
+.filter-contianer{
+padding: 0;
+margin: 10px;
+
+display: flex;
+justify-content: center;
+}
+
+.filter-holder{
+margin: 10px;
+float: left;
+}
+
+.display-roles{
+flex-direction: row;
+
+}
+
+.apply-button{
+background-color: #004851;
+color: white;
+border-radius: 10px;
+padding: 8px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+.apply-button:hover,
+.apply-button:focus {
+background-color: #0a7375;
+}
+
+.potential-roles{
+display: flex;
+width: 70vw;
+}
+
+.roles-holder{
+display: inline;
+}
+
+#distance-butt{
+border: none;
+}
+
+#time-butt{
+border: none;
+}
+
+#duration-butt{
+border: none;
+}
+
+#project-butt{
+border: none;
+}
+
+#availability-butt{
+border: none;
+}
+
+/* Start of dropdown css */
 /* Dropdown Button */
 .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+border-radius: 5px;
+background-color: rgba(68, 183, 73, 1);
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+background-color: rgba(68, 183, 73, 0.9);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: rgba(217, 255, 245, 1);
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+font-family: "Scanno", sans-serif;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+background-color: rgba(185, 245, 216, 0.5);
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+display: block;
+}
+
+/* End of dropdown stuff */
+
+/* Exandable roles stuff */
+.collapsible {
+background-color: #eee;
+color: #444;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 15px;
+margin-top: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+padding: 0 18px;
+display: none;
+overflow: hidden;
+background-color: #f1f1f1;
+text-align: center;
+}
+/* End of expandable stuff */

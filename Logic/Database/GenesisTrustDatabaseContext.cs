@@ -29,20 +29,14 @@ namespace GenesisVolunteerPortal.Logic.Database
 
                 entity.Property(e => e.PersonId)
                     .HasColumnName("PersonID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.AddressLine1)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.AddressLine1);
 
-                entity.Property(e => e.AddressLine2)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine2);
 
                 entity.Property(e => e.City)
-                    .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -57,41 +51,27 @@ namespace GenesisVolunteerPortal.Logic.Database
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Gender)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
+                entity.Property(e => e.Gender);
 
-                entity.Property(e => e.HomeNumber)
-                    .HasMaxLength(13)
-                    .IsUnicode(false);
+                entity.Property(e => e.HomeNumber);
 
-                entity.Property(e => e.MedicalInfo).HasMaxLength(50);
+                entity.Property(e => e.MedicalInfo);
 
-                entity.Property(e => e.MobileNumber)
-                    .IsRequired()
-                    .HasMaxLength(13)
-                    .IsUnicode(false);
+                entity.Property(e => e.MobileNumber);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.NationalInsurance)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
+                entity.Property(e => e.NationalInsurance);
 
                 entity.Property(e => e.PasswordHash).IsRequired();
 
                 entity.Property(e => e.PasswordSalt).IsRequired();
 
-                entity.Property(e => e.Postcode)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
+                entity.Property(e => e.Postcode);
 
-                entity.Property(e => e.ProfileImage).IsUnicode(false);
+                entity.Property(e => e.ProfileImage);
 
                 entity.Property(e => e.Role)
                     .IsRequired()

@@ -18,6 +18,7 @@ export class MapNavigationComponent extends Component {
                 <Tooltip placement="top" isOpen={this.state.tooltipOpen} target={id} toggle={this.toggle}>
                     Hello world!
                 </Tooltip>
+                
             </li>
         )
     }

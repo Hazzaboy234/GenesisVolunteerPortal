@@ -3,7 +3,8 @@
     flex-direction: row;
     margin:20px;
 }
-
+img { max-width: 100%; max-height: 100%; }
+input { display: none; }
 .image-container{
     display: flex;
     flex-direction: column;
@@ -14,6 +15,8 @@
 .image-container:hover{
     visibility: visible;
 }
+
+
 .profile-image{
     border: 1px solid rgb(0 72 81);
     border-radius: 4px;
@@ -110,9 +113,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 1%;
 }
 
-ul {list-style-type: none;} 
+ul {
+  /* removes style sheet clashes*/
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+  
+  
+  list-style-type: none;} 
 body {font-family: Verdana, sans-serif;}
 
 /* Month header */
@@ -124,11 +139,30 @@ body {font-family: Verdana, sans-serif;}
 
 /* Month list */
 .month ul {
+/* removes style sheet clashes*/
+display: block;
+list-style-type: none;
+margin-top: 1em;
+margin-bottom: 1 em;
+margin-left: 0;
+margin-right: 0;
+padding-left: 40px;
+
+
+
+
+
   margin: 0;
   padding: 0;
 }
 
 .month ul li {
+  display: list-item;
+  width: auto;
+  padding: 0px;
+  
+
+  
   color: white;
   font-size: 20px;
   text-transform: uppercase;
@@ -137,18 +171,33 @@ body {font-family: Verdana, sans-serif;}
 
 /* Previous button inside month header */
 .month .prev {
+  display: list-item;
+
   float: left;
   padding-top: 10px;
 }
 
 /* Next button */
 .month .next {
+  display: list-item;
+
   float: right;
   padding-top: 10px;
 }
 
 /* Weekdays (Mon-Sun) */
 .weekdays {
+/* removes style sheet clashes*/
+display: block;
+list-style-type: disc;
+margin-top: 1em;
+margin-bottom: 1 em;
+margin-left: 0;
+margin-right: 0;
+padding-left: 40px;
+
+
+
   margin: 0;
   padding: 10px 0;
   background-color:#ddd;
@@ -156,6 +205,9 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays li {
+  display: list-item;
+  background-color:#ddd;
+
   display: inline-block;
   width: 13%;
   color: #666;
@@ -164,6 +216,16 @@ body {font-family: Verdana, sans-serif;}
 
 /* Days (1-31) */
 .days {
+/* removes style sheet clashes*/
+display: block;
+list-style-type: disc;
+margin-top: 1em;
+margin-bottom: 1 em;
+margin-left: 0;
+margin-right: 0;
+padding-left: 40px;
+
+
   padding: 10px 0;
   background: #eee;
   margin: 0;
@@ -171,6 +233,8 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days li {
+  background: #eee;
+
   list-style-type: none;
   display: inline-block;
   width: 13%;
@@ -185,4 +249,19 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
   background: rgb(68, 183, 73);
   color: white !important
+}
+
+.days li:hover{
+  color: #777;
+  background-color: #eee
+}
+
+.weekdays li:hover{
+  color: #666;
+  background-color: #ddd
+}
+
+.month ul li:hover{
+  background: rgb(68, 183, 73);
+  color: white;
 }

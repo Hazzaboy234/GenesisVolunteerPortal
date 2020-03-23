@@ -8,10 +8,27 @@ export class Profile extends Component {
         document.title = "Genesis Trust: Profile";
     }
 
+  
+    readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+      
+          reader.onload = function(e) {
+            ('#image-preview').attr('src', e.target.result);
+          }
+      
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      
+
+
+
 
     render() {
         return (
             <div>
+                <link rel="stylesheet" href={require("./main.css")} />
                 <link rel="stylesheet" href={require("./profile.css")} />
                
 
@@ -19,15 +36,24 @@ export class Profile extends Component {
                 <div className="main-container">
 
                     <div className="profile-container">
+
                         <div className="image-container">
+
+                            <br></br><br></br><br></br>
                             <img className="profile-image" src={require("./Resources/ProfilePicture.jpg")} />
 
+                            <label for="image-picker">
+                                <img id="image-preview"className="profile-image"  alt="Change Image" />
+                            </label>
+                            <input id="image-picker" type="file" accept="image/*" />
 
-                            <span className="profile-image">Change Image</span>
+                           
                         </div>
+
 
                         <div className="details-container">
                             <ul className="details-ul">
+                                <br></br><br></br>
                                 <li className="details-label">Name</li>
                                 <li className="details-element">Clive Alive</li>
                                 <li className="details-label">Email</li>
@@ -42,57 +68,11 @@ export class Profile extends Component {
                     </div>
 
                     <div className="calendar-container">
-                        <div className="month">
-                            <ul>
-                                <li className="prev">&#10094;</li>
-                                <li className="next">&#10095;</li>
-                                <li>March<br /><span style={{ fontSize: "18px" }}>2020</span></li>
-                            </ul>
-                        </div>
-
-                        <ul className="weekdays">
-                            <li>Mo</li>
-                            <li>Tu</li>
-                            <li>We</li>
-                            <li>Th</li>
-                            <li>Fr</li>
-                            <li>Sa</li>
-                            <li>Su</li>
-                        </ul>
-
-                        <ul className="days">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li><span className="active">10</span></li>
-                            <li>11</li>
-                            <li>12</li>
-                            <li>13</li>
-                            <li>14</li>
-                            <li>15</li>
-                            <li>16</li>
-                            <li>17</li>
-                            <li>18</li>
-                            <li>19</li>
-                            <li>20</li>
-                            <li>21</li>
-                            <li>22</li>
-                            <li>23</li>
-                            <li>24</li>
-                            <li>25</li>
-                            <li>26</li>
-                            <li>27</li>
-                            <li>28</li>
-                            <li>29</li>
-                            <li>30</li>
-                            <li>31</li>
-                        </ul>
+                        <br></br><br></br>
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%2344b749&amp;ctz=Europe%2FLondon&amp;src=OG5jcm5iaW01NTVwaGx0dXRyODdhMHJnc2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;mode=MONTH&amp;showPrint=0&amp;showTabs=1&amp;showTz=0&amp;showCalendars=0&amp;showNav=1&amp;showTitle=0&amp;showDate=1"
+                            style={{ borderWidth: 0 }}
+                            width="800" height="600" frameborder="0"
+                            scrolling="no"></iframe>
 
                     </div>
 

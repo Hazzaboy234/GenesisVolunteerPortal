@@ -42,6 +42,7 @@
 
 .hidden{
     margin-top: -500px;
+    opacity: 0;
 }
 
 .show{

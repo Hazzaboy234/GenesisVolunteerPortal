@@ -1,6 +1,31 @@
 import React, { Component } from "react";
-
+import * as $ from "jquery";
 export class Signup extends Component {
+    post(){
+        var data = {}
+        data["FirstName"] = document.getElementById("first-name-input").value;
+        data["LastName"] = document.getElementById("second-name-input").value;
+        data["Email"] = document.getElementById("email-input").value;
+        data["Password"] = document.getElementById("password-input").value;
+        data["RegistrationCode"] = document.getElementById("rc-input").value;
+
+        $.ajax({
+            url: '/register',
+            type: 'POST',
+            data:JSON.stringify(data),
+            contentType:'application/json',            
+            success: function(res) { //If the credentials can be found..
+                alert("Signup sucessful");
+                window.location.replace("/dashboard");
+                return true;
+            },
+            error: function(xhr, testStatus, errorThrown){ //Otherwise
+                alert("Signup unsuccessful.");
+                return false;
+            }
+        });
+
+    }
     render() {
         return (
             <div>
@@ -13,30 +38,30 @@ export class Signup extends Component {
                     <div className="input-text">
                     <a href="/"><img alt="Back" id="back-arrow" src={require("./Resources/Arrow.png")}/></a>
                         <ul>
-                            <input type="text" placeholder="First Name " />
+                            <input id="first-name-input" type="text" placeholder="First Name " />
                             <span className="mandatory-icon">*</span>
                             
                         </ul>
                         <ul>
-                            <input type="text" placeholder="Surname" />
+                            <input id="second-name-input" type="text" placeholder="Surname" />
                             <span className="mandatory-icon">*</span>
                         </ul>
                         <ul>
-                            <input type="text" placeholder="Email" />
-                            <span className="mandatory-icon">*</span>
-                        </ul>
-                        <ul>
-
-                            <input type="password" placeholder="Password" />
+                            <input id="email-input" type="text" placeholder="Email" />
                             <span className="mandatory-icon">*</span>
                         </ul>
                         <ul>
 
-                            <input type="password" placeholder="Confirm Password" />
+                            <input id="password-input" type="password" placeholder="Password" />
                             <span className="mandatory-icon">*</span>
                         </ul>
                         <ul>
-                            <input type="text" placeholder="Registration Code" />
+
+                            <input id="cpassword-input" type="password" placeholder="Confirm Password" />
+                            <span className="mandatory-icon">*</span>
+                        </ul>
+                        <ul>
+                            <input id="rc-input" type="text" placeholder="Registration Code" />
                             <span>*</span>
                         </ul>
                         <ul className="info">
@@ -45,7 +70,7 @@ export class Signup extends Component {
                     </li>
                         </ul>
                         <ul className="button">
-                            <div className="foot-button">
+                            <div className="foot-button" onClick={this.post.bind(this)}>
                                 <b> SIGN UP NOW</b>
                             </div>
 
