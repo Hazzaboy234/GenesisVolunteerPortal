@@ -1,0 +1,36 @@
+
+.policy-container{
+    
+   
+    background-color: white;
+    color: rgb(0, 72, 81);
+    display: inline;
+ 
+
+}
+
+.content-container{
+    width:100%;
+}
+
+.policy-type1{
+    color: rgb(0, 72, 81);
+    width:100%;
+    background-color: rgb(233, 232, 232);;
+    padding-left: 1%;
+    padding-bottom: 2%;
+}
+.policy-type2{
+    width:100%;
+    background-color: white;
+    padding-left: 1%;
+    padding-bottom: 2%;
+}
+
+ul{
+    justify-content: left;
+    justify-items: left;
+}
+
+
+
