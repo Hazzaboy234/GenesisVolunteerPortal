@@ -220,12 +220,6 @@ export class Map extends Component {
                             {results}
                         </ul>
                     </li>
-                    <li onClick={
-                        ()=>{
-                            $.when(console.log("hello")).then(()=>console.log("goodbye"))
-                        }
-                    }>
-                    okay</li>
                 </ul>                
             </div>
         )

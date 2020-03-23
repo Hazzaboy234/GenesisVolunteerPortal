@@ -21,7 +21,7 @@ import { Calendar } from './components/Calendar';
 import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
-
+import {Logout} from "./components/Logout"
 
 
 export default class App extends Component {
@@ -61,6 +61,7 @@ export default class App extends Component {
         <Route path='/calendar' component={Calendar} />
         <Route path='/profile' component={Profile} />
         <Route path='/roley' component={Roles} />
+        <Route path='/logout' component={Logout} />
       </Layout>
     );
   }

@@ -69,4 +69,5 @@
   
   display:flex;
   flex-direction:row;
+  animation:fadein 0.5s;
 }
