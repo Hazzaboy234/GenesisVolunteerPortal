@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-
+import * as $ from "jquery";
 //Globals!
-var markers;
 var markerObjects = [];
 var map;
 var infowindow;
-var contentString = "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li><a>View</a></li></ul></div>";
+var contentString = "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li id='view-button'><a>View</a></li></ul></div>";
 var center = { lat: 59.310, lng: 18.067 }
 center = { lat: 51.379402, lng: -2.357393 }
 //var google;
@@ -23,6 +22,7 @@ export class Map extends Component {
         var m = new google.maps.Marker(marker);
         m.addListener("click", () => this.openWindow(m))
         this.openWindow(m);
+        
         markerObjects.push(m);
     }
     /**
@@ -58,10 +58,17 @@ export class Map extends Component {
 
     openWindow(marker) {
         var content = contentString.replace("event_title", marker.title);
-        content = content.replace("event_description", this.compileDescription(marker.description));
-        infowindow.setContent(content);
-        infowindow.open(map, marker);
-        map.panTo(center);
+        content = content.replace("event_description", this.compileDescription(marker.description));        
+        infowindow.setContent(content);        
+        $.when(infowindow.open(map, marker))
+        .then(
+            ()=>{
+                document.getElementById("view-button").addEventListener("click",
+                    ()=>window.location.replace("/roles/0")
+                )
+            } 
+        )
+        map.panTo(marker.position);
     }
     compileDescription(description) {
         var desc = "desc_body<br><br>desc_roles";
@@ -138,8 +145,9 @@ export class Map extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() {        
         var google = window.google;
+        markerObjects = []
 
         if (document.getElementById("map") === null) return;
 
@@ -149,7 +157,7 @@ export class Map extends Component {
         });
 
         infowindow = new google.maps.InfoWindow({
-            content: "<div class='infowindow-container'><span class='infowindow-title'>event_title</span><p class='infowindow-body'>event_description</p><ul class='infowindow-socials'><li><a>View</a></li></ul></div>"
+            content: contentString
         });
 
         //Add marker to mark the main officies..
@@ -166,6 +174,8 @@ export class Map extends Component {
             }
         ]
         examples.forEach((example) => { example["animation"] = google.maps.Animation.DROP; this.addMarker(example) })
+
+        //document.getElementById("").addEventListener("cl")
         this.addMarker({
             title: "Genesis Trust Offices",
             description: { body: "Our main offices" },
@@ -174,6 +184,11 @@ export class Map extends Component {
             animation: google.maps.Animation.DROP,
             icon: require("./Resources/home-icon.png")
         })
+
+        
+        /*.array.forEach((button)=>{
+            button.addEventListener("click",()=>console.log("okay"))
+        })*/
     }
     render() {
         var className = (this.state.showResults > 0 ? "" : "default")
@@ -181,7 +196,7 @@ export class Map extends Component {
             className += " " + (this.state.showResults === 1 ? "positive" : "negative");
         }
 
-        var results = markerObjects.map((marker) => marker.map != null ? <Result onClick={this.openWindow.bind(this)} marker={marker} /> : null)
+        var results = markerObjects.map((marker) => marker.map != null ? <Result key={marker.title} onClick={this.openWindow.bind(this)} marker={marker} /> : null)
         console.log(results)
 
         return (
@@ -204,6 +219,12 @@ export class Map extends Component {
                             {results}
                         </ul>
                     </li>
+                    <li onClick={
+                        ()=>{
+                            $.when(console.log("hello")).then(()=>console.log("goodbye"))
+                        }
+                    }>
+                    okay</li>
                 </ul>                
             </div>
         )

@@ -42,10 +42,15 @@
     font-size: 0.8em;
   }
 
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 .calendar-container{
   margin-top:80px;
   font-size:0.4em;
   min-height: 405px;
+  animation: fadein 0.5s;
 }
 
 .content-container{
