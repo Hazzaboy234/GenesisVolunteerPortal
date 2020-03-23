@@ -62,17 +62,21 @@
     background-color:red;
 }
 
-#side-ul,#main-ul{
+
+.maps-ui{
     background-color: rgba(54, 54, 54, 0.182);
     border:1px transparent solid;
     border-radius: 5px;
     margin:15px;
+    margin-top:5%;    
     display: flex;
     list-style-type: none;
     align-items: center;
     justify-content: space-evenly;
     font-size: 0.25em !important;
+    z-index:2;
 }
+
 
 #side-ul li,#main-ul li{
     margin:0 10px;    
@@ -168,9 +172,27 @@
     background-color: currentColor;
 }
 
+#scroll-button{
+    position: relative;
+    margin:0;
+    z-index: 3;
+    font-size: 0.25em;
+    height: 10%;
+    align-self: flex-start;
+    color:white;
+    
+}
+
 @media (max-width: 600px){
     #main-map-nav{
         justify-content: center;
         margin-top:100%;
+    }
+    #main-ul{
+        margin-top:100%;
+        font-size: 0.2em !important;
+    }
+    .map-container{
+        justify-content: center;
     }
 }

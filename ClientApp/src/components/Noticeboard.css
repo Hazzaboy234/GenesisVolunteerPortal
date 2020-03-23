@@ -40,7 +40,10 @@
     background-color: rgba(68, 183, 73, 0.2);
     border-radius: 8px;
     width: 100%;
-    border-right: 2px rgb(7, 77, 78) solid;
+    border: 2px rgb(7, 77, 78) solid;
+    border-left:none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .notice-body{
