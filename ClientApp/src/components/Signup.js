@@ -1,7 +1,30 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
 export class Signup extends Component {
+    validate(){        
+        var data = {}
+        data["FirstName"] = document.getElementById("first-name-input").value;
+        data["LastName"] = document.getElementById("second-name-input").value;
+        data["Email"] = document.getElementById("email-input").value;
+        data["Password"] = document.getElementById("password-input").value;
+        data["RegistrationCode"] = document.getElementById("rc-input").value; 
+
+        var regex = {
+            "FirstName":"\\w+",
+            "LastName":"\\w+",
+            "Email":".+",
+            "Password":"^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*",
+            "RegistrationCode":"([A-Z]{2}[0-9]{2}[A-Z]{1}[0-9]{3})"
+        }
+        
+        //Check if each field matches the regex
+        for(var field in regex) if(RegExp(regex[field]).test(data[field])===false) return field
+        if(data["Password"]!=document.getElementById("cpassword-input").value) return "passwords-no-match"
+        return true;
+    }
     post(){
+        var val = this.validate()
+        if(val!==true) {console.log(val);return;}
         var data = {}
         data["FirstName"] = document.getElementById("first-name-input").value;
         data["LastName"] = document.getElementById("second-name-input").value;
@@ -15,7 +38,6 @@ export class Signup extends Component {
             data:JSON.stringify(data),
             contentType:'application/json',            
             success: function(res) { //If the credentials can be found..
-                alert("Signup sucessful");
                 window.location.replace("/dashboard");
                 return true;
             },
