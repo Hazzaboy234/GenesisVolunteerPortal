@@ -10,7 +10,7 @@ export class Toast extends Component{
     
     render(){        
         var type = this.props.type!==undefined ? (" "+this.props.type) : "";
-        var visiblity = (this.state.visible == false || this.props.message==undefined?" hidden":"");
+        var visiblity = (this.state.visible === false || this.props.message===undefined?" hidden":"");
         var className = "toast_" +visiblity +type;
         return(
             <div className={className} onMouseUp={()=>this.setState({visible:false})}>

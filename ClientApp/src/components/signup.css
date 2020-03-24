@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     height:100vh;
     display: flex;
-    background-image: linear-gradient( rgb(68, 183, 73), rgb(68, 183, 73), rgb(10, 115, 117)); 
+    background: linear-gradient(rgba(68,183,73,1) 0%, rgba(68,183,73,1) 35%, rgba(10,115,117,1) 100%);
     flex-direction: column;
 }
 
@@ -13,9 +13,9 @@ body {
 }
 
 .input-text{
+    color:black;
     box-shadow: 0px 0px 15px 5px rgb(7, 77, 78);
     margin-top: 10;
-    width: 30%;
     border: 30px white solid;
     align-self: center;
     display: flex;
@@ -25,31 +25,27 @@ body {
     border-radius: 4px;
 }
 
-.input-text ul{
+ul{
     align-self: center;
+    list-style-type: none;
+    margin:0;
+    padding:0;
 }
 
-ul{
+li{
     
     list-style-type: none;
     padding: 0;
     margin: 0;
     width: 80%;
     display: flex;
-    flex-direction: row;
-    
-    
+    flex-direction: row;    
 }
-/**
-ul li {
-    width: 30%; 
-    text-align: left;
-}
-**/
+
 li{
     
     align-self: center;
-    font-size: 14px;
+    font-size: 14px;    
 }
 
 input{
@@ -64,9 +60,6 @@ input{
 }
 
 .header-container{
-    margin-left: 10;
-    margin-top: 20;
-    
     display: flex;
     flex-direction: column;
 }
@@ -82,8 +75,6 @@ input{
 }
 
 #header-logo{
-    padding-top: 45px;
-    padding-bottom: 30px;
     align-self: center;
     width: 300px;
 }
@@ -113,14 +104,6 @@ input{
     background-color: rgb(68, 183, 73);
 }
 
-.foot-text{
-    margin-left: 130;
-}
-
-.b{
-    align-self: center;
-}
-
 .button{ 
     margin-top: 10px;
     color: whitesmoke;
@@ -133,17 +116,12 @@ input{
     font-size: 35px;  
 }
 
-.info{
-    margin-left: 60px;
-    margin-top: 10px;
-}
-
 .mandatory-icon{
     color:red !important;
 }
 
 span{
-    color:white;
+    color:black;
     font-size:18px;
 }
 
@@ -151,4 +129,32 @@ span{
     width: 40px;
     margin: -10px;
     position: absolute;
+}
+
+.reveal-button{
+    position: absolute;
+    margin-left:18%;
+    width:20px;
+    height:20px;
+    cursor: pointer;    
+    transition: all 0.3 ease-in-out;
+    border-radius: 5px;
+}
+.reveal-button:hover{
+    opacity: 0.8;
+}
+
+.password-container{
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px){
+  .reveal-button{
+    margin-left: 60%;
+  }
 }

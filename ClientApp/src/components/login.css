@@ -23,10 +23,12 @@ button:hover{
 
 .main-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-image: linear-gradient( rgb(68, 183, 73), rgb(68, 183, 73), rgb(10, 115, 117)); 
     width:100vw;
     height:100vh;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .logo-container{
@@ -37,7 +39,6 @@ button:hover{
 }
 
 #header-logo{
-    padding-top: 45px;
     width: 300px;
 }
 

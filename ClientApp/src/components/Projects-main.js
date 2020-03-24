@@ -28,7 +28,7 @@ export class ProjectsMain extends Component {
                                     lifeline centre
                                     </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/client_stories.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/client_stories.jpg")} />
                                 </div>
 
                             </div>
@@ -39,7 +39,7 @@ export class ProjectsMain extends Component {
                                     family matters
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/family-matters.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/family-matters.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -49,7 +49,7 @@ export class ProjectsMain extends Component {
                                     street pastors
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/street-pastors.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/street-pastors.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -59,7 +59,7 @@ export class ProjectsMain extends Component {
                                     home for good
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/home-for-good.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/home-for-good.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -69,7 +69,7 @@ export class ProjectsMain extends Component {
                                     foodbank
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/food-bank.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/food-bank.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -79,7 +79,7 @@ export class ProjectsMain extends Component {
                                     lunch box
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/lunch-box.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/lunch-box.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -89,7 +89,7 @@ export class ProjectsMain extends Component {
                                     soup run
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/soup-run.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/soup-run.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -99,7 +99,7 @@ export class ProjectsMain extends Component {
                                     furniture project
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/furniture-projects.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/furniture-projects.jpg")} />
                                 </div>
                             </div>
                         </li>
@@ -109,7 +109,7 @@ export class ProjectsMain extends Component {
                                     life skills
                                 </div>
                                 <div class="photo">
-                                    <img id="header-logo" src={require("./Resources/life-skills.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/life-skills.jpg")} />
                                 </div>
                             </div>
                         </li>

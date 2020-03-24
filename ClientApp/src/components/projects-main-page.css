@@ -114,42 +114,32 @@ position: fixed;
 }
 
 
+.content{  
+  font-size: 1em !important;
+  border-radius:inherit;
+  background: white !important;
+}
 
+.content-logo{
+  width:80%;
+}
 .projects{
   /* removes style sheet clashes*/
-  display: block;
-  list-style-type: disc;
-  margin-top: 1em;
-  margin-bottom: 1 em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
 
-
-
-  /* actual styling*/
-  
-  list-style-type: none;
   padding: 0;
-  
-  width: 75%;
-  margin-left: 12.5%;
-  margin-bottom: 850px;
+  margin:0;
+  flex-wrap:wrap;
 
 
-
-  
 }
 
 .project{
-  display: list-item;
-
-  
+  flex:1;
   margin-top: 15px;
-  width: 33%;
-  float: left;
   padding: 0px;
-  background-color: rgba(87, 161, 91, 0.1);    
+  background-color: transparent;    
   color: black;
  
 }
@@ -162,7 +152,6 @@ position: fixed;
 .project-box{
   background-color: white;
   box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
-  margin-right: 15px;
   border: 1px gray solid;
   border-radius: 10px;
 }
@@ -175,4 +164,9 @@ position: fixed;
 
 .project:hover{
   background-color: rgba(87, 161, 91, 0.1);    
+}
+
+
+@media (max-width: 600px){
+  
 }

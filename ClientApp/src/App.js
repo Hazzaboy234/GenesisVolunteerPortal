@@ -22,7 +22,7 @@ import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
 import {Logout} from "./components/Logout"
-
+import "./components/anims.css"
 
 export default class App extends Component {
   static displayName = App.name;
@@ -46,12 +46,14 @@ export default class App extends Component {
   }
 
   render() {
+    var LoginPage = <Login openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>
     return (
       <Layout>
         {this.state.toast}
-        <Route exact path='/' render={(props) => <Login openToast={this.openToast.bind(this)} />} hideToast={this.hideToast.bind(this)}/>
+        <Route exact path='/' render={(props) => LoginPage}/>
+        <Route exact path='/login' render={(props) => LoginPage}/>
         <Route path='/dashboard' render={(props) => <Dashboard openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
-        <Route path='/signup' component={Signup} />
+        <Route path='/signup' render={(props)=> <Signup openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/settings' component={Settings} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />
