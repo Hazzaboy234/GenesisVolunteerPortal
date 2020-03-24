@@ -199,7 +199,6 @@ export class Map extends Component {
         }
 
         var results = markerObjects.map((marker) => marker.map != null ? <Result key={marker.title} onClick={this.openWindow.bind(this)} marker={marker} /> : null)
-        //console.log(results)
 
         return (
             <div className="map-container">
