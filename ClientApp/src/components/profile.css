@@ -6,24 +6,40 @@
 img { max-width: 100%; max-height: 100%; }
 input { display: none; }
 .image-container{
-    display: flex;
-    flex-direction: column;
+    
+    
     text-align: center;
     position: relative;
     height: auto;
+    width: 100%;
 }
 .image-container:hover{
     visibility: visible;
 }
+.row {
+  width:100%;
+  display: flex;
+  margin-left: 0;
+  margin-right:0;
+}
 
+.column1 {
+  flex: 30%;
+
+  background-color: white;
+}
+.column2 {
+  flex: 3%;
+  background-color: grey;
+}
 
 .profile-image{
     border: 1px solid rgb(0 72 81);
     border-radius: 4px;
     padding: 5px;
-    width: 150px;
-    max-width: 100%;
-    height: auto;    
+    margin-left: 5%;
+    width: 30%; 
+    display:flex;
 }
 .profile-image:hover{
     opacity: 0.5;
@@ -63,8 +79,8 @@ input { display: none; }
     flex-direction: column;
     background-color: none;
     align-items: flex-start !important;
-    margin-left: 10px;
-    padding: 5px !important;
+    margin-left: 5%;
+    padding: 2% !important;
 }
 .details-ul:hover{
     display: flex;
@@ -82,6 +98,19 @@ input { display: none; }
     margin-left: 20px !important;
     text-align: left;
     align-items: flex-start !important;
+}
+
+.roles{
+  background-color: rgb(68, 183, 73);;
+  border-radius: 25px;
+  color: black !important;
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  padding: 5px !important;
+  margin: 20px !important;
+  text-align: left;
+  align-items: flex-start !important;
 }
 
 .details-element:hover{
@@ -107,14 +136,6 @@ input { display: none; }
 
 /* CALENDAR STARTS HERE */
 
-.calendar-container{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1%;
-}
 
 ul {
   /* removes style sheet clashes*/
@@ -127,141 +148,10 @@ ul {
   padding-left: 40px;
   
   
-  list-style-type: none;} 
-body {font-family: Verdana, sans-serif;}
-
-/* Month header */
-.month {
-  width: 100%;
-  background-color:  rgb(68, 183, 73);
-  text-align: center;
-}
-
-/* Month list */
-.month ul {
-/* removes style sheet clashes*/
-display: block;
-list-style-type: none;
-margin-top: 1em;
-margin-bottom: 1 em;
-margin-left: 0;
-margin-right: 0;
-padding-left: 40px;
-
-
-
-
-
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  display: list-item;
-  width: auto;
-  padding: 0px;
-  
-
-  
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-/* Previous button inside month header */
-.month .prev {
-  display: list-item;
-
-  float: left;
-  padding-top: 10px;
-}
-
-/* Next button */
-.month .next {
-  display: list-item;
-
-  float: right;
-  padding-top: 10px;
-}
-
-/* Weekdays (Mon-Sun) */
-.weekdays {
-/* removes style sheet clashes*/
-display: block;
-list-style-type: disc;
-margin-top: 1em;
-margin-bottom: 1 em;
-margin-left: 0;
-margin-right: 0;
-padding-left: 40px;
-
-
-
-  margin: 0;
-  padding: 10px 0;
-  background-color:#ddd;
-  width: 100%
-}
-
-.weekdays li {
-  display: list-item;
-  background-color:#ddd;
-
-  display: inline-block;
-  width: 13%;
-  color: #666;
-  text-align: center;
-}
-
-/* Days (1-31) */
-.days {
-/* removes style sheet clashes*/
-display: block;
-list-style-type: disc;
-margin-top: 1em;
-margin-bottom: 1 em;
-margin-left: 0;
-margin-right: 0;
-padding-left: 40px;
-
-
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-  width: 100%;
-}
-
-.days li {
-  background: #eee;
-
   list-style-type: none;
-  display: inline-block;
-  width: 13%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
+} 
+
+body {
+  font-family: Verdana, sans-serif;
 }
 
-/* Highlight the "current" day */
-.days li .active {
-  padding: 5px;
-  background: rgb(68, 183, 73);
-  color: white !important
-}
-
-.days li:hover{
-  color: #777;
-  background-color: #eee
-}
-
-.weekdays li:hover{
-  color: #666;
-  background-color: #ddd
-}
-
-.month ul li:hover{
-  background: rgb(68, 183, 73);
-  color: white;
-}

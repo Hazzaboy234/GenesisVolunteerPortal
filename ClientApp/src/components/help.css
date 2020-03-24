@@ -1,11 +1,38 @@
 .header-container {
     background-color: white;
-    color: green;
+    color:  rgb(68, 183, 73);
     width:100%;
     padding-left: 2%;
     margin-left: 2%;
+    display: flex;
    
 }
+
+
+h1{
+  border-top-style: groove;
+  border-bottom-style: groove;
+  border-width: 8px;
+  text-size-adjust: 2.5em;
+  background-color: rgb(231, 231, 231);
+  color:rgb(0, 72, 81);
+  padding-left: 1%;
+}
+
+h3{
+  font-size: 1.8em;
+  border:  rgb(68, 183, 73);
+  border-top-style: groove;
+  border-bottom-style: groove;
+  border-width: 4px;
+  padding-left: 1%; 
+  text-align: center;
+  background-color: rgb(0, 72, 81);
+  color: white;
+
+}
+
+
 
 h4 {
     display: block;
@@ -15,44 +42,68 @@ h4 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color:black;
+    color:rgb(0, 72, 81);
     border-bottom: double;
-    border-color: black;
+    border-color:rgb(0, 72, 81);
     border-width: 2px;
-    background-color: rgb(231, 231, 231);
+    background-color:rgb(68, 183, 73);
     padding-left: 1%;
+    text-align: center;
+
   }
 h5 {
     display: block;
-    font-size: .8em;
+    font-size: 1em;
     margin-top: 0.3em;
     margin-bottom: 1.9em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
-    color:green;
+    color: rgb(0, 72, 81);
     padding-left: 1%;
   }
 
-h3{
-    font-size: 1.8em;
-    border: green;
-    border-top-style: groove;
-    border-bottom-style: groove;
-    border-width: 4px;
-    padding-left: 1%;
-    
+
+.title {
+ 
+  text-align: center;
+  background-color: rgb(68, 183, 73);
+  color: white;
+  font-size: 4em;
+  border-color: white;
+  border-top-color: white;
+  border-top-style: solid;
+  border-top-width: 15px;
+  }
+
+.row {
+  width:100%;
+  display: flex;
+  margin-left: 0;
+  margin-right:0;
 }
 
-h1{
-    border-top-style: groove;
-    border-bottom-style: groove;
-    border-width: 8px;
-    text-size-adjust: 2.5em;
-    background-color: rgb(231, 231, 231);
-    color:black;
-    padding-left: 1%;
+.column1 {
+  flex: 45%;
 
+  background-color: white;
+}
+.column2 {
+  flex: 10%;
+  background-color: white;
+}
+
+@media (max-width: 600px){
+  .column2 {
+    flex: 0%;
+    background-color: white;
+  }
+
+  .column1 {
+    flex: 100%;
+  
+    background-color: white;
+  }
 }
  
 

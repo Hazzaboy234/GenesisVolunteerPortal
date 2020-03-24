@@ -22,9 +22,6 @@ export class Profile extends Component {
       }
       
 
-
-
-
     render() {
         return (
             <div>
@@ -35,50 +32,70 @@ export class Profile extends Component {
                 <NavigationBar />
                 <div className="main-container">
 
-                    <div className="profile-container">
 
-                        <div className="image-container">
+
+                <div class="row">
+                    <div class="column1">
+                        
 
                             <br></br><br></br><br></br>
                             <img className="profile-image" src={require("./Resources/ProfilePicture.jpg")} />
 
-                            <label for="image-picker">
-                                <img id="image-preview"className="profile-image"  alt="Change Image" />
-                            </label>
+                            
+                            <img id="image-preview"className="profile-image"  alt="Change Image" />
+                            
                             <input id="image-picker" type="file" accept="image/*" />
-
-                           
-                        </div>
-
+                      
 
                         <div className="details-container">
                             <ul className="details-ul">
                                 <br></br><br></br>
-                                <li className="details-label">Name</li>
-                                <li className="details-element">Clive Alive</li>
+                                <li className="details-label">First Name</li>
+                                <li className="details-element">Clive</li>
+                                <li className="details-label">Surname</li>
+                                <li className="details-element">Alive</li>
                                 <li className="details-label">Email</li>
                                 <li className="details-element">clive.alive@gmail.com</li>
-                                <li className="details-label">Current Roles</li>
-                                <li className="details-element">Gardener</li>
-                                <li className="details-element">Furniture Shop Assistant</li>
-                                <li className="details-label">Applications</li>
-                                <li className="details-element">Soup Runner</li>
+                                <li className="details-label">DOB</li>
+                                <li className="details-element">6/9/1950</li>
+                                
                             </ul>
                         </div>
                     </div>
+                
+                    
+                    <div class="column2">
 
-                    <div className="calendar-container">
-                        <br></br><br></br>
-                        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%2344b749&amp;ctz=Europe%2FLondon&amp;src=OG5jcm5iaW01NTVwaGx0dXRyODdhMHJnc2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;mode=MONTH&amp;showPrint=0&amp;showTabs=1&amp;showTz=0&amp;showCalendars=0&amp;showNav=1&amp;showTitle=0&amp;showDate=1"
-                            style={{ borderWidth: 0 }}
-                            width="800" height="600" frameborder="0"
-                            scrolling="no"></iframe>
+                    </div>
+                       
 
+
+                    <div class="column1">
+                   
+                    <li className="details-label">Current Roles</li>
+                        <li className="roles">Standard Volunteer</li>
+                        <li className="roles">Gardener</li>
+                        <li className="roles">Basic Skills Teacher</li>
+                        <li className="roles">Furniture Shop Assistant</li>
+                        <li className="roles">Food Bank Host</li>
+                        <li className="roles">Soup Run Leader</li>
+                        <li className="roles">Donations Manager</li>
+                       
+
+                    </div>
+                    <div class="column2">
+
+</div>
+                    <div class="column1">
+        
+                        <li className="details-label">Applications</li>
+                        <li className="details-element">Soup Runner</li>
+                    
                     </div>
 
 
                 </div>
-
+</div>
 
 
                 <Footer />

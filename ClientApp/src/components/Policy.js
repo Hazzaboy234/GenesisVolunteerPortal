@@ -25,7 +25,7 @@ export class Policy extends Component {
                             <p>Want to get involved with volunteering at Genesis trust but don't know what we do or how to help?<br /><br />
                     Take a look at our Volunteer Handbook below to browse some of our activities and learn what we as a charity are about, and how you as an individual can come together as part of a greater team, and help us achieve something great!
                 </p>
-                            <img alt="Genesis Trust" src={require("./Resources/Volunteer-Hands2.jpg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/Volunteer-Hands2.jpg")} width="50%" />
 
 
                             <ul>
@@ -39,7 +39,7 @@ export class Policy extends Component {
                             <p>Thinking of becoming a volunteer?<br /><br />
                 Have a browse through our volunteer policy to see how Genesis Trust will support you as individuals as a volunteer.
                 </p>
-                            <img alt="Genesis Trust" src={require("./Resources/volunteer-policy.png")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/volunteer-policy.png")} width="50%" />
 
 
                             <ul>
@@ -55,7 +55,7 @@ export class Policy extends Component {
                     Below is a checklist that we will use to assess your ability and help you in your journey to becoming a volunteer with Genesis Trust.
 
                 </p>
-                            <img alt="Genesis Trust" src={require("./Resources/AdobeStock_190479583-e1567431988792.jpeg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/AdobeStock_190479583-e1567431988792.jpeg")} width="50%" />
 
 
 
@@ -75,7 +75,7 @@ export class Policy extends Component {
                     <br /><br />Have a look through the health and safety policy and see if you are already using good practices!
                 </p>
 
-                            <img alt="Genesis Trust" src={require("./Resources/Webp.net-resizeimage-5-1200x627.jpg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/Webp.net-resizeimage-5-1200x627.jpg")} width="50%" />
 
 
 
@@ -93,7 +93,7 @@ export class Policy extends Component {
                 It is important to us that we NEVER discriminate against anyone, so to ensure this is taken seriously, we adhere to out Equal Opportunities Policy
                 </p>
 
-                            <img alt="Genesis Trust" src={require("./Resources/20180409PHT01212_original.jpg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/20180409PHT01212_original.jpg")} width="50%" />
 
 
 
@@ -110,7 +110,7 @@ export class Policy extends Component {
                             <p>GenesisTrust is committed to minimising the environmental impact of our actions, and to upholding ethical standards. Read a little bit about how we do this below
 
                 </p>
-                            <img alt="Genesis Trust" src={require("./Resources/Global-Environmental-Change-Why-We-Need-International-Relations-Experts-737x415.jpg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/Global-Environmental-Change-Why-We-Need-International-Relations-Experts-737x415.jpg")} width="50%" />
 
 
                             <ul>
@@ -125,7 +125,7 @@ export class Policy extends Component {
                                 Adults are our number one group to aid when it comes to Genesis Trust. <br /><br />
                     We like to ensure all adults feel safe when we are dealing with them, and do everything possible to ensure our employees and volunteers are kept safe.<br /><br /> Read about our Safeguarding policy below.
                 </p>
-                            <img alt="Genesis Trust" src={require("./Resources/safeguarding_triratna.jpg")} width="400px" />
+                            <img alt="Genesis Trust" src={require("./Resources/safeguarding_triratna.jpg")} width="50%" />
 
                             <ul>
                                 <a href="http://genesistrust.org.uk/wp-content/uploads/2019/10/Policy-for-Safeguarding-Adults-August-2019.pdf">Policy for Safeguarding Adults</a><br />
@@ -135,7 +135,7 @@ export class Policy extends Component {
                             <div className="policy-type2">
                                 <h2>Data Policy</h2>
                                 <p>As part of our job it is important we take details from volunteers and clients to ensure we can aid in the most appropriate way, however we pride ourselves on our data protection. <br /><br /> Take a look at our data policy to see for yourselves what we do to keep your data safe!</p>
-                                <img alt="Genesis Trust" src={require("./Resources/data-analytics-picture--global-en-.jpg")} width="800px" />
+                                <img alt="Genesis Trust" src={require("./Resources/data-analytics-picture--global-en-.jpg")} width="50%" />
 
 
 
@@ -149,7 +149,7 @@ export class Policy extends Component {
                                 <h2>Complaints Procedure</h2>
                                 <p>Here at Genesis Trust we take any complaints very seriosuly, so if you have any complaints then please see our complaints policy. <br /><br />If you require further information, please do not hesitate to contact us at genesis trust using the contact tab below.</p>
 
-                                <img alt="Genesis Trust" src={require("./Resources/complaint-box-1200xx1500-844-0-81.jpg")} width="400px" />
+                                <img alt="Genesis Trust" src={require("./Resources/complaint-box-1200xx1500-844-0-81.jpg")} width="50%" />
 
 
                                 <ul>
