@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
 export class Signup extends Component {
+    constructor(props){
+        super(props);
+        this.toast = this.toast.bind(this);
+        
+    }
     validate(){        
         var data = {}
         data["FirstName"] = document.getElementById("first-name-input").value;
@@ -22,9 +27,13 @@ export class Signup extends Component {
         if(data["Password"]!=document.getElementById("cpassword-input").value) return "passwords-no-match"
         return true;
     }
+    toast(message){
+        var m = "The information you supplied in the 'X' field isn't valid."
+        this.props.openToast(m.replace("X",message),"negative");
+    }
     post(){
         var val = this.validate()
-        if(val!==true) {console.log(val);return;}
+        if(val!==true) {this.toast(val);return;}
         var data = {}
         data["FirstName"] = document.getElementById("first-name-input").value;
         data["LastName"] = document.getElementById("second-name-input").value;
