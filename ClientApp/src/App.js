@@ -22,7 +22,7 @@ import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
 import {Logout} from "./components/Logout"
-
+import "./components/anims.css"
 
 export default class App extends Component {
   static displayName = App.name;
