@@ -1,8 +1,4 @@
-.profile-container{
-    display: flex;
-    flex-direction: row;
-    margin:20px;
-}
+
 img { max-width: 100%; max-height: 100%; }
 input { display: none; }
 .image-container{
@@ -30,7 +26,7 @@ input { display: none; }
 }
 .column2 {
   flex: 3%;
-  background-color: grey;
+  background-color: rgb(231, 231, 231);
 }
 
 .profile-image{
@@ -38,30 +34,12 @@ input { display: none; }
     border-radius: 4px;
     padding: 5px;
     margin-left: 5%;
-    width: 30%; 
+    width: 50%; 
     display:flex;
+    align-content: center;
+    margin-left: 25%;
+    color:rgb(0, 72, 81);
 }
-.profile-image:hover{
-    opacity: 0.5;
-    visibility: visible;
-    cursor: pointer;
-
-}
-.edit-image {
-    font-size: 18px;
-    position: relative;
-    /*top: 50%;
-    left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*visibility: hidden;*/
-    text-align: center;
-    justify-content: center;
-}
-.edit-image:hover{
-    visibility: visible;
-    cursor: pointer;
-}
-
 
 
 .details-container{
@@ -70,24 +48,8 @@ input { display: none; }
     flex-direction: column;
     text-align: left;
 }
-.details-container:hover{
-    background-color: none;
-    cursor: default !important;
-}
-.details-ul{
-    display: flex;
-    flex-direction: column;
-    background-color: none;
-    align-items: flex-start !important;
-    margin-left: 5%;
-    padding: 2% !important;
-}
-.details-ul:hover{
-    display: flex;
-    flex-direction: column;
-    background-color: none;
-    cursor: default !important;
-}
+
+
 .details-element{
     background-color: initial !important;
     color: black !important;
@@ -101,21 +63,51 @@ input { display: none; }
 }
 
 .roles{
-  background-color: rgb(68, 183, 73);;
-  border-radius: 25px;
-  color: black !important;
-  display: flex;
-  list-style-type: none;
-  flex-direction: column;
-  padding: 5px !important;
-  margin: 20px !important;
-  text-align: left;
-  align-items: flex-start !important;
+    font-weight: bold;
+    background-color: rgb(68, 183, 73);;
+    border-radius: 25px;
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    margin: 20px !important;
+    text-align: left;
+    align-items: flex-start !important;
+    
+
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-.details-element:hover{
-    cursor: default !important;
+progress {
+    margin-left: 15% !important;
+    width:70%;
 }
+
+.text{
+    color:rgb(0, 72, 81);
+    margin-left:15%;
+}
+
+.applications{
+    font-weight: bold;
+    background-color: rgb(68, 183, 73);
+    border-radius: 25px;
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    margin: 20px !important;
+    text-align: left;
+    align-items: flex-start !important;
+
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+
 
 .details-label{
     font-weight: bold;
@@ -127,31 +119,54 @@ input { display: none; }
     text-align: left;
     align-items: flex-start !important;
     padding: 5px !important;
+    padding-left:5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: 25px;
+}
+.details-big{
+    font-weight: bold;
+    background-color:  rgb(68, 183, 73);
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.details-small{
+    background-color: initial !important;
+    color: black !important;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-.details-label:hover{
-    cursor: default !important;
+@media(max-width: 600px){
+    
+    .column1 {
+        flex: 100%;
+    
+        background-color: white;
+    }
+    .column2 {
+        flex: 0%;
+        background-color: rgb(231, 231, 231);
+    }
 }
-
-
-/* CALENDAR STARTS HERE */
-
-
-ul {
-  /* removes style sheet clashes*/
-  display: block;
-  list-style-type: disc;
-  margin-top: 1em;
-  margin-bottom: 1 em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
   
-  
-  list-style-type: none;
-} 
-
-body {
-  font-family: Verdana, sans-serif;
-}
 

@@ -9,17 +9,7 @@ export class Profile extends Component {
     }
 
   
-    readURL(input) {
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
-      
-          reader.onload = function(e) {
-            ('#image-preview').attr('src', e.target.result);
-          }
-      
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
+   
       
 
     render() {
@@ -40,26 +30,21 @@ export class Profile extends Component {
 
                             <br></br><br></br><br></br>
                             <img className="profile-image" src={require("./Resources/ProfilePicture.jpg")} />
-
-                            
-                            <img id="image-preview"className="profile-image"  alt="Change Image" />
-                            
-                            <input id="image-picker" type="file" accept="image/*" />
                       
 
                         <div className="details-container">
-                            <ul className="details-ul">
+                            
                                 <br></br><br></br>
-                                <li className="details-label">First Name</li>
-                                <li className="details-element">Clive</li>
-                                <li className="details-label">Surname</li>
-                                <li className="details-element">Alive</li>
-                                <li className="details-label">Email</li>
-                                <li className="details-element">clive.alive@gmail.com</li>
-                                <li className="details-label">DOB</li>
-                                <li className="details-element">6/9/1950</li>
+                                <li className="details-big">First Name</li>
+                                <li className="details-small">Clive</li>
+                                <li className="details-big">Surname</li>
+                                <li className="details-small">Alive</li>
+                                <li className="details-big">Email</li>
+                                <li className="details-small">clive.alive@gmail.com</li>
+                                <li className="details-big">DOB</li>
+                                <li className="details-small">6/9/1950</li>
                                 
-                            </ul>
+                            
                         </div>
                     </div>
                 
@@ -73,13 +58,12 @@ export class Profile extends Component {
                     <div class="column1">
                    
                     <li className="details-label">Current Roles</li>
-                        <li className="roles">Standard Volunteer</li>
-                        <li className="roles">Gardener</li>
-                        <li className="roles">Basic Skills Teacher</li>
-                        <li className="roles">Furniture Shop Assistant</li>
-                        <li className="roles">Food Bank Host</li>
-                        <li className="roles">Soup Run Leader</li>
-                        <li className="roles">Donations Manager</li>
+                        <li className="roles">Standard Volunteer</li>       <div class="text">Progress</div>        <progress value = "65" max = "200"/>
+                        <li className="roles">Gardener</li>                 <div class="text">Progress</div>        <progress value = "41" max = "200"/>
+                        <li className="roles">Basic Skills Teacher</li>     <div class="text">Progress</div>        <progress value = "170" max = "200"/>
+                        <li className="roles">Furniture Shop Assistant</li> <div class="text">Progress</div>        <progress value = "49" max = "200"/>
+                        <li className="roles">Food Bank Host</li>           <div class="text">Progress</div>        <progress value = "65" max = "168"/>
+                        <li className="roles">Donations Manager</li>        <div class="text">Progress</div>        <progress value = "190" max = "120"/>
                        
 
                     </div>
@@ -88,8 +72,13 @@ export class Profile extends Component {
 </div>
                     <div class="column1">
         
-                        <li className="details-label">Applications</li>
-                        <li className="details-element">Soup Runner</li>
+                        <li className="details-label">Applications</li>                
+                        <li className="applications">Young Carer</li>                   <div class="text">Progress</div>        <progress value = "168" max = "200"/>
+                        <li className="applications">Health Care Advisor</li>           <div class="text">Progress</div>        <progress value = "130" max = "200"/>
+                        <li className="applications">First Aider</li>                   <div class="text">Progress</div>        <progress value = "68" max = "200"/>
+                        <li className="applications">Financial Support Worker</li>      <div class="text">Progress</div>        <progress value = "97" max = "200"/>
+                        <li className="applications">Care Worker</li>                   <div class="text">Progress</div>        <progress value = "150" max = "200"/>
+                        <li className="applications">Hair Dresser</li>                  <div class="text">Progress</div>        <progress value = "10" max = "200"/>
                     
                     </div>
 
