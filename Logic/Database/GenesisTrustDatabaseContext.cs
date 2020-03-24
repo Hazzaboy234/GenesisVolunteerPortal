@@ -1,8 +1,9 @@
-﻿
+﻿using System;
 using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace GenesisVolunteerPortal.Logic.Database
+namespace GenesisVolunteerPortal
 {
     public partial class GenesisTrustDatabaseContext : DbContext
     {
@@ -10,10 +11,13 @@ namespace GenesisVolunteerPortal.Logic.Database
         {
         }
 
-        public GenesisTrustDatabaseContext(DbContextOptions<GenesisTrustDatabaseContext> options) : base(options)
+        public GenesisTrustDatabaseContext(DbContextOptions<GenesisTrustDatabaseContext> options)
+            : base(options)
         {
         }
 
+        public virtual DbSet<Events> Events { get; set; }
+        public virtual DbSet<EventsRoles> EventsRoles { get; set; }
         public virtual DbSet<Persons> Persons { get; set; }
         public virtual DbSet<ProjectDate> ProjectDate { get; set; }
         public virtual DbSet<ProjectMember> ProjectMember { get; set; }
@@ -21,20 +25,44 @@ namespace GenesisVolunteerPortal.Logic.Database
         public virtual DbSet<RoleTimes> RoleTimes { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Data Source=tcp:86.8.241.28,24169;Initial Catalog=GenesisTrustDatabase;User ID=BackendUser; Password=ChickenPoppersStarbucks");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Events>(entity =>
+            {
+                entity.HasKey(e => e.EventId);
+
+                entity.Property(e => e.Description).IsRequired();
+
+                entity.Property(e => e.Title).IsRequired();
+            });
+
+            modelBuilder.Entity<EventsRoles>(entity =>
+            {
+                entity.HasKey(e => new { e.EventId, e.RoleId });
+            });
+
             modelBuilder.Entity<Persons>(entity =>
             {
                 entity.HasKey(e => e.PersonId);
 
-                entity.Property(e => e.PersonId)
-                    .HasColumnName("PersonID")
-                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.PersonId).HasColumnName("PersonID");
 
-                entity.Property(e => e.AddressLine1);
+                entity.Property(e => e.AddressLine1)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-
-                entity.Property(e => e.AddressLine2);
+                entity.Property(e => e.AddressLine2)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.City)
                     .HasMaxLength(20)
@@ -51,27 +79,35 @@ namespace GenesisVolunteerPortal.Logic.Database
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Gender);
+                entity.Property(e => e.Gender)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.HomeNumber);
+                entity.Property(e => e.HomeNumber)
+                    .HasMaxLength(13)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.MedicalInfo);
+                entity.Property(e => e.MedicalInfo).HasMaxLength(50);
 
-                entity.Property(e => e.MobileNumber);
+                entity.Property(e => e.MobileNumber)
+                    .HasMaxLength(13)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.NationalInsurance);
+                entity.Property(e => e.NationalInsurance)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.PasswordHash).IsRequired();
 
-                entity.Property(e => e.PasswordSalt).IsRequired();
+                entity.Property(e => e.Postcode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Postcode);
-
-                entity.Property(e => e.ProfileImage);
+                entity.Property(e => e.ProfileImage).IsUnicode(false);
 
                 entity.Property(e => e.Role)
                     .IsRequired()

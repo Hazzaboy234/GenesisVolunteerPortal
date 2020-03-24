@@ -1,4 +1,7 @@
-﻿namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
+﻿using System;
+using System.Collections.Generic;
+
+namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
 {
     public partial class Roles
     {

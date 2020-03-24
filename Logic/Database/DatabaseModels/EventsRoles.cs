@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
 {
-    public partial class ProjectDate
+    public partial class EventsRoles
     {
-        public int ProjectId { get; set; }
-        public DateTime Date { get; set; }
+        public int EventId { get; set; }
+        public int RoleId { get; set; }
     }
 }
