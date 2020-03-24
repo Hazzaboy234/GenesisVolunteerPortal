@@ -116,7 +116,8 @@ position: fixed;
 
 .content{  
   font-size: 1em !important;
-  background: white;
+  border-radius:inherit;
+  background: white !important;
 }
 
 .content-logo{
@@ -125,6 +126,7 @@ position: fixed;
 .projects{
   /* removes style sheet clashes*/
   display: flex;
+  flex-direction: column;
 
   padding: 0;
   margin:0;
@@ -137,7 +139,7 @@ position: fixed;
   flex:1;
   margin-top: 15px;
   padding: 0px;
-  background-color: rgba(87, 161, 91, 0.1);    
+  background-color: transparent;    
   color: black;
  
 }

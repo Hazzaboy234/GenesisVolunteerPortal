@@ -46,10 +46,12 @@ export default class App extends Component {
   }
 
   render() {
+    var LoginPage = <Login openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>
     return (
       <Layout>
         {this.state.toast}
-        <Route exact path='/' render={(props) => <Login openToast={this.openToast.bind(this)} />} hideToast={this.hideToast.bind(this)}/>
+        <Route exact path='/' render={(props) => LoginPage}/>
+        <Route exact path='/login' render={(props) => LoginPage}/>
         <Route path='/dashboard' render={(props) => <Dashboard openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/signup' render={(props)=> <Signup openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/settings' component={Settings} />
