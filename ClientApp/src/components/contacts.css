@@ -8,6 +8,7 @@
 }
 
 .title-container {
+  background-color:white;
     align-items: center;
     color: rgb(0, 72, 81);
     font-size: 20pt;
@@ -27,6 +28,7 @@
 
   .phone-container {
     
+    background-color:white;
     margin:2%;
     border-top:5px solid rgb(68, 183, 73);
     width:33%;
@@ -35,6 +37,7 @@
   }
 
   .address-container {
+    background-color: white;
     margin:2%;
     border-top:5px solid rgb(68, 183, 73);
     width:33%;
@@ -54,6 +57,7 @@
     color: rgb(0, 72, 81);
     margin: 0%;
     display: inline;
+    width: 96%;
   }
   .email-container {
    

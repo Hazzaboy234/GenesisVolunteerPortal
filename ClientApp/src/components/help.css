@@ -29,6 +29,8 @@ h3{
   text-align: center;
   background-color: rgb(0, 72, 81);
   color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
 
 }
 
@@ -37,10 +39,7 @@ h3{
 h4 {
     display: block;
     font-size: 1.40em;
-    margin-top: 0em;
     margin-bottom: 1.0em;
-    margin-left: 0;
-    margin-right: 0;
     font-weight: bold;
     color:rgb(0, 72, 81);
     border-bottom: double;
@@ -49,6 +48,8 @@ h4 {
     background-color:rgb(68, 183, 73);
     padding-left: 1%;
     text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
   }
 h5 {
@@ -56,8 +57,6 @@ h5 {
     font-size: 1em;
     margin-top: 0.3em;
     margin-bottom: 1.9em;
-    margin-left: 0;
-    margin-right: 0;
     font-weight: bold;
     color: rgb(0, 72, 81);
     padding-left: 1%;
