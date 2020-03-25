@@ -1,9 +1,27 @@
 import React, { Component } from "react";
 import { Dropdown } from "./Dropdown";
+import { DropDownMenu } from "./DropDownMenu";
 import { Footer } from "./Footer";
 import { NavigationBar } from "./NavigationBar";
 
 export class Roles extends Component {
+  constructor(props) {
+    super(props);
+    var date1 = new Date();
+    date1.setMonth(7);
+    var date2 = new Date();
+    date2.setMonth(5)
+    var date3 = new Date();
+    date3.setMonth(0)
+    this.state = {
+      values: [
+        { title: "b", date: new Date() },
+        { title: "a", date: date1 },
+        { title: "c", date: date2 },
+        { title: "d", date: date3 }
+      ]
+    }
+  }
   componentDidMount() {
     document.title = "Genesis Trust: Roles";
   }
@@ -15,12 +33,12 @@ export class Roles extends Component {
   dropIt() {
     document.getElementById('distance-choice').classList.toggle("show");
   }
-  
+
   // Does not work yet
   chooseOption(butt, val) {
     document.getElementById(butt).value = val;
   }
-  
+
   // Close the dropdown menu if the user clicks outside of it
   // window.onclick = function(event) {
   //   if (!event.target.matches('.dropbtn')) {
@@ -34,10 +52,10 @@ export class Roles extends Component {
   //     }
   //   }
   // }
-  
+
   // var coll = document.getElementsByClassName("collapsible");
   // var i;
-  
+
   // for (i = 0; i < coll.length; i++) {
   //   coll[i].addEventListener("click", function() {
   //     this.classList.toggle("active");
@@ -49,13 +67,26 @@ export class Roles extends Component {
   //     }
   //   });
   // }
-  
 
+  //sorts this.state.values by one of its fields
+  sort(field) {
+    console.log(field);
+    var func = (a, b) => {
+      if (a[field] < b[field]) return -1
+      else if (a[field == b[field]]) return 0
+      else return 1
+    }
+    this.setState({ values: [...this.state.values].sort(func) })
+  }
   render() {
     return (
       <div>
         <link rel="stylesheet" href={require("./Roles.css")} />
-        <NavigationBar active={1}/>
+        <NavigationBar active={1} />
+        <DropDownMenu sort={this.sort.bind(this)} />
+        <ul style={{display:"flex",flexDirection:"column"}}>
+          {this.state.values.map((value) => <li>{value.title} + "|" + {value.date.toDateString()}</li>)}
+        </ul>
         <div className="big-ol-container">
           <div className="filter-container">
             <div className="dates-container, filter-holder">
@@ -67,176 +98,176 @@ export class Roles extends Component {
 
             {/* Distance Filter */}
             <div class="hold">
-            <div className="filter-holder">
-              <div className="dropdown">
-                <button  onclick="dropit('distance-choice')"  id="distance-butt"   className="dropbtn">
-                  Distance
+              <div className="filter-holder">
+                <div className="dropdown">
+                  <button onclick="dropit('distance-choice')" id="distance-butt" className="dropbtn">
+                    Distance
                 </button>
 
-                <div id="distance-choice" className="dropdown-content">
-                  <a href="#" onclick="chooseOption('distance-butt', '0-2')">
-                    0-2 Miles
+                  <div id="distance-choice" className="dropdown-content">
+                    <a href="#" onclick="chooseOption('distance-butt', '0-2')">
+                      0-2 Miles
                   </a>
-                  <a href="#" onclick="chooseOption('distance-butt', '3-5')">
-                    3-5 Miles
+                    <a href="#" onclick="chooseOption('distance-butt', '3-5')">
+                      3-5 Miles
                   </a>
-                  <a href="#" onclick="chooseOption('distance-butt', '6-10')">
-                    6-10 Miles
+                    <a href="#" onclick="chooseOption('distance-butt', '6-10')">
+                      6-10 Miles
                   </a>
-                  <a href="#" onclick="chooseOption('distance-butt', '11+')">
-                    11+ Miles
+                    <a href="#" onclick="chooseOption('distance-butt', '11+')">
+                      11+ Miles
                   </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Time Filter */}
-            <div className="filter-holder">
-              <div className="dropdown">
-                <button
-                  onclick="dropIt('Time')"
-                  id="time-butt"
-                  className="dropbtn"
-                >
-                  Time
+              {/* Time Filter */}
+              <div className="filter-holder">
+                <div className="dropdown">
+                  <button
+                    onclick="dropIt('Time')"
+                    id="time-butt"
+                    className="dropbtn"
+                  >
+                    Time
                 </button>
-                <div id="Time" className="dropdown-content">
-                  <a href="#" onclick="chooseOption('time-butt', 'Morning')">
-                    Morning
+                  <div id="Time" className="dropdown-content">
+                    <a href="#" onclick="chooseOption('time-butt', 'Morning')">
+                      Morning
                   </a>
-                  <a href="#" onclick="chooseOption('time-butt', 'Afternoon')">
-                    Afternoon
+                    <a href="#" onclick="chooseOption('time-butt', 'Afternoon')">
+                      Afternoon
                   </a>
-                  <a href="#" onclick="chooseOption('time-butt', 'Evening')">
-                    Evening
+                    <a href="#" onclick="chooseOption('time-butt', 'Evening')">
+                      Evening
                   </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Duration Filter */}
-            <div className="filter-holder">
-              <div className="dropdown">
-                <button
-                  onclick="dropIt('Duration')"
-                  id="duration-butt"
-                  className="dropbtn"
-                >
-                  Duration
-                </button>
-                <div id="Duration" className="dropdown-content">
-                  <a href="#" onclick="chooseOption('duration-butt', '1-4')">
-                    1-4 Hours
-                  </a>
-                  <a href="#" onclick="chooseOption('duration-butt', '1 Day')">
-                    1 Day
-                  </a>
-                  <a href="#" onclick="chooseOption('duration-butt', '1 Week')">
-                    1 Week
-                  </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('duration-butt', 'Ongoing')"
+              {/* Duration Filter */}
+              <div className="filter-holder">
+                <div className="dropdown">
+                  <button
+                    onclick="dropIt('Duration')"
+                    id="duration-butt"
+                    className="dropbtn"
                   >
-                    Ongoing
+                    Duration
+                </button>
+                  <div id="Duration" className="dropdown-content">
+                    <a href="#" onclick="chooseOption('duration-butt', '1-4')">
+                      1-4 Hours
                   </a>
+                    <a href="#" onclick="chooseOption('duration-butt', '1 Day')">
+                      1 Day
+                  </a>
+                    <a href="#" onclick="chooseOption('duration-butt', '1 Week')">
+                      1 Week
+                  </a>
+                    <a
+                      href="#"
+                      onclick="chooseOption('duration-butt', 'Ongoing')"
+                    >
+                      Ongoing
+                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="filter-holder">
-              <div className="dropdown">
-                <button
-                  onclick="dropIt('Projects')"
-                  id="projects-butt"
-                  className="dropbtn"
-                >
-                  Projects
+              <div className="filter-holder">
+                <div className="dropdown">
+                  <button
+                    onclick="dropIt('Projects')"
+                    id="projects-butt"
+                    className="dropbtn"
+                  >
+                    Projects
                 </button>
-                <div id="Projects" className="dropdown-content">
-                  <a
-                    href="#"
-                    onclick="chooseOption('projects-butt', 'Furniture Project')"
-                  >
-                    Furniture project
+                  <div id="Projects" className="dropdown-content">
+                    <a
+                      href="#"
+                      onclick="chooseOption('projects-butt', 'Furniture Project')"
+                    >
+                      Furniture project
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('projects-butt', 'Family matters')"
-                  >
-                    Family matters
+                    <a
+                      href="#"
+                      onclick="chooseOption('projects-butt', 'Family matters')"
+                    >
+                      Family matters
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('projects-butt', 'Life Skills')"
-                  >
-                    Life skills
+                    <a
+                      href="#"
+                      onclick="chooseOption('projects-butt', 'Life Skills')"
+                    >
+                      Life skills
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('projects-butt', 'Home for Good')"
-                  >
-                    Home for Good
+                    <a
+                      href="#"
+                      onclick="chooseOption('projects-butt', 'Home for Good')"
+                    >
+                      Home for Good
                   </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="filter-holder">
-              <div className="dropdown">
-                <button
-                  onclick="dropIt('Availability')"
-                  id="availability-butt"
-                  className="dropbtn"
-                >
-                  Duration
+              <div className="filter-holder">
+                <div className="dropdown">
+                  <button
+                    onclick="dropIt('Availability')"
+                    id="availability-butt"
+                    className="dropbtn"
+                  >
+                    Duration
                 </button>
-                <div id="Availability" className="dropdown-content">
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Monday')"
-                  >
-                    Monday
+                  <div id="Availability" className="dropdown-content">
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Monday')"
+                    >
+                      Monday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Tuesday')"
-                  >
-                    Tuesday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Tuesday')"
+                    >
+                      Tuesday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Wednesday')"
-                  >
-                    Wednesday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Wednesday')"
+                    >
+                      Wednesday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Thursday')"
-                  >
-                    Thursday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Thursday')"
+                    >
+                      Thursday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Friday')"
-                  >
-                    Friday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Friday')"
+                    >
+                      Friday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Saturday')"
-                  >
-                    Saturday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Saturday')"
+                    >
+                      Saturday
                   </a>
-                  <a
-                    href="#"
-                    onclick="chooseOption('availability-butt', 'Sunday')"
-                  >
-                    Sunday
+                    <a
+                      href="#"
+                      onclick="chooseOption('availability-butt', 'Sunday')"
+                    >
+                      Sunday
                   </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
             </div>
             <div className="potential-roles">
@@ -271,8 +302,8 @@ export class Roles extends Component {
                     But after a while you learn to ignore the names people call you
                     <br />
                    and just trust who you are
-                  
-                   
+
+
                   </p>
                   <button className="apply-button">Apply</button>
                 </div>
@@ -281,20 +312,20 @@ export class Roles extends Component {
                 </button>
                 <div className="content">
                   <p>
-                  I took a shower washing every body part with actual soap,
+                    I took a shower washing every body part with actual soap,
                     <br />
                     including all my major crevices…
                     <br />
                     including in between my toes and in my belly button,
                     <br />
                     which I never did before but sort of enjoyed.”
-                  
-                   
+
+
                   </p>
                   <button className="apply-button">Apply</button>
                 </div>
 
-               
+
               </div>
             </div>
           </div>

@@ -39,7 +39,7 @@ export class Signup extends Component {
             "LastName": "\\w+",
             "Email": ".+",
             "Password": "^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*",
-            "RegistrationCode": "\\w+"
+            "RegistrationCode": ".*"
         }
 
         //Check if each field matches the regex
@@ -66,7 +66,7 @@ export class Signup extends Component {
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
-            success: function (res) { //If the credentials can be found..
+            success: function (res) { //If the credentials can be added
                 window.location.replace("/dashboard");
                 return true;
             },

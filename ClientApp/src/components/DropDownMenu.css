@@ -1,0 +1,19 @@
+.drop-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.drop-element{
+    background-color: inherit;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.drop-icon{
+    background-color: grey;
+    transform: rotate(90deg);
+    width: 10%;
+}
