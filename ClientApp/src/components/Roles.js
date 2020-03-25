@@ -11,6 +11,10 @@ export class Roles extends Component {
   dropIt(choice) {
     document.getElementById(choice).classList.toggle("show");
   }
+
+  dropIt() {
+    document.getElementById('distance-choice').classList.toggle("show");
+  }
   
   // Does not work yet
   chooseOption(butt, val) {
@@ -62,15 +66,13 @@ export class Roles extends Component {
             </div>
 
             {/* Distance Filter */}
+            <div class="hold">
             <div className="filter-holder">
               <div className="dropdown">
-                <button
-                  onclick="dropIt('distance-choice')"
-                  id="distance-butt"
-                  className="dropbtn"
-                >
+                <button  onclick="dropit('distance-choice')"  id="distance-butt"   className="dropbtn">
                   Distance
                 </button>
+
                 <div id="distance-choice" className="dropdown-content">
                   <a href="#" onclick="chooseOption('distance-butt', '0-2')">
                     0-2 Miles
@@ -89,7 +91,7 @@ export class Roles extends Component {
             </div>
 
             {/* Time Filter */}
-            <div classNameName="filter-holder">
+            <div className="filter-holder">
               <div className="dropdown">
                 <button
                   onclick="dropIt('Time')"
@@ -235,10 +237,12 @@ export class Roles extends Component {
                 </div>
               </div>
             </div>
+
+            </div>
             <div className="potential-roles">
               <div className="roles-holder">
                 <button type="button" className="collapsible">
-                  <b>Role Title:</b> short role description
+                  <b>Role Title:</b> Bee movie enthusiast
                 </button>
                 <div className="content">
                   <p>
@@ -256,23 +260,41 @@ export class Roles extends Component {
                   <button className="apply-button">Apply</button>
                 </div>
                 <button type="button" className="collapsible">
-                  <b>Role Title:</b> short role description
+                  <b>Role Title:</b> Shrek Narrator
                 </button>
                 <div className="content">
                   <p>
-                    According to all known laws of aviation,
+                    People used to call me a monster
                     <br />
-                    there is no way a bee should be able to fly.
+                    and for a long time I believed them
                     <br />
-                    Its wings are too small to get its fat little body off the
-                    ground.
+                    But after a while you learn to ignore the names people call you
                     <br />
-                    The bee, of course, flies anyway
-                    <br />
-                    because bees don't care what humans think is impossible.
+                   and just trust who you are
+                  
+                   
                   </p>
                   <button className="apply-button">Apply</button>
                 </div>
+                <button type="button" className="collapsible">
+                  <b>Role Title:</b> Home Alone Fanatic
+                </button>
+                <div className="content">
+                  <p>
+                  I took a shower washing every body part with actual soap,
+                    <br />
+                    including all my major crevices…
+                    <br />
+                    including in between my toes and in my belly button,
+                    <br />
+                    which I never did before but sort of enjoyed.”
+                  
+                   
+                  </p>
+                  <button className="apply-button">Apply</button>
+                </div>
+
+               
               </div>
             </div>
           </div>

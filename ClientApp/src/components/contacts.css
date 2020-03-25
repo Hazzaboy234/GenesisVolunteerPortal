@@ -48,3 +48,32 @@
     width:100%;
     margin:0%;
  }
+
+ @media(max-width:1150px){
+  .column-container {
+    color: rgb(0, 72, 81);
+    margin: 0%;
+    display: inline;
+  }
+  .email-container {
+   
+    width:100%;
+    max-width: 100%; 
+  }
+
+  .phone-container {
+    width:100%;
+    max-width: 100%; 
+    
+  }
+
+  .address-container {
+    width:100%;
+    max-width: 100%; 
+  }
+  img{
+    width:30%;
+  }
+
+
+ }

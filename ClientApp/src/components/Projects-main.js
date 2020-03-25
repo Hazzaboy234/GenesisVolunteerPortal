@@ -4,8 +4,8 @@ import { Footer } from "./Footer";
 export class ProjectsMain extends Component {
     render() {
         return (<div>
+            <link rel="stylesheet" href={require("./main.css")} />
             <link rel="stylesheet" href={require("./projects-main-page.css")} />
-
             <link rel="stylesheet" href={require("./NavigationBar.css")} />
             <NavigationBar active={2}/>
 
@@ -19,100 +19,57 @@ export class ProjectsMain extends Component {
                         Click on an individual project below to find out more, or read about our Pathways Programme.
                     </div>
                 </div>
-
+<br></br>
                 <div class="project-box-containter">
                     <ul class="projects">
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    lifeline centre
-                                    </div>
+                      
+                                
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/client_stories.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/client_stories.jpg")} /><div class="text">Lifeline centre</div>
                                 </div>
 
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    family matters
-                                </div>
+                            
+                              
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/family-matters.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/family-matters.jpg")} /><div class="text">Family Matters</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    street pastors
-                                </div>
+                            
+                                
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/street-pastors.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/street-pastors.jpg")} /><div class="text">Street Pastors</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    home for good
-                                </div>
+                          
+                              
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/home-for-good.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/home-for-good.jpg")} /><div class="text">Home For Good</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    foodbank
-                                </div>
+                     
+                             
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/food-bank.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/food-bank.jpg")} /><div class="text">Foodbank</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    lunch box
-                                </div>
+                          
+                                
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/lunch-box.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/lunch-box.jpg")} /><div class="text">Lunch Box</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    soup run
-                                </div>
+                        
+                              
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/soup-run.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/soup-run.jpg")} /><div class="text">Soup Run</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    furniture project
-                                </div>
+                            
+                             
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/furniture-projects.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/furniture-projects.jpg")} /><div class="text">Furnature Project</div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="project">
-                            <div class="project-box">
-                                <div class="content">
-                                    life skills
-                                </div>
+                            
+                        
+                             
                                 <div class="photo">
-                                    <img className="content-logo" src={require("./Resources/life-skills.jpg")} />
+                                    <img className="content-logo" src={require("./Resources/life-skills.jpg")} /><div class="text">Life Skills</div>
                                 </div>
-                            </div>
-                        </li>
+                            
 
 
 

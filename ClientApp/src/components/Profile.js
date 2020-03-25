@@ -57,13 +57,13 @@ export class Profile extends Component {
 
                     <div class="column1">
                    
-                    <li className="details-label">Current Roles</li>
-                        <li className="roles">Standard Volunteer</li>       <div class="text">Progress</div>        <progress value = "65" max = "200"/>
-                        <li className="roles">Gardener</li>                 <div class="text">Progress</div>        <progress value = "41" max = "200"/>
-                        <li className="roles">Basic Skills Teacher</li>     <div class="text">Progress</div>        <progress value = "170" max = "200"/>
-                        <li className="roles">Furniture Shop Assistant</li> <div class="text">Progress</div>        <progress value = "49" max = "200"/>
-                        <li className="roles">Food Bank Host</li>           <div class="text">Progress</div>        <progress value = "65" max = "168"/>
-                        <li className="roles">Donations Manager</li>        <div class="text">Progress</div>        <progress value = "190" max = "120"/>
+                    <li className="details-label">Current Roles</li>        
+                        <li className="roles">Standard Volunteer</li>       <br></br> 
+                        <li className="roles">Gardener</li>                 <br></br> 
+                        <li className="roles">Basic Skills Teacher</li>     <br></br> 
+                        <li className="roles">Furniture Shop Assistant</li> <br></br> 
+                        <li className="roles">Food Bank Host</li>           <br></br> 
+                        <li className="roles">Donations Manager</li>        <br></br> 
                        
 
                     </div>

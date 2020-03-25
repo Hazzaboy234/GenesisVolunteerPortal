@@ -3,12 +3,14 @@
   background-color:#b9f5d8;
 }
 
-.filter-contianer{
-padding: 0;
-margin: 10px;
+.filter-container{
+background-color: white;
+}
 
-display: flex;
-justify-content: center;
+p{
+  background-color: rgb(68, 183, 73);
+  font-size: 20pt;
+  width:100%;
 }
 
 .filter-holder{
@@ -37,8 +39,9 @@ background-color: #0a7375;
 }
 
 .potential-roles{
-display: flex;
-width: 70vw;
+
+width: 100%;
+
 }
 
 .roles-holder{
@@ -64,7 +67,9 @@ border: none;
 #availability-butt{
 border: none;
 }
-
+.hold{
+  display:flex;
+}
 /* Start of dropdown css */
 /* Dropdown Button */
 .dropbtn {
@@ -141,10 +146,14 @@ background-color: #ccc;
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-padding: 0 18px;
-display: none;
-overflow: hidden;
-background-color: #f1f1f1;
+background-color: white !important;
 text-align: center;
 }
 /* End of expandable stuff */
+
+@media(max-width: 800px){
+  .hold{
+    display:inline-table;
+    width:100%;
+  }
+}

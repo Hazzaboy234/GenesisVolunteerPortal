@@ -1,50 +1,10 @@
 
   
-  ul li {
-    transition:inherit;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color:rgb(68, 183, 73);
-
-    
   
-
-    
   
-    cursor: pointer;
-    color:white;
-    font-size: 1.25em;
-    text-transform: capitalize;
-  }
-  
-  ul li:hover{  background-color: whitesmoke; }
- 
-  ul li a{
-    user-select: none;
-    color:inherit;
-    transition:inherit;
-    text-decoration: none;
-  
-    font-size:0.8em;
-  }
-  
-  ul li:hover{
-    outline-width: 1px;
-    outline-color:black;
-  
-  }
-
-  
-.main-container {
-    display: flex;
-    flex-direction: row;
-    flex:3;
-    color:rgb(90, 223, 90);
-}
 
 .content-container{
-  background-color: rgb(217, 255, 245, 0.2);
+  background-color: white;
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
@@ -103,7 +63,7 @@ position: fixed;
 }
 
 .text-content{
-  background-color: whitesmoke;
+  background-color: rgb(68, 183, 73);
   margin-top: 10px;
   padding: 20px;
   width: 80%;
@@ -117,26 +77,30 @@ position: fixed;
 .content{  
   font-size: 1em !important;
   border-radius:inherit;
-  background: white !important;
+  background-color: rgb(68, 183, 73);
+}
+.text{
+  color:black;
+  padding-left: 5%;
+  background-color: rgb(68, 183, 73);
 }
 
 .content-logo{
-  width:80%;
+  width:100%;
 }
 .projects{
   /* removes style sheet clashes*/
   display: flex;
-  flex-direction: column;
-
-  padding: 0;
   margin:0;
   flex-wrap:wrap;
+  padding-left: 10%;
+  padding-right: 10%;
 
 
 }
 
 .project{
-  flex:1;
+  flex:3;
   margin-top: 15px;
   padding: 0px;
   background-color: transparent;    
@@ -145,17 +109,29 @@ position: fixed;
 }
 
 .photo{
-  margin-bottom: 5px;
+  width: 30%;
+  padding: 1%;
+  border: rgb(68, 183, 73);
+  border-width: 4pt;
+  border-style: ridge;
+  margin: 1%;
 }
 
 
 .project-box{
-  background-color: white;
+  background-color: rgb(68, 183, 73);
   box-shadow: 5px 5px rgb(0, 72, 81), 3px 3px rgb(0, 72, 81), 2px 2px rgb(0, 72, 81);
   border: 1px gray solid;
   border-radius: 10px;
 }
-
+.project-box-container{
+ 
+    width:100%;
+    display: flex;
+    margin-left: 0;
+    margin-right:0;
+  
+}
 
 
 .project-box:hover{
@@ -167,6 +143,8 @@ position: fixed;
 }
 
 
-@media (max-width: 600px){
-  
+@media (max-width:700px){
+  .text{
+    font-size: small;
+  }
 }
