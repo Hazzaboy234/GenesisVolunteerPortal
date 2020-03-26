@@ -13,7 +13,20 @@
 }
 
 .drop-icon{
-    background-color: grey;
+    /*background-color: grey;*/
     transform: rotate(90deg);
     width: 10%;
+}
+
+.drop-title{
+    /*color:rgb(68, 183, 73);*/
+    padding:0px 5px;
+    /*background-color: white;*/
+    border-radius: 5px;
+}
+
+.drop-element .active{
+    color:rgb(68, 183, 73);
+    font-weight: bold;
+    background-color: white;
 }

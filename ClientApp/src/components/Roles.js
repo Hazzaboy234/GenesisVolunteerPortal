@@ -21,6 +21,7 @@ export class Roles extends Component {
         { title: "d", date: date3 }
       ]
     }
+    console.log(Object.keys(this.state.values[0]))
   }
   componentDidMount() {
     document.title = "Genesis Trust: Roles";
@@ -79,13 +80,14 @@ export class Roles extends Component {
     this.setState({ values: [...this.state.values].sort(func) })
   }
   render() {
+    var filters = Object.keys(this.state.values[0]);
     return (
       <div>
         <link rel="stylesheet" href={require("./Roles.css")} />
         <NavigationBar active={1} />
-        <DropDownMenu sort={this.sort.bind(this)} />
-        <ul style={{display:"flex",flexDirection:"column"}}>
-          {this.state.values.map((value) => <li>{value.title} + "|" + {value.date.toDateString()}</li>)}
+        <DropDownMenu filters={filters} sort={this.sort.bind(this)} />
+        <ul style={{ display: "flex", flexDirection: "column" }}>
+          {this.state.values.map((value) => <li>{value.title},{value.date.toDateString()}</li>)}
         </ul>
         <div className="big-ol-container">
           <div className="filter-container">
