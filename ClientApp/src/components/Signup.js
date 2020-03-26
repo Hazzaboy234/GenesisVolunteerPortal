@@ -26,6 +26,7 @@ export class Signup extends Component {
         this.state = { reveal: false }
 
     }
+
     validate() {
         var data = {}
         data["FirstName"] = document.getElementById("first-name-input").value;

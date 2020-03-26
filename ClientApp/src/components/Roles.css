@@ -158,10 +158,13 @@ text-align: center;
   }
 }
 
+
+
 .role-container{
   display: flex;
   flex-direction: row;
 }
+
 
 .role-header{
   display:flex;
@@ -172,9 +175,15 @@ text-align: center;
 
 }
 
-.role-expand{
+.role-button-container{
+  display:flex;
+  flex-direction: row;
+}
+
+.role-button-container button{
   background-color: #0A7375;
   color:white;
   border-radius: 5px;
   box-shadow: none;
 }
+

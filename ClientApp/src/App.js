@@ -23,6 +23,7 @@ import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
 import {Logout} from "./components/Logout"
 import "./components/anims.css"
+import { Redirecter } from './components/Redirecter';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -51,7 +52,7 @@ export default class App extends Component {
       <Layout>
         {this.state.toast}
         <Route exact path='/' render={(props) => LoginPage}/>
-        <Route exact path='/login' render={(props) => LoginPage}/>
+        <Route exact path='/login' render={(props) => <Redirecter interval={500} steps={[{action:()=>window.location.replace("/"),message:"Redirecting to login..."}]}/>}/>
         <Route path='/dashboard' render={(props) => <Dashboard openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/signup' render={(props)=> <Signup openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/settings' component={Settings} />

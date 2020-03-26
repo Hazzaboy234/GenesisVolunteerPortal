@@ -17,7 +17,12 @@ class Role extends Component {
           {this.props.desc}
         </p>
 
-        <button className="role-expand">Apply</button>
+        
+        <div className="role-button-container">
+          <button className="role-expand">Learn more</button>
+          <button className="role-expand">Apply</button>
+        </div>
+        
       </li>
     )
   }
@@ -39,10 +44,10 @@ export class Roles extends Component {
         { title: "Guide", desc: "Guide the people dem", startdate: date3 }
       ]
     }
-    //console.log(Object.keys(this.state.values[0]))
   }
   componentDidMount() {
     document.title = "Genesis Trust: Roles";
+    //Load roles from db...
   }
 
   dropIt(choice) {
