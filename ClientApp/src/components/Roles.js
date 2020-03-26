@@ -54,9 +54,10 @@ export class Roles extends Component {
     document.getElementById(choice).classList.toggle("show");
   }
 
-  dropIt() {
-    document.getElementById('distance-choice').classList.toggle("show");
+  showRole(role) {
+    document.getElementById(role).classList.toggle("show-role");
   }
+
 
   // Does not work yet
   chooseOption(butt, val) {
@@ -270,10 +271,10 @@ export class Roles extends Component {
             </div>
             <div className="potential-roles">
               <div className="roles-holder">
-                <button type="button" className="collapsible">
+                <button type="button" className="collapsible" onclick="showRole('jazz')">
                   <b>Role Title:</b> Bee movie enthusiast
                 </button>
-                <div className="content">
+                <div className="content" id="jazz">
                   <p>
                     According to all known laws of aviation,
                     <br />
@@ -288,6 +289,7 @@ export class Roles extends Component {
                   </p>
                   <button className="apply-button">Apply</button>
                 </div>
+                
                 <button type="button" className="collapsible">
                   <b>Role Title:</b> Shrek Narrator
                 </button>
