@@ -49,7 +49,22 @@ export class Roles extends Component {
     document.title = "Genesis Trust: Roles";
     //Load roles from db...
   }
-  
+
+  dropIt(choice) {
+    document.getElementById(choice).classList.toggle("show");
+  }
+
+  showRole(role) {
+    document.getElementById(role).classList.toggle("show-role");
+  }
+
+
+  // Does not work yet
+  chooseOption(butt, val) {
+    document.getElementById(butt).value = val;
+  }
+
+
   //sorts this.state.values by one of its fields
   sort(field) {
     console.log(field);
