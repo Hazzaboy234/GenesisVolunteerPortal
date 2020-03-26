@@ -59,21 +59,22 @@ export class Login extends Component {
     }
 
     render() {
-        var container;
+        var form;
         if(this.state.mode === 0){
-            container = <LoginForm submit={this.validate} helper={this.flipMode}/>
+            form = <LoginForm submit={this.validate} helper={this.flipMode}/>
         }else{
-            container = <ForgotPassword helper={this.flipMode}/>
+            form = <ForgotPassword helper={this.flipMode}/>
         }
 
 
         return (
             <div className="main-container">
+                <button onClick={()=>this.props.updateCookie({firstName:"Finn"})}>updateCookie</button>
                 <link rel="stylesheet" href={require("./login.css")}/>
                 <div className="logo-container">                    
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
                 </div>
-                {container}
+                {form}
             </div>
 
         )

@@ -21,7 +21,6 @@ import { Calendar } from './components/Calendar';
 import { Toast } from './components/Toast';
 import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
-import {Logout} from "./components/Logout"
 import "./components/anims.css"
 import { Redirecter } from './components/Redirecter';
 
@@ -30,7 +29,12 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { toast: <Toast /> }    
+    this.state = { 
+      toast: <Toast /> ,
+      cookie:{}
+    }
+    this.updateCookie = this.updateCookie.bind(this);
+    this.getCookie = this.getCookie.bind(this);
   }
 
   openToast(message, type) {
@@ -46,12 +50,39 @@ export default class App extends Component {
     this.setState({toast:<Toast/>})
   }
 
+  getCookie(field){
+    if(field==undefined) return this.state.cookie
+    else return this.state.cookie[field];
+  }
+
+  updateCookie(data){
+    var suffix = "userdata=";
+    var newCookie = this.state.cookie
+
+    if(this.state.cookie===null) newCookie = {}
+    Object.keys(data).forEach((key)=>newCookie[key]=data[key]);
+    newCookie["expires"] = "-1"
+    document.cookie = (suffix+JSON.stringify(newCookie));    
+    this.setState({cookie:newCookie});
+  }
+
+  componentDidMount(){
+    //document.cookie = "userdata="+JSON.stringify({firstName:"Sam",secondName:"Sogs",email:"juwonsogbesan@gmail.com"})+";"
+    var suffix = "userdata=";
+    var userdata = document.cookie.match("(X{.*})".replace("X",suffix))
+    if(userdata.length===0) userdata = null// there is no valid cookie
+    else{
+      userdata = userdata[0]      
+      userdata = JSON.parse(userdata.substring(suffix.length)) //turn it into a JSON object...      
+    }
+    this.setState({cookie:userdata});
+  }
+
   render() {
-    var LoginPage = <Login openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>
     return (
       <Layout>
-        {this.state.toast}
-        <Route exact path='/' render={(props) => LoginPage}/>
+        {this.state.toast}        
+        <Route exact path='/' render={(props) =>  <Login openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)} getCookie={this.getCookie} updateCookie={this.updateCookie}/>}/>
         <Route exact path='/login' render={(props) => <Redirecter interval={500} steps={[{action:()=>window.location.replace("/"),message:"Redirecting to login..."}]}/>}/>
         <Route path='/dashboard' render={(props) => <Dashboard openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/signup' render={(props)=> <Signup openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
@@ -63,7 +94,11 @@ export default class App extends Component {
         <Route path='/calendar' component={Calendar} />
         <Route path='/profile' component={Profile} />
         <Route path='/ourroles' component={Roles} />
-        <Route path='/logout' component={Logout} />
+        <Route path='/logout' render={(props)=>
+          <Redirecter interval={500} steps={[
+          {action:()=>document.cookie = null,message:"Clearing cookies"},
+          {action:()=>window.location.replace("/"),message:"Redirecting to login..."},        
+        ]}/>} />
       </Layout>
     );
   }

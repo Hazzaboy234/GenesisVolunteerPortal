@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+/**
+ * Takes a bunch of functions (steps) and executes them all in series
+ * Primary use: Clear up cookies & other user data before routing to another page
+ */
 export class Redirecter extends Component {
     constructor(props){
         super(props);

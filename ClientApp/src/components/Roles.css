@@ -40,12 +40,15 @@ background-color: #0a7375;
 
 .potential-roles{
 
-width: 100%;
+width: 70%;
+align-self: center;
+margin: 0 auto;
 
 }
 
 .roles-holder{
 display: inline;
+align-self: center;
 }
 
 #distance-butt{
@@ -80,6 +83,7 @@ padding: 16px;
 font-size: 16px;
 border: none;
 cursor: pointer;
+margin: auto;
 }
 
 /* Dropdown button on hover & focus */
@@ -123,6 +127,10 @@ background-color: rgba(185, 245, 216, 0.5);
 display: block;
 }
 
+.show-role{
+  display: block;
+}
+
 /* End of dropdown stuff */
 
 /* Exandable roles stuff */
@@ -137,6 +145,7 @@ text-align: left;
 outline: none;
 font-size: 15px;
 margin-top: 15px;
+border-radius: 5px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -148,7 +157,14 @@ background-color: #ccc;
 .content {
 background-color: white !important;
 text-align: center;
+display: none;
 }
+
+#jazz{
+  border:none;
+}
+
+
 /* End of expandable stuff */
 
 @media(max-width: 800px){
@@ -156,8 +172,21 @@ text-align: center;
     display:inline-table;
     width:100%;
   }
-}
 
+  .potential-roles{
+    width: 100vw;
+  }
+
+  .dropbtn {
+    border-radius: 5px;
+    background-color: rgba(68, 183, 73, 1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+}
 
 
 .role-container{
