@@ -31,7 +31,7 @@ export default class App extends Component {
     super(props);
     this.state = { 
       toast: <Toast /> ,
-      cookie:{}
+      cookie:null
     }
     this.updateCookie = this.updateCookie.bind(this);
     this.getCookie = this.getCookie.bind(this);
@@ -61,20 +61,23 @@ export default class App extends Component {
 
     if(this.state.cookie===null) newCookie = {}
     Object.keys(data).forEach((key)=>newCookie[key]=data[key]);
-    newCookie["expires"] = "-1"
+    //newCookie["expires"] = "-1"
     document.cookie = (suffix+JSON.stringify(newCookie));    
     this.setState({cookie:newCookie});
   }
 
   componentDidMount(){
-    //document.cookie = "userdata="+JSON.stringify({firstName:"Sam",secondName:"Sogs",email:"juwonsogbesan@gmail.com"})+";"
+    document.cookie = "userdata="+JSON.stringify({firstName:"Sam",secondName:"Sogs",email:"juwonsogbesan@gmail.com"})+";"
     var suffix = "userdata=";
-    var userdata = document.cookie.match("(X{.*})".replace("X",suffix))
-    if(userdata.length===0) userdata = null// there is no valid cookie
-    else{
+    var userdata = document.cookie.match("(X{.*?}){1}".replace("X",suffix))
+    console.log(userdata)
+    if(userdata!=null){// there is no valid cookie
+    
       userdata = userdata[0]      
-      userdata = JSON.parse(userdata.substring(suffix.length)) //turn it into a JSON object...      
+      console.log(userdata);
+      userdata = JSON.parse(userdata.substring(suffix.length)) //turn it into a JSON object...  
     }
+  
     this.setState({cookie:userdata});
   }
 
@@ -96,7 +99,7 @@ export default class App extends Component {
         <Route path='/ourroles' component={Roles} />
         <Route path='/logout' render={(props)=>
           <Redirecter interval={500} steps={[
-          {action:()=>document.cookie = null,message:"Clearing cookies"},
+          {action:()=>document.cookie = "userdata="+new Date().toUTCString(),message:"Clearing cookies"},
           {action:()=>window.location.replace("/"),message:"Redirecting to login..."},        
         ]}/>} />
       </Layout>

@@ -140,7 +140,6 @@ export class Map extends Component {
 
     componentDidMount() {        
         var google = window.google;
-        console.log("mounting");
         markerObjects = []
 
         if (document.getElementById("map") === null) return;
@@ -160,10 +159,6 @@ export class Map extends Component {
                 )
             } 
         )
-
-
-        //Add marker to mark the main officies..
-
 
         //Add some example markrers
         var examples = [
@@ -215,7 +210,7 @@ export class Map extends Component {
                         <button className="clear-button" onClick={this.reset}>X</button>
                     </li>
                     <li className="results-container">
-                        <span className={className} id="results-tag">Events</span>
+                        <span className={className} id="results-tag">Events & Projects</span>
                         <ul className="results-list">
                             {results}
                         </ul>
