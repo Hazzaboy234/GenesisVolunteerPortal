@@ -157,3 +157,24 @@ text-align: center;
     width:100%;
   }
 }
+
+.role-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.role-header{
+  display:flex;
+  flex-direction: column;
+}
+
+.role-body{
+
+}
+
+.role-expand{
+  background-color: #0A7375;
+  color:white;
+  border-radius: 5px;
+  box-shadow: none;
+}

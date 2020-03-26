@@ -4,6 +4,24 @@ import { DropDownMenu } from "./DropDownMenu";
 import { Footer } from "./Footer";
 import { NavigationBar } from "./NavigationBar";
 
+class Role extends Component {
+  render() {
+    console.log(this.props.content)
+    return (
+      <li className="role-container">
+        <div className="role-header">          
+          <span>{this.props.title}</span>
+          <span>{this.props.startdate}</span>
+        </div>
+        <p className="role-body">
+          {this.props.desc}
+        </p>
+
+        <button className="role-expand">Apply</button>
+      </li>
+    )
+  }
+}
 export class Roles extends Component {
   constructor(props) {
     super(props);
@@ -15,13 +33,13 @@ export class Roles extends Component {
     date3.setMonth(0)
     this.state = {
       values: [
-        { title: "b", date: new Date() },
-        { title: "a", date: date1 },
-        { title: "c", date: date2 },
-        { title: "d", date: date3 }
+        { title: "Videographer", desc: "Join the team as a ...", startdate: new Date() },
+        { title: "Chauffeur", desc: "Skrrr", startdate: date1 },
+        { title: "Server/Waiter", desc: "Wait on me", startdate: date2 },
+        { title: "Guide", desc: "Guide the people dem", startdate: date3 }
       ]
     }
-    console.log(Object.keys(this.state.values[0]))
+    //console.log(Object.keys(this.state.values[0]))
   }
   componentDidMount() {
     document.title = "Genesis Trust: Roles";
@@ -40,34 +58,6 @@ export class Roles extends Component {
     document.getElementById(butt).value = val;
   }
 
-  // Close the dropdown menu if the user clicks outside of it
-  // window.onclick = function(event) {
-  //   if (!event.target.matches('.dropbtn')) {
-  //     var dropdowns = document.getElementsByClassName("dropdown-content");
-  //     var i;
-  //     for (i = 0; i < dropdowns.length; i++) {
-  //       var openDropdown = dropdowns[i];
-  //       if (openDropdown.classList.contains('show')) {
-  //         openDropdown.classList.remove('show');
-  //       }
-  //     }
-  //   }
-  // }
-
-  // var coll = document.getElementsByClassName("collapsible");
-  // var i;
-
-  // for (i = 0; i < coll.length; i++) {
-  //   coll[i].addEventListener("click", function() {
-  //     this.classList.toggle("active");
-  //     var content = this.nextElementSibling;
-  //     if (content.style.display === "block") {
-  //       content.style.display = "none";
-  //     } else {
-  //       content.style.display = "block";
-  //     }
-  //   });
-  // }
 
   //sorts this.state.values by one of its fields
   sort(field) {
@@ -80,14 +70,15 @@ export class Roles extends Component {
     this.setState({ values: [...this.state.values].sort(func) })
   }
   render() {
-    var filters = Object.keys(this.state.values[0]);
+    var filters = Object.keys(this.state.values[0]); //Automatically get filters from object keys
     return (
       <div>
         <link rel="stylesheet" href={require("./Roles.css")} />
         <NavigationBar active={1} />
         <DropDownMenu filters={filters} sort={this.sort.bind(this)} />
+
         <ul style={{ display: "flex", flexDirection: "column" }}>
-          {this.state.values.map((value) => <li>{value.title},{value.date.toDateString()}</li>)}
+          {this.state.values.map((value) => <Role title={value.title} desc={value.desc} startdate={value.startdate.toDateString()} />)}
         </ul>
         <div className="big-ol-container">
           <div className="filter-container">
