@@ -7,6 +7,13 @@
 background-color: white;
 }
 
+.drop-list{
+  background-color: white;
+}
+
+.drop-element{
+  color:green;
+}
 p{
   background-color: rgb(68, 183, 73);
   font-size: 20pt;
@@ -46,9 +53,28 @@ margin: 0 auto;
 
 }
 
+.p{
+  background-color: rgb(68, 183, 73);
+  font-size: 20pt;
+  width: 80%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 5px;
+  margin-right: 2%;
+  margin-top: 1.4%;
+  border-radius: 5px;
+  margin-right: 3%;
+}
 .roles-holder{
 display: inline;
 align-self: center;
+}
+.role-container{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-style: groove;
+  margin-top:1%;
 }
 
 #distance-butt{
@@ -192,15 +218,35 @@ display: none;
 .role-container{
   display: flex;
   flex-direction: row;
+  background-color: white;
+  border-style: groove;
+  margin-top:1%;
 }
 
 
 .role-header{
-  display:flex;
+  display: flex;
   flex-direction: column;
+  color: white;
+  background-color: #0A7375;
+  border-radius: 5px;
+  width: 20%;
+
 }
 
 .role-body{
+  background-color: rgb(231, 231, 231);
+  font-size: 20pt;
+  width: 100%;
+  color: #0A7375;
+  margin-left:2%;
+  margin-right:2%;
+  border-radius: 5px;
+  margin-top:1%;
+  margin-bottom:1%;
+  padding-top: 0.5%;
+  padding-bottom: 1%;
+
 
 }
 
@@ -211,8 +257,7 @@ display: none;
 
 .role-button-container button{
   background-color: #0A7375;
-  color:white;
+  color: white;
   border-radius: 5px;
-  box-shadow: none;
 }
 

@@ -38,10 +38,10 @@ export class Roles extends Component {
     date3.setMonth(0)
     this.state = {
       values: [
-        { title: "Videographer", desc: "Join the team as a ...", startdate: new Date() },
-        { title: "Chauffeur", desc: "Skrrr", startdate: date1 },
-        { title: "Server/Waiter", desc: "Wait on me", startdate: date2 },
-        { title: "Guide", desc: "Guide the people dem", startdate: date3 }
+        { title: "Videographer", desc: "Join the team as a videographer", startdate: new Date() },
+        { title: "Chauffeur", desc: "Drive people to and from locations", startdate: date1 },
+        { title: "Server/Waiter", desc: "Wait for a variety of people", startdate: date2 },
+        { title: "Guide", desc: "Guide groups of people to help locations", startdate: date3 }
       ]
     }
   }
