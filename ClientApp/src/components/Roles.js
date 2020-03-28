@@ -64,7 +64,6 @@ export class Roles extends Component {
     document.getElementById(butt).value = val;
   }
 
-
   //sorts this.state.values by one of its fields
   sort(field) {
     console.log(field);

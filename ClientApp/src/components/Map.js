@@ -127,7 +127,7 @@ export class Map extends Component {
     }
     reset() {
         document.getElementById("search-input").value = ""
-        document.getElementById("results-tag").innerText = "All Events"
+        document.getElementById("results-tag").innerText = "Events & Projects"
         this.setState({ showResults: 0 })
         this.changeMap(map);
     }

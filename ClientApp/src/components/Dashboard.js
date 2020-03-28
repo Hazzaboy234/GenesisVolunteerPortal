@@ -9,7 +9,7 @@ import { Footer } from "./Footer";
 export class Dashboard extends Component {
     componentDidMount(){
         document.title="Genesis Trust Portal: Dashboard"
-        document.cookie = JSON.stringify({hello:"test",okay:"then"})        
+        //document.cookie = JSON.stringify({hello:"test",okay:"then"})        
         //console.log(document.cookie);
     }
     render() {

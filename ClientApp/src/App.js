@@ -99,7 +99,7 @@ export default class App extends Component {
         <Route path='/ourroles' component={Roles} />
         <Route path='/logout' render={(props)=>
           <Redirecter interval={500} steps={[
-          {action:()=>document.cookie = "userdata="+new Date().toUTCString(),message:"Clearing cookies"},
+          {action:()=>document.cookie = "userdata=expires"+new Date().toUTCString(),message:"Clearing cookies"},
           {action:()=>window.location.replace("/"),message:"Redirecting to login..."},        
         ]}/>} />
       </Layout>
