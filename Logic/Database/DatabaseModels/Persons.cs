@@ -1,18 +1,14 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
 {
     public partial class Persons
     {
-        [Key, Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public string PasswordSalt { get; set; }
         public DateTime DoB { get; set; }
         public string NationalInsurance { get; set; }
         public bool BanStatus { get; set; }
@@ -30,5 +26,6 @@ namespace GenesisVolunteerPortal.Logic.Database.DatabaseModels
         public string Postcode { get; set; }
         public string Gender { get; set; }
         public bool EmailConfirmed { get; set; }
+        public string PasswordSalt { get; set; }
     }
 }

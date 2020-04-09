@@ -36,6 +36,10 @@ namespace GenesisVolunteerPortal.Controllers
         [HttpPost("/register")]
         public async Task<ActionResult> Register(RegistrationAttempt attempt)
         {
+            if(attempt.Email == "" || attempt.FirstName == "" || attempt.LastName == "" || attempt.Password == "")
+            {
+                return BadRequest("One or more fields are invalid.");
+            }
             var response = await _authorisationManager.Register(attempt);
             if (response.Success)
             {

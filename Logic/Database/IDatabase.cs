@@ -1,4 +1,5 @@
 ﻿using GenesisVolunteerPortal.Logic.Database.DatabaseModels;
+using GenesisVolunteerPortal.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,5 +19,6 @@ namespace GenesisVolunteerPortal.Logic.Database
         Task<List<RoleTimes>> GetRoleTimesByRoleId(int roleId);
         Task Remove<T>(T removal);
         Task Update<T>(T update);
+        Task<List<Event>> GetAllEvents();
     }
 }

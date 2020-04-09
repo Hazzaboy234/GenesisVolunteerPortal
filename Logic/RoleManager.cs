@@ -22,7 +22,7 @@ namespace GenesisVolunteerPortal.Logic
             role.Time = new List<string>();
             foreach (RoleTimes time in times)
             {
-                role.Time.Add(time.Time.Value.Date.ToString());
+                role.Time.Add(time.Time.TimeOfDay.ToString());
             }
 
             return role;
