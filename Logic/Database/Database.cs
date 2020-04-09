@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using GenesisVolunteerPortal.Models;
 
 namespace GenesisVolunteerPortal.Logic.Database
 {
@@ -77,6 +78,34 @@ namespace GenesisVolunteerPortal.Logic.Database
         public async Task<List<Projects>> GetAllProjects()
         {
             return await _context.Projects.ToListAsync().ConfigureAwait(true);
+        }
+
+        public async Task<List<Event>> GetAllEvents()
+        {
+            var events = await _context.Events.ToListAsync().ConfigureAwait(true);
+            var returnEvents = new List<Event>();
+            events.ForEach(delegate(Events item) 
+            {
+                var tempEvent = new Event();
+                tempEvent.Title = item.Title;
+                tempEvent.Description = item.Description;
+                tempEvent.EventId = item.EventId;
+                var roles = _context.EventsRoles.ToList();
+                foreach(var role in roles)
+                {
+                    if(role.EventId == tempEvent.EventId)
+                    {
+                        tempEvent.Roles.Add(role.RoleId);
+                    }
+                }
+                returnEvents.Add(tempEvent);
+            });
+            return returnEvents;
+
+            
+
+            
+            
         }
     }
 }
