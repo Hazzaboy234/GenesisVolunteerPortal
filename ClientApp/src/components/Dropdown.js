@@ -9,8 +9,8 @@ export class Dropdown extends Component {
           Option1
         </button>
         <div id="myDropdown" className="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 1</a>
+          <a href="/h">Link 1</a>
+          <a href="/o">Link 1</a>
         </div>
       </div>
     );

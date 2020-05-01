@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Dropdown } from "./Dropdown";
 import { DropDownMenu } from "./DropDownMenu";
 import { Footer } from "./Footer";
 import { NavigationBar } from "./NavigationBar";
@@ -69,7 +68,7 @@ export class Roles extends Component {
     console.log(field);
     var func = (a, b) => {
       if (a[field] < b[field]) return -1
-      else if (a[field == b[field]]) return 0
+      else if (a[field === b[field]]) return 0
       else return 1
     }
     this.setState({ values: [...this.state.values].sort(func) })

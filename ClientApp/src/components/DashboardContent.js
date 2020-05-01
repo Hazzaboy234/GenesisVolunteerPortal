@@ -31,7 +31,7 @@ export class DashboardContent extends Component {
             {
                 key:0,
                 title:"Map",
-                component:<Map/>
+                component:<Map addTracker={this.props.addTracker}/>
             },
             {
                 key:1,
@@ -66,7 +66,7 @@ class NavItem extends Component {
     render() {
         var className = "map-nav-item" + (this.props.active !== undefined ? " active" : "");
         return (
-            <li onClick={()=>this.props.onClick(this.props.id)} className={className}><a>{this.props.title}</a></li>
+            <li onClick={()=>this.props.onClick(this.props.id)} className={className}><span style={{fontSize:"0.8em"}}>{this.props.title}</span></li>
         )
     }
 }

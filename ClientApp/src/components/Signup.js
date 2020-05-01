@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
-import Tracker from "../Tracker";
+//import Tracker from "../Tracker";
 
 class InputElement extends Component {
     render() {
         var id = "X-input".replace("X", this.props.id);
-        var type = this.props.type != undefined ? this.props.type : "text";
+        var type = this.props.type !== undefined ? this.props.type : "text";
         var mandatory = null;
-        if (this.props.mandatory != undefined) {
+        if (this.props.mandatory !== undefined) {
             mandatory = <span className="mandatory-icon">*</span>
         }
 
@@ -24,13 +24,12 @@ export class Signup extends Component {
     constructor(props) {
         super(props);
         this.toast = this.toast.bind(this);
-        this.state = { reveal: false ,trackers:[]}
+        this.state = { reveal: false}
 
     }
 
     componentDidMount(){
-        var trackers = [];
-        trackers.push(new Tracker({
+        this.props.addTracker({
             //id:"test-button",
             className:"super",
             events:[
@@ -39,9 +38,7 @@ export class Signup extends Component {
                 eventHandler:(mem)=>{
                     var newMem = mem();
                     newMem[0] = new Date();
-    
                     mem(newMem);
-                    console.log("entering");
                 }
             },            {
                 event:"mouseleave",
@@ -49,16 +46,13 @@ export class Signup extends Component {
                     var newMem = mem();
                     newMem[1] = new Date();
                     mem(newMem);
-                    console.log(mem());
-                    console.log("leaving");
                 }
             }
             ],
             mem_:[0,0] //start, end
-        }))
+        })
 
-        trackers.push(
-        new Tracker({
+        this.props.addTracker({
             //id:"test-button",
             className:"input-element",
             events:[
@@ -71,10 +65,9 @@ export class Signup extends Component {
             }
             ],
             mem_:0            
-        }))
+        })
 
-        trackers.push(
-        new Tracker({
+        this.props.addTracker({
             //id:"test-button",
             className:"reveal-button",
             events:[
@@ -87,11 +80,11 @@ export class Signup extends Component {
             }
             ],
             mem_:0            
-        }))
+        })
 
-        this.setState({trackers:trackers})
+        //this.setState({trackers:trackers})
 
-        window.addEventListener("unload",()=>this.state.trackers.forEach(tracker=>console.log(tracker.export())))
+        //window.addEventListener("unload",()=>this.state.trackers.forEach(tracker=>console.log(tracker.export())))
 
     }
 
@@ -116,7 +109,7 @@ export class Signup extends Component {
 
         //Check if each field matches the regex
         for (var field in regex) if (RegExp(regex[field]).test(data[field]) === false) return field
-        if (data["Password"] != document.getElementById("cpassword-input").value) return "passwords-no-match"
+        if (data["Password"] !== document.getElementById("cpassword-input").value) return "passwords-no-match"
         return true;
     }
     toast(message) {
@@ -160,7 +153,6 @@ export class Signup extends Component {
 
                 <div className="super">
                     <ul className="input-text">
-                        <button id="test-button">YOOOO</button>
                         <a href="/"><img alt="Back" id="back-arrow" src={require("./Resources/Arrow.png")} /></a>
                         <InputElement id="first-name" type="text" placeholder="First Name" mandatory />
                         <InputElement id="second-name" type="text" placeholder="Second Name" mandatory />

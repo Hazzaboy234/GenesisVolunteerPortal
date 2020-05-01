@@ -21,6 +21,7 @@ import { Profile } from './components/Profile';
 import {Roles} from "./components/Roles"
 import "./components/anims.css"
 import { Redirecter } from './components/Redirecter';
+import { TrackerManager } from './Tracker';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -29,7 +30,8 @@ export default class App extends Component {
     super(props);
     this.state = { 
       toast: <Toast /> ,
-      cookie:null
+      cookie:null,
+      trackerManager:new TrackerManager()
     }
     this.updateCookie = this.updateCookie.bind(this);
     this.getCookie = this.getCookie.bind(this);
@@ -85,8 +87,8 @@ export default class App extends Component {
         {this.state.toast}        
         <Route exact path='/' render={(props) =>  <Login openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)} getCookie={this.getCookie} updateCookie={this.updateCookie}/>}/>
         <Route exact path='/login' render={(props) => <Redirecter interval={500} steps={[{action:()=>window.location.replace("/"),message:"Redirecting to login..."}]}/>}/>
-        <Route path='/dashboard' render={(props) => <Dashboard openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
-        <Route path='/signup' render={(props)=> <Signup openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
+        <Route path='/dashboard' render={(props) => <Dashboard addTracker={this.state.trackerManager.add} openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
+        <Route path='/signup' render={(props)=> <Signup addTracker={this.state.trackerManager.add} openToast={this.openToast.bind(this)} hideToast={this.hideToast.bind(this)}/>}/>
         <Route path='/settings' component={Settings} />
         <Route path='/policies' component={Policy} />
         <Route path='/help' component={Help} />

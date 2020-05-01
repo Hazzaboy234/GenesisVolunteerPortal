@@ -5,12 +5,13 @@ import React, { Component } from "react";
 import { NavigationBar } from "./NavigationBar";
 import { DashboardContent } from "./DashboardContent";
 import { Footer } from "./Footer";
+import { TrackerManager } from "../Tracker";
 
 export class Dashboard extends Component {
     componentDidMount(){
         document.title="Genesis Trust Portal: Dashboard"
         //document.cookie = JSON.stringify({hello:"test",okay:"then"})        
-        //console.log(document.cookie);
+        //console.log(document.cookie);     
     }
     render() {
         
@@ -19,7 +20,7 @@ export class Dashboard extends Component {
                 <link rel="stylesheet" href={require("./NavigationBar.css")}/>
                 <link rel="stylesheet" href={require("./dashboard.css")}/>                                
                 <NavigationBar active={0}/>
-                <DashboardContent/>
+                <DashboardContent addTracker={this.props.addTracker}/>
                 <Footer/>
             </div>
         )

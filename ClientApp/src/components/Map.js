@@ -22,7 +22,7 @@ export class Map extends Component {
         var m = new google.maps.Marker(marker);
         m.addListener("click", () => this.openWindow(m))
         this.openWindow(m);
-        
+
         markerObjects.push(m);
     }
     /**
@@ -58,8 +58,8 @@ export class Map extends Component {
 
     openWindow(marker) {
         var content = contentString.replace("event_title", marker.title);
-        content = content.replace("event_description", this.compileDescription(marker.description));        
-        infowindow.setContent(content);        
+        content = content.replace("event_description", this.compileDescription(marker.description));
+        infowindow.setContent(content);
         $.when(infowindow.open(map, marker))
         map.panTo(marker.position);
     }
@@ -67,7 +67,7 @@ export class Map extends Component {
         var desc = "desc_body<br><br>desc_roles";
         desc = desc.replace("desc_body", description.body);
         var roles;
-        if ((description.roles != undefined) && (description.roles.length >= 0)) {
+        if ((description.roles !== undefined) && (description.roles.length >= 0)) {
             roles = "Available Roles<br>" + description.roles.toString()
         } else {
             roles = "No available roles";
@@ -138,7 +138,53 @@ export class Map extends Component {
         }
     }
 
-    componentDidMount() {        
+    componentDidMount() {
+        this.props.addTracker({
+            id: "map",
+            events: [
+                {
+                    event: "mouseenter",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[0] = new Date(); mem(newMem) }
+                }, {
+                    event: "mouseleave",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[1] = new Date(); mem(newMem) }
+                }
+            ],
+            mem_: [0, 0],
+            description: "Map UI idle time"
+        })
+
+
+        this.props.addTracker({
+            id: "main-ul",
+            events: [
+                {
+                    event: "mouseenter",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[0] = new Date(); mem(newMem) }
+                }, {
+                    event: "mouseleave",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[1] = new Date(); mem(newMem) }
+                }
+            ],
+            mem_: [0, 0],
+            description: "Map UI idle time"
+        })
+
+        this.props.addTracker({
+            id: "search-input",
+            events: [
+                {
+                    event: "focus",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[0] = new Date(); mem(newMem) }
+                }, {
+                    event: "unfocus",
+                    eventHandler: (mem) => { var newMem = mem(); newMem[1] = new Date(); mem(newMem) }
+                }
+            ],
+            mem_: [0, 0],
+            description: "Map UI Search tool idle time"
+        })
+
         var google = window.google;
         markerObjects = []
 
@@ -152,12 +198,12 @@ export class Map extends Component {
         $.when(infowindow = new google.maps.InfoWindow({
             content: contentString
         })).then(
-            ()=>{
-                document.getElementById("view-button").addEventListener("click",                
-                    ()=>{if(window.confirm("Are you sure you want to redirect?\nAny changes may be lost.")) window.location.replace("/roles/0")}
-                    
+            () => {
+                document.getElementById("view-button").addEventListener("click",
+                    () => { if (window.confirm("Are you sure you want to redirect?\nAny changes may be lost.")) window.location.replace("/roles/0") }
+
                 )
-            } 
+            }
         )
 
         //Add some example markrers
@@ -182,7 +228,7 @@ export class Map extends Component {
             icon: require("./Resources/home-icon.png")
         })
 
-        
+
         /*.array.forEach((button)=>{
             button.addEventListener("click",()=>console.log("okay"))
         })*/
@@ -215,7 +261,7 @@ export class Map extends Component {
                             {results}
                         </ul>
                     </li>
-                </ul>                
+                </ul>
             </div>
         )
     }

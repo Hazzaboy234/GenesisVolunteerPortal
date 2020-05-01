@@ -81,9 +81,9 @@ export class Login extends Component {
         }
 
 
+        //<button onClick={this.setup}>Check if the cookie is valid</button>
         return (
-            <div className="main-container">
-                <button onClick={this.setup}>Check if the cookie is valid</button>
+            <div className="main-container">                
                 <link rel="stylesheet" href={require("./login.css")} />
                 <div className="logo-container">
                     <img id="header-logo" alt="Genesis Trust" src={require("./Resources/logo.png")} />
