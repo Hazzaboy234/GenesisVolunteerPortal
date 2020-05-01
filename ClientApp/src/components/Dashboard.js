@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import { NavigationBar } from "./NavigationBar";
 import { DashboardContent } from "./DashboardContent";
 import { Footer } from "./Footer";
-import { TrackerManager } from "../Tracker";
+//import { TrackerManager } from "../Tracker";
 
 export class Dashboard extends Component {
     componentDidMount(){

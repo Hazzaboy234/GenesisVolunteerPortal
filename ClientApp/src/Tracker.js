@@ -1,23 +1,47 @@
-import $ from "jquery";
 export default class Tracker {
-    constructor({ id="", className="",tag,events=[], mem_,description=""}) {
+    constructor({targets=[""], events=[], initialMemory=[], sharedMemory=true, description="", name=""}) {
+        if(sharedMemory===true){
+            this.memory = initialMemory; //memory variable used to save information
+        }else{
+            this.memory = []
+            
+            this.memory.length = targets.length;
+            this.memory.fill(initialMemory);
+        }
         this.mem = this.mem.bind(this); //method for getting and setting this.memory
-        this.memory = mem_; //memory variable used to save information
-        this.subjectID=id; //the id of the element to track
-        this.subjectClass=className; //the class of the element(s) to track
         this.description=description; //description to help us identify the Tracker
+        this.targets = targets;
         
-        const subject = document.getElementById(id);        
-        if (subject !== null) events.forEach((e)=>subject.addEventListener(e.event, e.eventHandler.bind(this, this.mem)))
-        
-        const subjects = document.getElementsByClassName(className);
-        for(var i=0;i<subjects.length;i++) events.forEach((e)=>subjects[i].addEventListener(e.event, e.eventHandler.bind(this, this.mem)))
+
+        this.sharedMemory = sharedMemory;
+        //targets.forEach((target)=>{
+        for(var j=0;j<targets.length;j++){
+            var target = targets[j];
+            console.log(document.querySelectorAll(target));
+            switch(target.charAt(0)){
+
+                case '#': //We have an ID to target
+                const subject = document.getElementById(target.substr(1));
+                    events.forEach((e)=>subject.addEventListener(e.event, e.eventHandler.bind(this, this.mem.bind(this,j))))
+                    break;
+
+                case '.': //We have a class to target!
+                const subjects = document.getElementsByClassName(target.substr(1));
+                for(var i=0;i<subjects.length;i++) events.forEach((e)=>subjects[i].addEventListener(e.event, e.eventHandler.bind(this, this.mem.bind(this,j))))
+                    break;
+
+                default: //we have an invalid target!
+                    throw "X is not a valid target".replace("X",target);
+            }
+        }
+
         //trackers.push({id:this.id,memory:this.memory}) //push it to the global trackers thing
     }
 
-    mem(newMem=null){
+    mem(location,newMem=null){
         if(newMem===null){
-            return this.memory;
+            if(this.sharedMemory===false) return this.memory;
+            else return this.memory[location];
         }else{
             this.memory=newMem;
         }
@@ -25,7 +49,7 @@ export default class Tracker {
 
     //returns an object with tracker data inside
     export(){
-        return {subjectID:this.subjectID,subjectClass:this.subjectClass,memory:this.memory,description:this.description}
+        return {target:this.targets,memory:this.memory,description:this.description}
     }
 }
 
@@ -38,8 +62,8 @@ export class TrackerManager{
         this.export = this.export.bind(this);
     }
     
-    add({ id="", className="",tag,events=[], mem_,description="" }){
-        var data = { id, className,tag,events, mem_ ,description}
+    add({ targets, events, mem_,sharedMemory,description}){
+        var data = { targets,events, mem_ ,sharedMemory,description}
         try{
             this.trackers.push(
                 new Tracker(data)            

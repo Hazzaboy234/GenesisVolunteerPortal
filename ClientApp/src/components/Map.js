@@ -140,7 +140,7 @@ export class Map extends Component {
 
     componentDidMount() {
         this.props.addTracker({
-            id: "map",
+            targets: ["#map","#main-ul"],
             events: [
                 {
                     event: "mouseenter",
@@ -151,27 +151,12 @@ export class Map extends Component {
                 }
             ],
             mem_: [0, 0],
-            description: "Map UI idle time"
-        })
-
-
-        this.props.addTracker({
-            id: "main-ul",
-            events: [
-                {
-                    event: "mouseenter",
-                    eventHandler: (mem) => { var newMem = mem(); newMem[0] = new Date(); mem(newMem) }
-                }, {
-                    event: "mouseleave",
-                    eventHandler: (mem) => { var newMem = mem(); newMem[1] = new Date(); mem(newMem) }
-                }
-            ],
-            mem_: [0, 0],
-            description: "Map UI idle time"
+            sharedMemory:false,
+            description: "Track IDLE time on elements"
         })
 
         this.props.addTracker({
-            id: "search-input",
+            targets: ["#search-input"],
             events: [
                 {
                     event: "focus",
@@ -182,8 +167,9 @@ export class Map extends Component {
                 }
             ],
             mem_: [0, 0],
-            description: "Map UI Search tool idle time"
+            description: "Track GUI Usage"
         })
+
 
         var google = window.google;
         markerObjects = []
