@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
+import Tracker from "../Tracker";
 
 class InputElement extends Component {
     render() {
@@ -12,7 +13,7 @@ class InputElement extends Component {
 
         return (
             <li>
-                <input id={id} type={type} placeholder={this.props.placeholder} />
+                <input class="input-element" id={id} type={type} placeholder={this.props.placeholder} />
                 {mandatory}
             </li>
         )
@@ -23,10 +24,80 @@ export class Signup extends Component {
     constructor(props) {
         super(props);
         this.toast = this.toast.bind(this);
-        this.state = { reveal: false }
+        this.state = { reveal: false ,trackers:[]}
 
     }
 
+    componentDidMount(){
+        var trackers = [];
+        trackers.push(new Tracker({
+            //id:"test-button",
+            className:"super",
+            events:[
+            {
+                event:"mouseenter",
+                eventHandler:(mem)=>{
+                    var newMem = mem();
+                    newMem[0] = new Date();
+    
+                    mem(newMem);
+                    console.log("entering");
+                }
+            },            {
+                event:"mouseleave",
+                eventHandler:(mem)=>{
+                    var newMem = mem();
+                    newMem[1] = new Date();
+                    mem(newMem);
+                    console.log(mem());
+                    console.log("leaving");
+                }
+            }
+            ],
+            mem_:[0,0] //start, end
+        }))
+
+        trackers.push(
+        new Tracker({
+            //id:"test-button",
+            className:"input-element",
+            events:[
+            {
+                event:"focus",
+                eventHandler:(mem)=>{
+                    console.log(mem());
+                    mem(mem()+1);
+                }
+            }
+            ],
+            mem_:0            
+        }))
+
+        trackers.push(
+        new Tracker({
+            //id:"test-button",
+            className:"reveal-button",
+            events:[
+            {
+                event:"click",
+                eventHandler:(mem)=>{
+                    console.log(mem());
+                    mem(mem()+1);
+                }
+            }
+            ],
+            mem_:0            
+        }))
+
+        this.setState({trackers:trackers})
+
+        window.addEventListener("unload",()=>this.state.trackers.forEach(tracker=>console.log(tracker.export())))
+
+    }
+
+    componentWillUnmount(){
+        console.log(this.state.trackers.forEach(tracker=>console.log(tracker.export())))
+    }
     validate() {
         var data = {}
         data["FirstName"] = document.getElementById("first-name-input").value;
@@ -88,8 +159,8 @@ export class Signup extends Component {
                 </div>
 
                 <div className="super">
-
                     <ul className="input-text">
+                        <button id="test-button">YOOOO</button>
                         <a href="/"><img alt="Back" id="back-arrow" src={require("./Resources/Arrow.png")} /></a>
                         <InputElement id="first-name" type="text" placeholder="First Name" mandatory />
                         <InputElement id="second-name" type="text" placeholder="Second Name" mandatory />

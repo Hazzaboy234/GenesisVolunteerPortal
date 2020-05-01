@@ -10,8 +10,6 @@ import './custom.css'
 import { Dashboard } from './components/Dashboard';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
-//import { Boilerplate } from './components/Boilerplate';
-import {Boilerplate} from "./components/Boilerplate"
 import { Settings } from './components/Settings';
 import { Policy } from './components/Policy';
 import { Help } from './components/Help';
@@ -51,7 +49,7 @@ export default class App extends Component {
   }
 
   getCookie(field){
-    if(field==undefined) return this.state.cookie
+    if(field===undefined) return this.state.cookie
     else return this.state.cookie[field];
   }
 
